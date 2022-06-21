@@ -2,7 +2,7 @@
 ## Integrantes
 - Joaquin Acosta, 22 anios, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
 
-- Flora Vargas.
+- Flora Vargas, tengo 30 anios, soy de San Miguel, conocí el mundo de la programación por curiosidad, aprendiendo de manera autodidacta lo que termino gustándome mucho, actualmente estoy cursando la técnicatura en Informática.
 
 - Daniel Zambrana, 25 anios, Vivo en Villa celina Provincia de Buenos Aires
 
