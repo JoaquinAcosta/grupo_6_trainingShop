@@ -9,4 +9,4 @@
 - Fabian Coseglia, soy de San Miguel estudiaba profesorado en educación física pero a nada de finalizar la carrera decidí cambiar de categoría y pasar de la actividad física al mundo IT.
 mis intereses principales y quizas objetivos a largo plazos son la ciberseguridad y el hacking ético. 
 
-- Leandro Mumbach
+- Leandro Mumbach, tengo 27 años, soy de San Miguel. Ingrese al curso por recomendación, sin saber nada de programación, salvo por ver unos videos sobre de que trataba. La carrera me gusto por ver a un amigo que trabaja de programador y me parecia muy bueno lo que hacia e interesante.
