@@ -1,4 +1,8 @@
 # Proyecto integrador
+## Descripción del proyecto:
+- Desarrollar un ecomerce basado en la venta de suplementos y accesorios de entrenamiento.
+El cliente final son aquellas personas que estan dedicadas a la actividad física o un estilo de vida fitness.
+
 ## Integrantes
 - Joaquin Acosta, 22 anios, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
 
