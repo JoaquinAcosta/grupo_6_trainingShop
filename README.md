@@ -1,6 +1,6 @@
 # Proyecto integrador
 ## Descripción del proyecto:
-- Desarrollar un ecomerce basado en la venta de suplementos y accesorios de entrenamiento.
+- Desarrollar un e-commerce basado en la venta de suplementos y accesorios de entrenamiento.
 El cliente final son aquellas personas que estan dedicadas a la actividad física o un estilo de vida fitness.
 
 ## Integrantes
