@@ -4,30 +4,30 @@
 El cliente final son aquellas personas que estan dedicadas a la actividad física o un estilo de vida fitness.
 
 
-## Sitios de Referencias
+## Sitios de Referencias:
 
-Para llevar a cabo este e-commerce tomamos como referencias las siguientes páginas:  
+- Para llevar a cabo este e-commerce tomamos como referencias las siguientes páginas:  
 
-Ideas de home y página en general¬: https://www.adnnutrition.com.ar/ 
+- Ideas de home y página en general : https://www.adnnutrition.com.ar/ 
 
-Maquetación de producto: https://www.mercadolibre.com.ar/ 
+- Maquetación de producto: https://www.mercadolibre.com.ar/ 
 
-Carrito de Compras:  https://www.fravega.com/ 
+- Carrito de Compras:  https://www.fravega.com/ 
 
-Detalles del producto: https://desuplementos.com/product/whey-protein-1000-grs-nucleo-fit-frutos-rojos/ 
+- Detalles del producto: https://desuplementos.com/productwhey-protein-1000-grs-nucleo-fit-frutos-rojos/ 
 
-Ideas generales de carrito y login https://www.garbarino.com/
+- Ideas generales de carrito y login https://www.garbarino.com/
 
-## Diseño
+## Disenio:
 
-Colores: https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa 
+- Colores: https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa 
 
-Tipografia: https://fonts.google.com/ 
+- Tipografia: https://fonts.google.com/ 
 
-Logotipo: https://www.figma.com/file/RW8FyVoqbJwW3XnZpv05zc/trainingShopMobile?node-id=150%3A2
+- Logotipo: https://www.figma.com/file/RW8FyVoqbJwW3XnZpv05zc/trainingShopMobile?node-id=150%3A2
 
 
-## Integrantes
+## Integrantes:
 - Joaquin Acosta, 22 anios, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
 
 - Flora Vargas, tengo 30 anios, soy de San Miguel, conocí el mundo de la programación por curiosidad, aprendiendo de manera autodidacta lo que termino gustándome mucho, actualmente estoy cursando la técnicatura en Informática.
