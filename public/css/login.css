@@ -1,0 +1,50 @@
+      /*header*/
+.login-header{
+    height: 100px;
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding-top: 40px;}
+
+      /*main*/
+.login-main-div h1{
+    text-align: center;
+    margin: 20px 0px;}
+.login-main-div{
+    padding-bottom: 15px;}
+.login-main-label{
+    width: 100%;}
+.login-main-input{
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 5px;
+    border-radius: 8px;
+    background-color: var(--colorCeleste);
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);}
+.login-main-olv-contraseña{
+    text-align: end;
+    margin-top: -10px;}
+.login-main-div-button{
+    text-align: center;
+    padding: 20px 0px;}
+.login-main-button{
+    font-size: 20px;
+    padding: 0px 30px;
+    background-color: var(--colorAzulOscuro);
+    border-radius: 8px;
+    color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);}
+.login-main-crear_cuenta{
+    text-align: center;
+    padding: 5px 0px 50px 0px;}
+.login-main-a-crear_cuenta{
+    font-weight: bold;
+    padding-left: 7px;
+    color: black;}
+
+       /*footer*/
+.login-footer{
+    height: 200px;
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding-top: 90px;}

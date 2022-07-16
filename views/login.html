@@ -5,31 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header>
+        <section class="login-header">Header</section>
     </header>
     <main>
-        <div>
+        <div class="login-main-div">
             <h1>Iniciá sesión</h1>
         </div>
-     <form>
-        <div>
-            <label>Email:</label>
-            <input type="email" name="email">
+     <form action="/login" method="post">
+        <div class="login-main-div">
+            <label class="login-main-label">Email:</label>
+            <input class="login-main-input" type="email" name="email">
         </div>
-        <div>
-            <label>Contraseña:</label>
-            <input type="password" name="clave">
+        <div class="login-main-div">
+            <label class="login-main-label">Contraseña:</label>
+            <input class="login-main-input"  type="password" name="clave">
         </div>
-        <p><a href="">¿Olvidaste tu contraseña?</a></p>
-        <div>
-            <button type="submit">ACCEDER</button>
+        <p class="login-main-olv-contraseña"><a href="">¿Olvidaste tu contraseña?</a></p>
+        <div class="login-main-div-button">
+            <button class="login-main-button" type="submit">ACCEDER</button>
         </div>
-        <p>¿No tienes cuenta? <a href="/register">Crear cuenta</a></p>
+        <p class="login-main-crear_cuenta">¿No tienes cuenta? <a class="login-main-a-crear_cuenta" href="/register">Crear cuenta</a></p>
      </form>
     </main>
     <footer>
+        <section class="login-footer">Footer</section>
     </footer>
 </body>
 </html>
