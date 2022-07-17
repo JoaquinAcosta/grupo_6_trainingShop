@@ -20,7 +20,8 @@
     border-radius: 8px;
     background-color: var(--colorCeleste);
     border: none;
-    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);}
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
+    font-size: 14px;}
 .login-main-olv-contraseña{
     text-align: end;
     margin-top: -10px;}
@@ -28,6 +29,7 @@
     text-align: center;
     padding: 20px 0px;}
 .login-main-button{
+    height: 36px;
     font-size: 20px;
     padding: 0px 30px;
     background-color: var(--colorAzulOscuro);
