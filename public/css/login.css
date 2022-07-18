@@ -10,7 +10,13 @@
     text-align: center;
     margin: 20px 0px;}
 .login-main-div{
+    position: relative;
     padding-bottom: 15px;}
+.login-main-div i{
+    position: absolute;
+    right: 10px;
+    top: 48%;
+    cursor: pointer;}
 .login-main-label{
     width: 100%;}
 .login-main-input{
@@ -35,7 +41,8 @@
     background-color: var(--colorAzulOscuro);
     border-radius: 8px;
     color: var(--colorCeleste);
-    box-shadow: 1px 2px 5px 0px rgb(131 131 131);}
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    cursor: pointer;}
 .login-main-crear_cuenta{
     text-align: center;
     padding: 5px 0px 50px 0px;}
@@ -50,3 +57,30 @@
     background-color: darkgoldenrod;
     text-align: center;
     padding-top: 90px;}
+
+
+
+    /*login tablet*/
+@media(min-width: 768px){
+    .login-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.login-main form{
+    width: 65%;}
+    } 
+
+
+
+     /*login desktop*/
+@media(min-width: 1024px){
+.login-main-div {
+    display: flex;}
+.login-main-label{
+    width: 16%;
+    align-self: center;
+    text-align: end;
+    padding-right: 10px;}
+.login-main-div i {
+        top: 30%;}
+    }

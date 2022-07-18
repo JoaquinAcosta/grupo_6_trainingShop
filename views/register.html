@@ -5,15 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/5b33f8a9a4.js" crossorigin="anonymous"></script>
 </head>
-<body>Registro
+<body>
     <header>
-
+        <section class="login-header">Header</section>
     </header>
-    <main>
+    <main class="register-main">
+        <div class="register-main-hijo">
+        <nav>
+          <ul class="register-main-menu">
+            <li><a href="/">Inicio ></a></li>
+            <li><a href="/login">Mi cuenta ></a></li>
+            <li>Crear cuenta</li>
+          </ul>
+        </nav>
+        <h1 class="register-main-titulo">Crear cuenta</h1>
+      <form action="/register" method="post">
+        <div class="register-main-div">
+            <label class="register-main-label">Nombre y Apellido:</label>
+            <input class="register-main-input" type="text" name="usuario" placeholder="ej: María Perez" required>
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Email:</label>
+            <input class="register-main-input" type="email" name="email" placeholder="ej: tunombre@email.com">
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Teléfono (opcional):</label>
+            <input class="register-main-input" type="tel" name="telefono" placeholder="ej: 1123547689">
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Contraseña</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="register-main-input" type="password" name="clave">
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Confirmar Contraseña</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="register-main-input" type="password" name="clave2">
+        </div>
+        <div>
+            <button class="register-main-button" type="submit">Crear cuenta</button>
+        </div>
+        <p class="register-main-p">¿Ya tenés una cuenta? <a class="register-main-inicia_sesion" href="/login">Iniciá Sesión</a></p>
+      </form>
+      </div>
     </main>
     <footer>
-
+        <section class="login-footer">Footer</section>
     </footer>
 </body>
 </html>

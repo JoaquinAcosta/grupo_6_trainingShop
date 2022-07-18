@@ -13,7 +13,13 @@
     text-decoration: underline;
     padding-bottom: 15px;}
 .register-main-div{
+    position: relative;
     padding-bottom: 8px;}
+.register-main-div i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;}
 .register-main-label{
     width: 100%;}
 .register-main-input{
@@ -24,7 +30,8 @@
     background-color: var(--colorCeleste);
     border: none;
     box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
-    font-size: 14px;}
+    font-size: 14px;
+    padding-left: 10px;}
 .register-main-button{
     width: 100%;
     height: 30px;
@@ -33,7 +40,8 @@
     border-radius: 20px;
     color: var(--colorCeleste);
     box-shadow: 1px 2px 5px 0px rgb(131 131 131);
-    margin-top: 6px;}
+    margin-top: 6px;
+    cursor: pointer;}
 .register-main-p {
     text-align: center;
     padding: 10px 0px;}
