@@ -1,0 +1,19 @@
+.productCart__main {
+    margin: 0 auto;
+    width: 90%;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.productCart__main__section--cart-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.productCart__main__article--product-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

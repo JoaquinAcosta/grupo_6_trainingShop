@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Cart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/e6f6cca573.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <main>
-        <h1>Carrito de Compras</h1>
-        <section>
-            <div><img src="/images/product.png" alt="producto"></div>
-            <p>Descripcion</p>
-            <button>Eliminar</button>
-            <button>Cambiar cantidad producto</button>
-            <p>Precio</p>
+    <main class="productCart__main">
+        <h2>Carrito de Compras</h2>
+        <section class="productCart__main__section--cart-items">
+            <article class="productCart__main__article--product-item">
+                <div class="productCart__main__article--product-image"><img src="/images/productoCarrito.png" alt="producto"></div>
+                <p>Creatina Pura XPLODE 500gr</p>
+                <button><i class="fa-solid fa-trash-can"></i></button>
+                <div>
+                    <button class="decr"><i class="fa-solid fa-minus"></i></button>
+                    <button class="incr"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <p>$7500</p>
+            </article>
+
         </section>
+        <h4>¿Tenés un código de descuento?</h4>
         <form action="">
             <input type="text" name="" placeholder="Código de descuento">
             <button>APLICAR</button>
         </form>
-        <h2>Subtotal (sin envío):</h2>
+        <h3>Subtotal (sin envío):</h3>
         <p>Precio</p>
         <div>
             <h4>Ver más productos</h4>
@@ -29,12 +40,13 @@
         </div>
         <section>
             <h2>DESTACADO</h2>
-            <div><img src="/public/images/productoCarrito.png" alt="producto"></div>
+            <div><img src="/images/productoCarrito.png" alt="producto"></div>
             <p>Descripcion</p>
             <p>Precio</p>
             <h4>Comprar</h4>
         </section>
     </main>
-    
+
 </body>
+
 </html>
