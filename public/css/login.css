@@ -1,14 +1,19 @@
-      /*header*/
+      /*header mobile*/
 .login-header{
     height: 100px;
     background-color: darkgoldenrod;
     text-align: center;
     padding-top: 40px;}
 
-      /*main*/
+      /*main mobile*/
+.login-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
 .login-main-div h1{
     text-align: center;
-    margin: 20px 0px;}
+    margin: 20px 0px;
+    text-decoration: underline;}
 .login-main-div{
     position: relative;
     padding-bottom: 15px;}
@@ -27,7 +32,8 @@
     background-color: var(--colorCeleste);
     border: none;
     box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
-    font-size: 14px;}
+    font-size: 14px;
+    outline: none;}
 .login-main-olv-contraseña{
     text-align: end;
     margin-top: -10px;}
@@ -51,7 +57,7 @@
     padding-left: 7px;
     color: black;}
 
-       /*footer*/
+       /*footer mobile*/
 .login-footer{
     height: 200px;
     background-color: darkgoldenrod;
@@ -62,22 +68,20 @@
 
     /*login tablet*/
 @media(min-width: 768px){
-    .login-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
 .login-main form{
     width: 65%;}
-    } 
+} 
 
 
 
      /*login desktop*/
 @media(min-width: 1024px){
+.login-main form{
+    width: 55%;}
 .login-main-div {
     display: flex;}
 .login-main-label{
-    width: 16%;
+    width: 20%;
     align-self: center;
     text-align: end;
     padding-right: 10px;}
