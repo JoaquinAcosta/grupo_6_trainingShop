@@ -6,13 +6,17 @@
     width: 80%;}
 .register-main-menu{
     display: flex;
+    margin: 10px 0px;
     justify-content: center;}
 .register-main-menu li{
-    padding-left: 5px;}
+    padding-left: 5px;
+    text-transform: none;}
+.register-main-menu a{
+    color: black;}
 .register-main-titulo{
     text-align: center;
     text-decoration: underline;
-    padding-bottom: 15px;}
+    padding-bottom: 20px;}
 .register-main-div{
     position: relative;
     padding-bottom: 8px;}

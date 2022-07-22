@@ -33,10 +33,13 @@
     border: none;
     box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
     font-size: 14px;
+    padding-left: 5px;
     outline: none;}
 .login-main-olv-contraseña{
     text-align: end;
     margin-top: -10px;}
+.login-main-olv-contraseña a{
+    color: black;}
 .login-main-div-button{
     text-align: center;
     padding: 20px 0px;}
@@ -55,7 +58,7 @@
 .login-main-a-crear_cuenta{
     font-weight: bold;
     padding-left: 7px;
-    color: black;}
+    color: var(--colorAzulClaro);}
 
        /*footer mobile*/
 .login-footer{
