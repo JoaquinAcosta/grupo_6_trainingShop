@@ -47,6 +47,10 @@
 
 }
 
+.index__section__destacado{
+    margin-bottom: 15px;
+}
+
 .article__price--flex{
     display: flex;
     gap: 10px;
