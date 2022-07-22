@@ -3,7 +3,11 @@
     width: 90%;
 }
 
-h2 {
+main section {
+    margin-bottom: 20px;
+}
+
+main h2 {
     margin-top: 20px;
 }
 
@@ -26,6 +30,13 @@ h2 {
     display: flex;
 }
 
+.title{
+    padding: 20px 0;
+    line-height: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #202020;
+   }
 
 .counter {
     width: 100px;
@@ -42,15 +53,15 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 300;
     color: #202020;
     cursor: pointer;
 }
 
 .count {
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 300;
     color: #202020;
 }
 
@@ -61,15 +72,15 @@ h2 {
 
 .amount {
     padding-top: 20px;
-    font-size: 26px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 300;
     color: #202020;
 }
 
 .remove {
     padding-top: 5px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 300;
     color: #E44C4C;
     cursor: pointer;
    }
