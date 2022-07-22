@@ -8,5 +8,6 @@ app.use(express.static('public'));
 
 app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
 app.get('/detalledelproducto', (req,res) => res.sendFile(path.join(__dirname, 'views', 'detalledelproducto.html')));
+app.get('/header-footer', (req,res) => res.sendFile(path.join(__dirname, 'views', 'header-footer.html')));
 
 app.listen(port, () => console.log(`Server running in http://localhost:${port}`));
