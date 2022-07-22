@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --colorAzul: #0F4C75;
@@ -34,6 +35,10 @@ ol {
 li {
     list-style: none;
     text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
 }
 
 .header__section--2 {
@@ -109,6 +114,54 @@ li {
     font-family: var(--tipografiaSecundario);
 }
 
+
+/* FOOTER */
+
+footer {
+    background-color: var(--colorAzulOscuro);
+}
+
+.container__footer-categorias {
+    padding-bottom: 8px;
+}
+
+.container__footer h3 {
+    color: var(--colorCeleste);
+    padding: 9px 7px;
+}
+
+.container__footer-categorias ul li {
+    color: var(--colorCeleste);
+    font-size: 13px;
+    padding: 3px 13px;
+}
+
+.container__footer-contactos {
+    padding-bottom: 8px;
+}
+
+.container__footer-contactos ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3px;
+}
+
+.container__footer-contactos ul a {
+    color: var(--colorCeleste);
+    font-size: 13px;
+    padding: 3px 13px;
+}
+
+.copy {
+    color: var(--colorCeleste);
+    font-size: 10px;
+    text-align: center;
+    border-top: 0.1px solid #fff;
+    padding: 4px 0;
+}
+
+
+
 @media (min-width:768px) {
 
     .header__section__superior--2,
@@ -183,6 +236,16 @@ li {
         margin-left: -25px;
 
 
+    }
+
+    .container__footer {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 20px ;
+    }
+
+    .container__footer-contactos {
+        padding-left: 200px;
     }
 }
 
