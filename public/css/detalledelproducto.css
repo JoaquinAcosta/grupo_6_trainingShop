@@ -1,66 +1,237 @@
+
 body{
-    position: absolute;
-    padding: 20px 20px;
-    margin: 10px;
     text-align: center;
-    --tipografiaGeneral : 'Roboto';
+    font-style: var(--tipografiaGeneral);
     line-height: normal;
     box-sizing: border-box;
 }
 .main_producto_h2{
-   font-size: 20px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 20px;
 }
 .main_producto_imagen{
     background-position: 20%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  /*   position: absolute; */
+    padding: 20px 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .main_producto_precio{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: 800;
 }
 .main_producto_cuotas{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px;
+    height: 40px;
 }
-.main_producto_nav_ul{
+.contenedor{ 
     display: flex;
-    margin-bottom: 10px;
-    text-align: center;
-} 
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 2px;
+    color: #BBE1FA; 
+}
+.contenedor_1:hover{
+    color:#0F4C75;
+}
+.contenedor_2:hover{
+    color:#0F4C75;
+}
+.contenedor_3:hover{
+    color:#0F4C75;
+}
+.contenedor_4:hover{
+    color:#0F4C75;
+}
+.contenedor_5:hover{
+    color:#0F4C75;
+}
+
 .main_section form button{
     background-color: var(--colorAzulOscuro);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    width: 180px;
+    height: 40px;
+    color: #BBE1FA;
+}
 
-}
 .main_producto_section_h3{
-    margin-top: 10px;
+    margin-top: 10%;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
+    font-style: normal;
+    text-align: center;
 }
-.main_producto_section_p{
+.main_producto_section p{
+    padding: 5%;
     text-align: justify;
 
 }
 .main_producto_section_ul_detalles{
+    padding: 5%;
     text-align: justify;
 }
 
+@media (min-width:768px) {
+    .main_producto_h2{
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 20px;
+     
+    }
+    .main_producto_imagen{
+        background-position: 20%;
+        padding: 20px 20px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+       
+    }
+    .main_producto_precio{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 800;
+     
+    }
+    .main_producto_cuotas{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        height: 40px;
+    }
+    .contenedor{ 
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+        gap: 2px;
+        color: #BBE1FA;
+      
+    }
+    .contenedor_1:hover{
+        color:#0F4C75;
+    }
+    .contenedor_2:hover{
+        color:#0F4C75;
+    }
+    .contenedor_3:hover{
+        color:#0F4C75;
+    }
+    .contenedor_4:hover{
+        color:#0F4C75;
+    }
+    .contenedor_5:hover{
+        color:#0F4C75;
+    }
+    
+    .main_section form button{
+        background-color: var(--colorAzulOscuro);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        width: 180px;
+        height: 40px;
+        color: #BBE1FA;
+    
+    }
+    
+    .main_producto_section_h3{
+        margin-top: 10%;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-style: normal;
+        text-align: center;
+    }
+    .main_producto_section p{
+        padding: 5%;
+        text-align: justify;
+    
+    }
+    .main_producto_section_ul_detalles{
+        padding: 5%;
+        text-align: justify;
+    }
+}
 
-
-
-
-
-
-
-
-
-/* .producto_header_section_div_button{
-    font-size: 30px;
-    background-color: var(--colorAzulOscuro);
-} */
+@media (min-width:1024px) {
+    .main_producto_h2{
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .main_producto_imagen{
+        background-position: 20%;
+        padding: 20px 20px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .main_producto_precio{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 800;
+    }
+    .main_producto_cuotas{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        height: 40px;
+    }
+    .contenedor{ 
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: center;
+        gap: 2px;
+        color: #BBE1FA; 
+    }
+    .contenedor_1:hover{
+        color:#0F4C75;
+    }
+    .contenedor_2:hover{
+        color:#0F4C75;
+    }
+    .contenedor_3:hover{
+        color:#0F4C75;
+    }
+    .contenedor_4:hover{
+        color:#0F4C75;
+    }
+    .contenedor_5:hover{
+        color:#0F4C75;
+    }
+    
+    .main_section form button{
+        background-color: var(--colorAzulOscuro);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        width: 180px;
+        height: 40px;
+        color: #BBE1FA;
+    }
+    
+    .main_producto_section_h3{
+        margin-top: 10%;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-style: normal;
+        text-align: center;
+    }
+    .main_producto_section p{
+        padding: 5%;
+        text-align: justify;
+    
+    }
+    .main_producto_section_ul_detalles{
+        padding: 5%;
+        text-align: justify;
+    }
+}
