@@ -6,10 +6,8 @@
 /*ELIPSES*/
 .index__section__elipses{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto
+    justify-content: space-around;
+    width: 100%;
 }
 
 .index__section__elipses i{
@@ -18,15 +16,17 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     font-size: 40px;
-    padding: 15px;
-    margin-top: 10px;
-    margin-left: 20px;
+    padding: 12px;
+}
+
+.index .centrado-i{
+    margin-left: 10px;
 }
 
 .index__section__elipses p{
     text-align: center;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 13px;
     color: var(--colorAzulOscuro);
 }
 
@@ -107,6 +107,11 @@
 
 /*MEDIA TABLET*/
 @media (min-width:768px){
+
+    .index__section__elipses{
+    justify-content: space-around;
+    }
+
     .index__section__elipses i{
         padding: 21px;
         font-size: 40px;
