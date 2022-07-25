@@ -313,7 +313,7 @@ main h2 {
     .index__section__destacado,
     .index__section__novedades {
         flex-direction: row;
-        width: 95%;
+        width: 100%;
     }
 
     .article--flex {
