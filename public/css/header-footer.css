@@ -39,6 +39,7 @@ li {
 
 a {
     text-decoration: none;
+    color: var(--colorCeleste);
 }
 
 .header__section--2 {
