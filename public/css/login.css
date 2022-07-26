@@ -1,0 +1,102 @@
+      /*header mobile*/
+.login-header{
+    height: 100px;
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding-top: 40px;}
+
+      /*main mobile*/
+.login-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+.login-main-div h1{
+    text-align: center;
+    margin: 20px 0px;
+    text-decoration: underline;}
+.login-main-div{
+    position: relative;
+    padding-bottom: 15px;}
+.login-main-div i{
+    position: absolute;
+    right: 10px;
+    top: 48%;
+    cursor: pointer;}
+.login-main-label{
+    width: 100%;}
+.login-main-input{
+    width: 100%;
+    height: 36px;
+    margin-top: 5px;
+    border-radius: 8px;
+    background-color: var(--colorCeleste);
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
+    font-size: 14px;
+    padding-left: 5px;
+    outline: none;}
+.login-main-olv-contraseña{
+    text-align: end;
+    margin-top: -10px;}
+.login-main-olv-contraseña a{
+    color: black;}
+.login-main-div-button{
+    text-align: center;
+    padding: 20px 0px;}
+.login-main-button{
+    height: 36px;
+    width: 100%;
+    font-size: 20px;
+    padding: 0px 30px;
+    background-color: var(--colorAzulOscuro);
+    border-radius: 8px;
+    border: none;
+    color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    cursor: pointer;}
+.login-main-button:hover{
+    background-color: var(--colorAzul);
+    transition: 0.5s;}
+.login-main-crear_cuenta{
+    text-align: center;
+    padding: 5px 0px 50px 0px;}
+.login-main-a-crear_cuenta{
+    font-weight: bold;
+    padding-left: 7px;
+    color: var(--colorAzulClaro);}
+
+       /*footer mobile*/
+.login-footer{
+    height: 200px;
+    background-color: darkgoldenrod;
+    text-align: center;
+    padding-top: 90px;}
+
+
+
+    /*login tablet*/
+@media(min-width: 768px){
+.login-main form{
+    width: 65%;}
+} 
+
+
+
+     /*login desktop*/
+@media(min-width: 1024px){
+.login-main form{
+    width: 55%;}
+.login-main-div {
+    display: flex;}
+.login-main-label{
+    width: 20%;
+    align-self: center;
+    text-align: end;
+    padding-right: 10px;}
+.login-main-div i {
+        top: 30%;}
+.login-main-div-button{
+    text-align: end;}
+.login-main-button{
+    width: 83%;}
+}
