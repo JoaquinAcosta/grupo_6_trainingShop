@@ -134,7 +134,7 @@
         display: flex;
         gap: 30px;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         padding: 20px;
         
     }
