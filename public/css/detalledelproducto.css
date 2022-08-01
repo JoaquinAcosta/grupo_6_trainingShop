@@ -85,7 +85,7 @@ main{
     color: #202020;
     cursor: pointer;
 }
-.count{
+.count-detail{
     width: 30px;
     height: 30px;
     justify-content: center;
@@ -183,7 +183,7 @@ main{
         gap: 2px;
        
     }
-    .count{
+    .count-detail{
       margin-left: 15px;
     }
     .main_producto_stock{
