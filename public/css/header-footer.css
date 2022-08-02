@@ -64,10 +64,15 @@ a {
     padding-left: 6px;
 }
 
+.header__section__contenedor a {
+    text-align: center;
+    width:50%;
+}
+
 
 .header__section__contenedor img {
-    width: 45%;
-    height: 45%;
+    width: 75%;
+    height: 75%;
 }
 
 .logo-user-carrito {
@@ -190,8 +195,8 @@ footer {
     }
 
     .header__section__contenedor img {
-        width: 30%;
-        height: 30%;
+        width: 57%;
+        height: 50%;
     }
 
     .logo-user-carrito i {
