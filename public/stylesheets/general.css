@@ -1,0 +1,37 @@
+:root {
+    --colorAzul : #0F4C75;
+    --colorAzulOscuro : #1B262C;
+    --colorAzulClaro : #3282B8;
+    --colorCeleste : #BBE1FA;
+    --tipografiaGeneral : 'Roboto';
+    --tipografiaSecundario : 'Inter';
+    /* --sizeTitulares : ;
+    --sizeCuerpo : ;
+    --sizeDescripciones : ;
+    --sizePrecio : ;
+    */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--tipografiaGeneral);
+}
+
+body{
+    margin: 0 auto;
+}
+
+ul, ol {
+    padding-left: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+

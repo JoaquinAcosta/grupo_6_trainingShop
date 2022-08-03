@@ -3,7 +3,31 @@
 - Desarrollar un e-commerce basado en la venta de suplementos y accesorios de entrenamiento.
 El cliente final son aquellas personas que estan dedicadas a la actividad física o un estilo de vida fitness.
 
-## Integrantes
+
+## Sitios de Referencias:
+
+- Para llevar a cabo este e-commerce tomamos como referencias las siguientes páginas:  
+
+- Ideas de home y página en general : https://www.adnnutrition.com.ar/ 
+
+- Maquetación de producto: https://www.mercadolibre.com.ar/ 
+
+- Carrito de Compras:  https://www.fravega.com/ 
+
+- Detalles del producto: https://desuplementos.com/productwhey-protein-1000-grs-nucleo-fit-frutos-rojos/ 
+
+- Ideas generales de carrito y login https://www.garbarino.com/
+
+## Disenio:
+
+- Colores: https://colorhunt.co/palette/1b262c0f4c753282b8bbe1fa 
+
+- Tipografia: https://fonts.google.com/ 
+
+- Logotipo: https://www.figma.com/file/RW8FyVoqbJwW3XnZpv05zc/trainingShopMobile?node-id=150%3A2
+
+
+## Integrantes:
 - Joaquin Acosta, 22 anios, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
 
 - Flora Vargas, tengo 30 anios, soy de San Miguel, conocí el mundo de la programación por curiosidad, aprendiendo de manera autodidacta lo que termino gustándome mucho, actualmente estoy cursando la técnicatura en Informática.

@@ -1,0 +1,91 @@
+   /*main mobile*/
+.register-main{
+    display: flex;
+    justify-content: center;}
+.register-main-hijo{
+    width: 80%;}
+.register-main-menu{
+    display: flex;
+    margin: 10px 0px;
+    justify-content: center;}
+.register-main-menu li{
+    padding-left: 5px;
+    text-transform: none;}
+.register-main-menu a{
+    color: black;}
+.register-main-titulo{
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: 20px;}
+.register-main-div{
+    position: relative;
+    padding-bottom: 8px;}
+.register-main-div i{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;}
+.register-main-label{
+    width: 100%;}
+.register-main-input{
+    width: 100%;
+    height: 36px;
+    margin-top: 5px;
+    border-radius: 8px;
+    background-color: var(--colorCeleste);
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
+    font-size: 14px;
+    padding-left: 10px;
+    outline: none;}
+.register-main-button{
+    width: 100%;
+    height: 36px;
+    font-size: 20px;
+    background-color: var(--colorAzulOscuro);
+    border-radius: 8px;
+    border: none;
+    color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    margin-top: 6px;
+    cursor: pointer;}
+.register-main-button:hover{
+    background-color: var(--colorAzul);
+    transition: 0.5s;}
+.register-main-p {
+    text-align: center;
+    padding: 10px 0px;}
+.register-main-inicia_sesion{
+    color: var(--colorAzulClaro);
+    font-weight: bold;}
+
+
+    /*main tablet*/
+@media(min-width: 768px){
+.register-main-hijo{
+    width: 65%;}
+}
+  
+    /*main desktop*/
+@media(min-width: 1024px){
+.register-main form{
+    position: relative;
+    left: -70px;}
+.register-main-div{
+    display: flex;}
+.register-main-label {
+    width: 33%;
+    align-self: center;
+    text-align: end;
+    padding-right: 10px;}
+.register-main-div i {
+    right: 5px;
+    top: 35%;}
+.register-main-div_button{
+    text-align: end;}
+.register-main-button {
+    width: 75%;}
+.register-main-p{
+    position: relative;
+    left: 85px;}
+}
