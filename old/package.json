@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-integrador",
+  "version": "1.0.0",
+  "description": "- Desarrollar un e-commerce basado en la venta de suplementos y accesorios de entrenamiento.\r El cliente final son aquellas personas que estan dedicadas a la actividad física o un estilo de vida fitness.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaquinAcosta/grupo_6_trainingShop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaquinAcosta/grupo_6_trainingShop/issues"
+  },
+  "homepage": "https://github.com/JoaquinAcosta/grupo_6_trainingShop#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

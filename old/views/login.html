@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/5b33f8a9a4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <section class="header__section">
+            <div class="header__section__contenedor">
+                <div class="logo-menu"><i class="fa-solid fa-bars"></i></div>
+                <a href="/"><img src="/images/logo-mobil-tablet.png" alt=""></a>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/product-cart"><p>Mi carrito</p></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="buscador">
+                <form action="">
+                    <input type="text" placeholder="Que estas buscando?">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </form>
+            </div>
+        </section>
+        <section class="header__section__superior--2">
+            
+                <div class="header__secction__logoSuperior">
+                    <a href="/"><img src="/images/logo-superior.png" alt="logo-superior"></a>
+                </div>
+                <div class="buscador">
+                    <form action="">
+                        <input type="text" placeholder="Que estas buscando?">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </form>
+                </div>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/product-cart"><p>Mi carrito</p></a>
+                    </div>
+                </div>
+
+        </section>
+        <section class="header__section__inferior--2">
+            <div class="header__section__inferior--logo">
+                <a href="/"><img src="/images/logo-inferior.png" alt=""></a>
+                
+            </div>
+            <div class="header__section__inferior--sections">
+                <ul>
+                    <a href="/"><li>inicio</li></a>
+                    <a href=""><li>productos</li></a>
+                    <a href=""><li>contactos</li></a>
+                    <a href=""><li>preguntas frecuentes</li></a>
+                </ul>
+            </div>
+        </section>
+    </header>
+    <main class="login-main">
+        <div class="login-main-div">
+            <h1>Inicia sesión</h1>
+        </div>
+     <form action="/login" method="get">
+        <div class="login-main-div">
+            <label class="login-main-label">Email:</label>
+            <input class="login-main-input" type="email" name="email" placeholder="ej: tunombre@email.com">
+        </div>
+        <div class="login-main-div">
+            <label class="login-main-label">Contraseña:</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="login-main-input"  type="password" name="clave">
+        </div>
+        <p class="login-main-olv-contraseña"><a href="">¿Olvidaste tu contraseña?</a></p>
+        <div class="login-main-div-button">
+            <button class="login-main-button" type="submit">ACCEDER</button>
+        </div>
+        <p class="login-main-crear_cuenta">¿No tienes cuenta? <a class="login-main-a-crear_cuenta" href="/register">Crear cuenta</a></p>
+     </form>
+    </main>
+    <footer>
+        <div class="container__footer">
+
+            <div class="container__footer-categorias">
+                <h3>Categorias</h3>
+                <ul>
+                    <a href=""><li>inicio</li></a>
+                    <a href=""><li>productos</li></a>
+                    <a href=""><li>contactos</li></a>
+                    <a href=""><li>preguntas frecuentes</li></a> 
+                </ul>
+            </div>
+
+            <div class="container__footer-contactos"> 
+                <h3>Contactos</h3>
+                <ul>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i> <span>+54912345678</span></a>
+                    <a href=""><i class="fa-solid fa-phone"></i><span>(011)12345678</span></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i><span>email@trainingshop.com</span></a>
+                    <a href=""><i class="fa-solid fa-location-dot"></i><span>Capital Federal, Buenos Aires, Argentina</span></a>
+                </ul>
+            </div>    
+
+        </div>
+        <div class="copy">
+            <p>Copyright Training Shop - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+main{
+    width: 95%;
+    margin: 0 auto;
+    font-style: var(--tipografiaGeneral);
+    line-height: normal;
+    text-align: center;
+    box-sizing: border-box;
+}
+.main_producto_titulo_mobile{
+    font-size: 20px;
+    font-weight: 200px;
+    margin-top: 30px;
+}
+.main_producto_titulo_tablet{
+    display: none;
+}
+.main_producto_imagen img {
+    background-position: 20%;
+    padding: 10px 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    width: 90%;
+    height: 80%;
+    flex-direction: row;
+}
+.main_producto_subtitulo{
+    font-size: 20px;
+    font-weight: 200px;
+    margin-top: 10px;
+}
+.main_producto_precio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: 800;
+}
+.main_producto_cuotas{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 40px;
+}
+.valoracion{ 
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 2px;
+    color: #BBE1FA;
+}
+._1:hover{
+    color:#0F4C75;
+}
+._2:hover{
+    color:#0F4C75;
+}
+._3:hover{
+    color:#0F4C75;
+}
+._4:hover{
+    color:#0F4C75;
+}
+._5:hover{
+    color:#0F4C75;
+}
+._6{
+    text-transform:lowercase;
+    margin: 0px 5px;
+}
+.main_producto_nav_cantidad ul{
+    display: flex;
+    margin: 0 auto 20px;
+    justify-content: center;
+    gap: 2px;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: #202020;
+    cursor: pointer;
+}
+.count-detail{
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+.main_section form button{
+   background-color: var(--colorAzulOscuro);
+    border-radius: 15px;
+    border: 0;
+    width: 180px;
+    height: 40px;
+    color: #BBE1FA;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.main_producto_stock{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 2px;
+    color: #BBE1FA;
+}
+.main_producto_section_h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-style: normal;
+}
+.main_producto_section p{
+    padding: 5%;
+    font-size: 20px;
+    text-align: justify;
+}
+.main_producto_stock{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 2px;
+    color: #BBE1FA;
+}
+.main_producto_section_ul_detalles{
+    padding: 5%;
+    font-size: 20px;
+    text-align: justify;
+}
+
+
+
+
+
+
+@media (min-width:768px){
+    .main_section{
+        margin: 50px 0;
+        text-align: justify;    
+    }
+    .main_section article{ 
+     display: flex;
+    }
+    .main_contenedor_superior{
+        width: 50%;
+        padding: 20px;
+    }
+    .main_producto_imagen img{
+      width: 365px;
+       height: 380px;
+
+    }
+    .main_contenedor_inferior{
+        width: 60%;
+        padding: 50px;
+    }
+    .main_producto_titulo_tablet{
+        display: inline-block;
+        padding: 0 0 30px;
+    }
+    .main_producto_titulo_mobile{
+        display: none;
+    }
+    .valoracion{
+        justify-content: flex-start;
+        margin: 0px 20px;
+        margin-bottom: 10px;
+        justify-content: left;
+        margin: 10px;  
+    }
+    .main_producto_nav_cantidad ul{
+        display: flex;
+        margin-bottom: 20px;
+        margin-left:  20px;
+        justify-content: left;
+        gap: 2px;
+       
+    }
+    .count-detail{
+      margin-left: 15px;
+    }
+    .main_producto_stock{
+        justify-content: flex-start;
+        margin: 0px 20px;
+    }
+    .main_producto_section_p{
+        font-size: 30px;
+    }
+    .main_producto_stock{
+        justify-content: left;
+    }
+ }
+
+
+
+@media (min-width:1024px){
+    .main_producto_imagen img{
+        width: 435px;
+         height: 450px;
+         }
+         .main_producto_section_h3{
+            font-size: 30px;
+         }
+         .main_producto_section p{
+            padding: 5%;
+            font-size: 25px;
+            text-align: justify;
+         }
+         .main_producto_section_ul_detalles{
+            font-size: 22px;
+            
+        }
+        
+}
