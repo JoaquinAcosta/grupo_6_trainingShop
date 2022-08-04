@@ -317,7 +317,7 @@ main h2 {
         width: 100%;
     }
 
-    .article--flex {
+    .productCart__article--flex {
         display: flex;
         gap: 30px;
         justify-content: center;
