@@ -22,6 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+             //Ruta html
+app.get('/addProduct',(req,res)=>{return res.sendFile(path.join(__dirname,'/views/addProduct.html'))})
+app.get('/editProduct',(req,res)=>{return res.sendFile(path.join(__dirname,'/views/editProduct.html'))})
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

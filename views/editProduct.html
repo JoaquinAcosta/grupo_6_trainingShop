@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Crear producto</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    <script src="https://kit.fontawesome.com/5b33f8a9a4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/df7032ec01.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -71,26 +71,65 @@
             </div>
         </section>
     </header>
-    <main class="login-main">
-        <div class="login-main-div">
-            <h1>Inicia sesión</h1>
+    <main class="addProduct-main">
+        <div>
+            <h2 class="addProduct-title-h2">Editar productos</h2>
         </div>
-     <form action="/login" method="get">
-        <div class="login-main-div">
-            <label class="login-main-label">Email:</label>
-            <input class="login-main-input" type="email" name="email" placeholder="ej: tunombre@email.com">
+        <form action="/views/addProduct.html" method="post">
+            <div class="addProduct-div-general">
+              <fieldset class="addProduct-fieldset">
+                <legend>Ingrese el nombre del producto</legend>
+                <input type="text" name="producto" required>
+              </fieldset>
+            </div>              
+            <div class="addProduct-div-general">
+              <fieldset class="addProduct-fieldset">  
+                <legend>Descripción del producto</legend>
+                <textarea name="descripcion"  required></textarea>
+              </fieldset>
+            </div>  
+        <div class="addProduct-div-padre_img">           
+            <div class="addProduct-div-img_producto">  
+                <label>Agregar imagen del producto</label>
+                <input type="file" name="imagen" accept="jpg" multiple>          
+            </div>
         </div>
-        <div class="login-main-div">
-            <label class="login-main-label">Contraseña:</label>
-            <i class="fa-solid fa-eye-slash"></i>
-            <input class="login-main-input"  type="password" name="clave">
-        </div>
-        <p class="login-main-olv-contraseña"><a href="">¿Olvidaste tu contraseña?</a></p>
-        <div class="login-main-div-button">
-            <button class="login-main-button" type="submit">ACCEDER</button>
-        </div>
-        <p class="login-main-crear_cuenta">¿No tienes cuenta? <a class="login-main-a-crear_cuenta" href="/register">Crear cuenta</a></p>
-     </form>
+            <div class="addProduct-div-catYcolor">
+                <select name="categorias">
+                    <option value="Categoría">Categoría</option>
+                    <option value="Aminoácidos">Aminoácidos</option>
+                    <option value="Creatina">Creatina</option>
+                    <option value="Ganadores de peso">Ganadores de peso</option>
+                    <option value="Multivitamínicos">Multivitamínicos</option>
+                    <option value="Pre-entreno">Pre-entreno</option>
+                    <option value="Proteínas">Proteínas</option>
+                    <option value="Quemadores">Quemadores</option>
+                    <option value="Veganos">Veganos</option>
+                </select>             
+            
+                <select name="marcas">
+                    <option value="Marca">Marca</option>
+                    <option value="Body Advance">Body Advance</option>
+                    <option value="BSN">BSN</option>
+                    <option value="ENA Sport">ENA Sport</option>
+                    <option value="Muscletech">Muscletech</option>
+                    <option value="Nutrex Research">Nutrex Research</option>
+                    <option value="Optimum Nutrition">Optimum Nutrition</option>
+                    <option value="Protein Project">Protein Project</option>
+                    <option value="Star Nutrition">Star Nutrition</option>
+                </select>
+            </div>
+            <div class="addProduct-div-general"> 
+              <fieldset class="addProduct-fieldset">   
+                <legend>Precio</legend>
+                <input type="number" name="precio"> 
+              </fieldset>           
+            </div>
+            <div class="addProduct-div-button">
+                <button type="submit">Editar</button>
+                <button type="reset">Cancelar</button>
+            </div>
+        </form>
     </main>
     <footer>
         <div class="container__footer">
