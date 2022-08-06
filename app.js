@@ -6,9 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-/* var productsRouter = require('./controllers/productsController') */
 var productCartRouter = require('./routes/productCart');
-
+const productsRouter = require('./routes/products');
 var app = express();
 
 // view engine setup
@@ -24,10 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productCart', productCartRouter);
-
-             //Ruta html
-app.get('/addProduct',(req,res)=>{return res.sendFile(path.join(__dirname,'/views/addProduct.html'))})
-app.get('/editProduct',(req,res)=>{return res.sendFile(path.join(__dirname,'/views/editProduct.html'))})
+app.use('/products', productsRouter);
 
 
 // catch 404 and forward to error handler
