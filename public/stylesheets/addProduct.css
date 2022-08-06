@@ -13,6 +13,7 @@
     border-radius: 8px;
     background-color: var(--colorCeleste);
     box-shadow: 6px 4px 7px 1px rgb(131 131 131);
+    text-align: center;
 }
 .addProduct-fieldset input{
     width: 100%;
