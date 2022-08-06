@@ -1,6 +1,6 @@
 /*BANNER*/
-.index__section__banner{
-    width: 100%;
+.carousel-inner{
+    height: 140px;
 }
 
 /*ELIPSES*/
@@ -111,6 +111,9 @@
 
 /*MEDIA TABLET*/
 @media (min-width:768px){
+    .carousel-inner{
+        height: 266px;
+    }
 
     .index__section__elipses{
     justify-content: space-around;
@@ -145,3 +148,11 @@
     }
     
 }
+
+@media (min-width:1024px){
+    .carousel-inner{
+        height: 360px;
+    }
+
+}
+   

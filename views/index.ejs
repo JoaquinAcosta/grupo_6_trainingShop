@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <%- include('./partials/head') %>
 <body class="index">
     <%- include('./partials/header') %>
     <main class="index__main">
-        <section >
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/banner1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/banner2.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/banner3.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <!-- ANTES DEL CARROUSEL = BANNER --> 
+        <!-- <section >
             <img class="index__section__banner" src="/images/banner1.png" alt="">
-        </section>
+        </section> -->
         <section class="index__section__elipses">
             <article class="index__section__elipses__article--container">
                     <i class="fa-solid fa-truck"></i>
@@ -21,6 +48,7 @@
                     <p>Compra segura</p>
                 </article>
         </section>
+
         <section class="index__section__novedades">
             <h2 class="index__section__h2">NOVEDADES</h2>
             <div class="article--flex">
@@ -81,6 +109,7 @@
         </section>
     </main>
     <%- include('./partials/footer') %>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </body>
 </html>
