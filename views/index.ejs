@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %>
-<body class="index">
+
+  <body class="index">
     <%- include('./partials/header') %>
-    <main class="index__main">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <main class="index__main">
+        <section class="index__section__banner">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -16,9 +18,6 @@
               </div>
               <div class="carousel-item">
                 <img src="/images/banner2.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/images/banner3.png" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -30,129 +29,194 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        <!-- ANTES DEL CARROUSEL = BANNER --> 
-        <!-- <section >
-            <img class="index__section__banner" src="/images/banner1.png" alt="">
-        </section> -->
+        </section>
         <section class="index__section__elipses">
-            <article class="index__section__elipses__article--container">
-                    <i class="fa-solid fa-truck"></i>
-                    <p>Envíos sin cargo</p>
-                </article>
-            <article class="index__section__elipses__article--container">
-                    <i class="fa-solid fa-credit-card centrado-i"></i>
-                    <p>Todas las tarjetas</p>
-                </article>
-            <article class="index__section__elipses__article--container">   
-                    <i class="fa-solid fa-shield-halved centrado-i"></i>
-                    <p>Compra segura</p>
-                </article>
+          <article class="index__section__elipses__article--container">
+            <i class="fa-solid fa-truck"></i>
+            <p>Envíos sin cargo</p>
+          </article>
+          <article class="index__section__elipses__article--container">
+            <i class="fa-solid fa-credit-card centrado-i"></i>
+            <p>Todas las tarjetas</p>
+          </article>
+          <article class="index__section__elipses__article--container">
+            <i class="fa-solid fa-shield-halved centrado-i"></i>
+            <p>Compra segura</p>
+          </article>
         </section>
-
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <article class="index__section__novedades--article">
-                    <div class="index__section__novedades--container"><img src="/images/product1.png" alt=""></div>
-                    <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
-                    <div class="article__price--flex">
-                        <p>$7500</p>
-                        <a  a href="/detalledelproducto">Comprar</a>
-                    </div>
-                </article>
-              </div>
-              <div class="carousel-item">
-                <article class="index__section__novedades--article">
-                    <div class="index__section__novedades--container"><img src="/images/product1.png" alt=""></div>
-                    <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
-                    <div class="article__price--flex">
-                        <p>$7500</p>
-                        <a  a href="/detalledelproducto">Comprar</a>
-                    </div>
-                </article>
-              </div>
-              <div class="carousel-item">
-                <article class="index__section__novedades--article">
-                    <div class="index__section__novedades--container"><img src="/images/product1.png" alt=""></div>
-                    <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
-                    <div class="article__price--flex">
-                        <p>$7500</p>
-                        <a  a href="/detalledelproducto">Comprar</a>
-                    </div>
-                </article>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-
-        <!-- <section class="index__section__novedades">
+        <!-- SECTION CAROUSEL NOVEDADES -->
+        <section class="index__section__novedades">
+          <div class="glider-contain">
             <h2 class="index__section__h2">NOVEDADES</h2>
-            <div class="article--flex">
-             <article class="index__section__novedades--article">
-                 <div class="index__section__novedades--container"><img src="/images/product1.png" alt=""></div>
-                 <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a  a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
-             <article class= "index__section__novedades--article articleCarrusel">
-                 <div class="index__section__novedades--container"><img src="/images/product3-betaAlanine.png" alt=""></div>
-                 <h4 class="index__section__h4">BETA ALANINE 300gr</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
-             <article class= "index__section__novedades--article articleCarrusel">
-                 <div class="index__section__novedades--container"><img src="/images/product2.png" alt=""></div>
-                 <h4 class="index__section__h4">TNT Dynamite 240gr</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
+            <div class="glider">
+              <article class="index__section__novedades--article">
+                <div class="index__section__novedades--container"><img src="/images/product1.png" alt=""></div>
+                <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__novedades--article">
+                <div class="index__section__novedades--container"><img src="/images/product3-betaAlanine.png" alt="">
+                </div>
+                <h4 class="index__section__h4">BETA ALANINE 300gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__novedades--article">
+                <div class="index__section__novedades--container"><img src="/images/product2.png" alt=""></div>
+                <h4 class="index__section__h4">TNT Dynamite 240gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__destacado--article">
+                <div class="index__section__destacado--container"><img src="/images/product4-protein.png" alt=""></div>
+                <h4 class="index__section__h4">WHEY PROTHEIN - chocolate suizo 2lb</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__destacado--article">
+                <div class="index__section__destacado--container"><img src="images/productKiller.png" alt=""></div>
+                <h4 class="index__section__h4">KILLER CUTZ - 100gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
             </div>
+
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <!-- <div role="tablist" class="dots"></div> -->
+          </div>
         </section>
-        <section class= "index__section__destacado">
+          <!-- SECTION CAROUSEL DESTACADOS -->
+        <section class="index__section__destacado">
+          <div class="glider-contain">
             <h2 class="index__section__h2">DESTACADOS</h2>
-            <article class="article--flex">
-             <article class="index__section__destacado--article">
-                 <div class="index__section__destacado--container"><img src="/images/product4-protein.png" alt=""></div>
-                 <h4 class="index__section__h4">WHEY PROTHEIN - chocolate suizo 2lb</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
-             <article class="index__section__destacado--article articleCarrusel">
-                 <div class="index__section__destacado--container"><img src="/images/productZMA.png" alt=""></div>
-                 <h4 class="index__section__h4">ZMA - 90caps</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
-             <article class="index__section__destacado--article articleCarrusel">
-                 <div class="index__section__destacado--container"><img src="images/productKiller.png" alt=""></div>
-                 <h4 class="index__section__h4">KILLER CUTZ - 100gr</h4>
-                 <div class="article__price--flex">
-                     <p>$7500</p>
-                     <a href="/products/detail">Comprar</a>
-                 </div>
-             </article>
-            </article>
-        </section> -->
-    </main>
-    <%- include('./partials/footer') %>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-</body>
+            <div class="glider2">
+              <article class="index__section__destacado--article">
+                <div class="index__section__destacado--container"><img src="/images/productZMA.png" alt=""></div>
+                <h4 class="index__section__h4">ZMA - 90caps</h4>
+                <div class="article__price--flex">
+                    <p>$7500</p>
+                    <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__novedades--article">
+                <div class="index__section__novedades--container"><img src="/images/product3-betaAlanine.png" alt="">
+                </div>
+                <h4 class="index__section__h4">BETA ALANINE 300gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__novedades--article">
+                <div class="index__section__novedades--container"><img src="/images/product2.png" alt=""></div>
+                <h4 class="index__section__h4">TNT Dynamite 240gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__destacado--article">
+                <div class="index__section__destacado--container"><img src="/images/product4-protein.png" alt=""></div>
+                <h4 class="index__section__h4">WHEY PROTHEIN - chocolate suizo 2lb</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+              <article class="index__section__destacado--article">
+                <div class="index__section__destacado--container"><img src="images/productKiller.png" alt=""></div>
+                <h4 class="index__section__h4">KILLER CUTZ - 100gr</h4>
+                <div class="article__price--flex">
+                  <p>$7500</p>
+                  <a href="/products/detail">Comprar</a>
+                </div>
+              </article>
+            </div>
+
+            <button aria-label="Previous" class="glider-prev glider-prev-2">«</button>
+            <button aria-label="Next" class="glider-next glider-next-2">»</button>
+            <!-- <div role="tablist" class="dots"></div> -->
+          </div>
+        </section>
+
+      </main>
+      <%- include('./partials/footer') %>
+        <!-- GLIDER-JS SCRIPT -->
+        <script>
+          window.addEventListener('load', function () {
+            new Glider(document.querySelector('.glider'), {
+              slidesToShow: 1,
+              dots: '#dots',
+              arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+              },
+              responsive: [
+                {
+                  // screens greater than >= 775px
+                  breakpoint: 768,
+                  settings: {
+                    // Set to `auto` and provide item width to adjust to viewport
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                }, {
+                  // screens greater than >= 1024px
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                }
+              ]
+            })
+          });
+
+            /*CAROUSEL DE DESTACADOS */
+          
+          window.addEventListener('load', function () {
+            new Glider(document.querySelector('.glider2'), {
+              slidesToShow: 1,
+              dots: '#dots',
+              arrows: {
+                prev: '.glider-prev-2',
+                next: '.glider-next-2'
+              },
+              responsive: [
+                {
+                  // screens greater than >= 775px
+                  breakpoint: 768,
+                  settings: {
+                    // Set to `auto` and provide item width to adjust to viewport
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                }, {
+                  // screens greater than >= 1024px
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                  }
+                }
+              ]
+            })
+          });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  </body>
+
 </html>

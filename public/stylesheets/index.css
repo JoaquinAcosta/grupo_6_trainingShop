@@ -1,7 +1,11 @@
 /*BANNER*/
-.carousel-inner{
-    height: 140px;
+.index__section__carusel{
+    width: 98%;
 }
+.index__section__banner--img{
+    width: 100%;
+}
+
 
 /*ELIPSES*/
 .index__section__elipses{
@@ -47,14 +51,64 @@
 
 }
 
-.index__section__destacado{
-    margin-bottom: 15px;
+/*CARRUSELES*/
+/* --- --- CAROUSEL --- --- */
+.carousel__contenedor {
+	position: relative;
 }
 
-.article__price--flex{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.carousel__anterior,
+.carousel__siguiente {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: none;
+	top: calc(50% - 35px);
+	cursor: pointer;
+	line-height: 30px;
+	text-align: center;
+	background: none;
+	color: #fff;
+	opacity: 20%;
+}
+
+.carousel__anterior:hover,
+.carousel__siguiente:hover {
+	opacity: 100%;
+}
+
+.carousel__anterior {
+	left: -30px;
+}
+
+.carousel__siguiente {
+	right: -30px;
+}
+
+.carousel__lista {
+	overflow: hidden;
+}
+
+.carousel__elemento {
+	text-align: center;
+}
+
+.carousel__indicadores .glider-dot {
+	display: block;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	opacity: .2;
+	border-radius: 0;
+}
+
+.carousel__indicadores .glider-dot:hover {
+	opacity: .5;
+}
+
+.carousel__indicadores .glider-dot.active {
+	opacity: 1;
 }
 
 
@@ -84,10 +138,6 @@
     color: var(--colorAzulOscuro);
 }
 
-.articleCarrusel{
-    display: none;
-}
-
 .index__section__destacado--article a,.index__section__novedades--article a{
     display: inline-block;
     text-decoration: none;
@@ -105,15 +155,13 @@
     font-size: 32px;
     font-weight: bold;
     color: var(--colorAzulOscuro);
+    margin: auto;
     
    
 }
 
 /*MEDIA TABLET*/
 @media (min-width:768px){
-    .carousel-inner{
-        height: 266px;
-    }
 
     .index__section__elipses{
     justify-content: space-around;
@@ -149,10 +197,3 @@
     
 }
 
-@media (min-width:1024px){
-    .carousel-inner{
-        height: 360px;
-    }
-
-}
-   
