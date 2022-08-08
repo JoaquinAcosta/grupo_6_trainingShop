@@ -16,7 +16,8 @@
     text-decoration: underline;}
 .login-main-div{
     position: relative;
-    padding-bottom: 15px;}
+    padding-bottom: 15px;
+    text-align: start;}
 .login-main-div i{
     position: absolute;
     right: 10px;

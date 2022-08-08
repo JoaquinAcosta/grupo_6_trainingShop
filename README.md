@@ -38,3 +38,10 @@ El cliente final son aquellas personas que estan dedicadas a la actividad físic
 mis intereses principales y quizas objetivos a largo plazos son la ciberseguridad y el hacking ético. 
 
 - Leandro Mumbach, tengo 27 años, soy de San Miguel. Ingrese al curso por recomendación, sin saber nada de programación, salvo por ver unos videos sobre de que trataba. La carrera me gusto por ver a un amigo que trabaja de programador y me parecia muy bueno lo que hacia e interesante.
+
+
+## RETROSPECTIVAS:
+### [Retrospectiva SPRINT 1](https://github.com/JoaquinAcosta/grupo_6_trainingShop/tree/retrospectivas/RETRO%201)
+### [Retrospectiva SPRINT 2](https://github.com/JoaquinAcosta/grupo_6_trainingShop/tree/retrospectivas/RETRO%202)
+
+## TRELLO: https://trello.com/b/DqiRCpm0/c16-grupo6-training-shop
