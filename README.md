@@ -43,5 +43,7 @@ mis intereses principales y quizas objetivos a largo plazos son la cibersegurida
 ## RETROSPECTIVAS:
 ### [Retrospectiva SPRINT 1](https://github.com/JoaquinAcosta/grupo_6_trainingShop/tree/retrospectivas/RETRO%201)
 ### [Retrospectiva SPRINT 2](https://github.com/JoaquinAcosta/grupo_6_trainingShop/tree/retrospectivas/RETRO%202)
+### [Retrospectiva SPRINT 3](https://github.com/JoaquinAcosta/grupo_6_trainingShop/blob/retrospectivas/RETRO%203/README.md)
+
 
 ## TRELLO: https://trello.com/b/DqiRCpm0/c16-grupo6-training-shop
