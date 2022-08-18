@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Daniel",
+        "lastName": "Zambrana",
+        "email": "daniel@gmail.com",
+        "phone": 123454566,
+        "password": "1234",
+        "category": "vendedor",
+        "image": "default-image.png"
+      
+    },
+    {
+        "id": 2,
+        "name": "fabi",
+        "lastName": "coseglia",
+        "email": "fabi@gmail.com",
+        "phone": 123454896,
+        "password": "4321",
+        "category": "comprador",
+        "image": "default-image.png"
+      
+    }
+]
