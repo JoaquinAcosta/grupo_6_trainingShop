@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear producto</title>
+    <title>Editar producto</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <script src="https://kit.fontawesome.com/df7032ec01.js" crossorigin="anonymous"></script>
 </head>
@@ -73,25 +73,25 @@
     </header>
     <main class="addProduct-main">
         <div>
-            <h2 class="addProduct-title-h2">Editar productos</h2>
+            <h2 class="addProduct-title-h2">Editar productos: <%= product.name %></h2>
         </div>
-        <form action="/views/addProduct.html" method="post">
+        <form action="/product/update/<%= product.id %>?_method=PUT " method="post">
             <div class="addProduct-div-general">
               <fieldset class="addProduct-fieldset">
                 <legend>Ingrese el nombre del producto</legend>
-                <input type="text" name="producto" required>
+                <input type="text" name="producto" value="<%= product.name %>" required>
               </fieldset>
             </div>              
             <div class="addProduct-div-general">
               <fieldset class="addProduct-fieldset">  
                 <legend>Descripción del producto</legend>
-                <textarea name="descripcion"  required></textarea>
+                <textarea name="descripcion"><%= product.description %></textarea>
               </fieldset>
             </div>  
         <div class="addProduct-div-padre_img">           
             <div class="addProduct-div-img_producto">  
                 <label>Agregar imagen del producto</label>
-                <input type="file" name="imagen" accept="jpg" multiple>          
+                <input type="file" name="imagen" accept="jpg" multiple>       
             </div>
         </div>
             <div class="addProduct-div-catYcolor">
@@ -122,7 +122,7 @@
             <div class="addProduct-div-general"> 
               <fieldset class="addProduct-fieldset">   
                 <legend>Precio</legend>
-                <input type="number" name="precio"> 
+                <input type="number" name="precio" value="<%= product.price %>"> 
               </fieldset>           
             </div>
             <div class="addProduct-div-button">
