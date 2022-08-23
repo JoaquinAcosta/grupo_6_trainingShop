@@ -8,7 +8,7 @@ router
     .get('/detail', detail)
     .get('/add', add)
     .get('/edit', edit)
-    .delete('/delete/:id',productsController.destroy)
+    .delete('/delete/:id',destroy)
 
 
 module.exports = router;
