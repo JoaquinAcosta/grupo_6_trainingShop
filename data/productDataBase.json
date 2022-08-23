@@ -52,5 +52,23 @@
       "category": "destacados",
       "price": 15000,
       "brand": "Star nutrition"
+   },
+   {
+      "id": 7,
+      "name": "Proteinas",
+      "description": "baratas",
+      "image": "default-image.png",
+      "category": "Categoría",
+      "price": 2000,
+      "brand": "Marca"
+   },
+   {
+      "id": 8,
+      "name": "Plus Ultra",
+      "description": "TREMENDO!",
+      "image": "default-image.png",
+      "category": "Creatina",
+      "price": 100000,
+      "brand": "Star Nutrition"
    }
 ]
