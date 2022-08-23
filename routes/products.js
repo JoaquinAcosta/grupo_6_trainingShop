@@ -2,13 +2,18 @@ const express = require('express');
 const productsController = require('../controllers/productsController');
 const router = express.Router();
 
-const {detail, add, edit, destroy} = require ('../controllers/productsController')
+const {detail, add, store, edit, update, index, destroy} = require ('../controllers/productsController')
 
 router
-    .get('/detail', detail)
+    .get('/detail/:id',  detail)
     .get('/add', add)
-    .get('/edit', edit)
     .delete('/delete/:id',destroy)
+    //GET ALL PRODUCTS//
+    .get('/', index)
+    .get('/edit/:id',edit)
+    .put('/update/:id',update)
+    .post('/store', store)
+
 
 
 module.exports = router;

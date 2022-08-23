@@ -4,125 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear producto</title>
+    <title>Editar producto</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <script src="https://kit.fontawesome.com/df7032ec01.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <section class="header__section">
-            <div class="header__section__contenedor">
-                <div class="logo-menu"><i class="fa-solid fa-bars"></i></div>
-                <a href="/"><img src="/images/logo-mobil-tablet.png" alt=""></a>
-                <div class="logo-user-carrito">
-                    <div class="logo__user">
-                        <a href="/login"><i class="fa-solid fa-user"></i></a>
-                        <a href="/login"><p>Mi cuenta</p></a>
-                    </div>
-                    <div class="logo__carrito">
-                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <a href="/product-cart"><p>Mi carrito</p></a>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="buscador">
-                <form action="">
-                    <input type="text" placeholder="Que estas buscando?">
-                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                </form>
-            </div>
-        </section>
-        <section class="header__section__superior--2">
-            
-                <div class="header__secction__logoSuperior">
-                    <a href="/"><img src="/images/logo-superior.png" alt="logo-superior"></a>
-                </div>
-                <div class="buscador">
-                    <form action="">
-                        <input type="text" placeholder="Que estas buscando?">
-                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                    </form>
-                </div>
-                <div class="logo-user-carrito">
-                    <div class="logo__user">
-                        <a href="/login"><i class="fa-solid fa-user"></i></a>
-                        <a href="/login"><p>Mi cuenta</p></a>
-                    </div>
-                    <div class="logo__carrito">
-                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <a href="/product-cart"><p>Mi carrito</p></a>
-                    </div>
-                </div>
 
-        </section>
-        <section class="header__section__inferior--2">
-            <div class="header__section__inferior--logo">
-                <a href="/"><img src="/images/logo-inferior.png" alt=""></a>
-                
-            </div>
-            <div class="header__section__inferior--sections">
-                <ul>
-                    <a href="/"><li>inicio</li></a>
-                    <a href=""><li>productos</li></a>
-                    <a href=""><li>contactos</li></a>
-                    <a href=""><li>preguntas frecuentes</li></a>
-                </ul>
-            </div>
-        </section>
-    </header>
+    <%- include('./partials/header') %>
+
     <main class="addProduct-main">
         <div>
-            <h2 class="addProduct-title-h2">Editar productos</h2>
+            <h2 class="addProduct-title-h2">Editar producto: <%= product.name %></h2>
         </div>
-        <form action="/views/addProduct.html" method="post">
+        <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
             <div class="addProduct-div-general">
               <fieldset class="addProduct-fieldset">
                 <legend>Ingrese el nombre del producto</legend>
-                <input type="text" name="producto" required>
+                <input type="text" name="name" value="<%= product.name %>" required>
               </fieldset>
             </div>              
             <div class="addProduct-div-general">
               <fieldset class="addProduct-fieldset">  
                 <legend>Descripción del producto</legend>
-                <textarea name="descripcion"  required></textarea>
+                <textarea type="text" name="description"><%= product.description %></textarea>
               </fieldset>
             </div>  
         <div class="addProduct-div-padre_img">           
             <div class="addProduct-div-img_producto">  
-                <label>Agregar imagen del producto</label>
-                <input type="file" name="imagen" accept="jpg" multiple>          
+                <!-- <label for="image">Agregar imagen del producto</label>
+                <input type="file" name="image" id="image" multiple> -->   
+                <img width="200" src="/images/productsImage/<%= product.image %>" alt="<%= product.name%>">   
             </div>
         </div>
             <div class="addProduct-div-catYcolor">
-                <select name="categorias">
-                    <option value="Categoría">Categoría</option>
-                    <option value="Aminoácidos">Aminoácidos</option>
-                    <option value="Creatina">Creatina</option>
-                    <option value="Ganadores de peso">Ganadores de peso</option>
-                    <option value="Multivitamínicos">Multivitamínicos</option>
-                    <option value="Pre-entreno">Pre-entreno</option>
-                    <option value="Proteínas">Proteínas</option>
-                    <option value="Quemadores">Quemadores</option>
-                    <option value="Veganos">Veganos</option>
+                <select name="category">
+                    <option value="destacados"<%= product.category === "destacados" && "selected" %> >destacados</option>
+                    <option value="novedades"<%= product.category === "novedades" && "selected" %> >novedades</option>
                 </select>             
             
-                <select name="marcas">
-                    <option value="Marca">Marca</option>
+                <select name="brand">
+                   <!--  <option value="Marca">Marca</option> -->
+                    <option value="brand"<%= product.brand === "brand" && "selected" %> ><%= product.brand %></option>
+                    
                     <option value="Body Advance">Body Advance</option>
                     <option value="BSN">BSN</option>
-                    <option value="ENA Sport">ENA Sport</option>
+                    <option value="ENA Sport">ENA Sport</option>           
                     <option value="Muscletech">Muscletech</option>
+                    <option value="Nutrex">Nutrex</option>
                     <option value="Nutrex Research">Nutrex Research</option>
                     <option value="Optimum Nutrition">Optimum Nutrition</option>
                     <option value="Protein Project">Protein Project</option>
-                    <option value="Star Nutrition">Star Nutrition</option>
+                    <option value="Star Nutrition">Star Nutrition</option> 
                 </select>
             </div>
             <div class="addProduct-div-general"> 
               <fieldset class="addProduct-fieldset">   
                 <legend>Precio</legend>
-                <input type="number" name="precio"> 
+                <input type="number" name="price" value="<%= product.price %>"> 
               </fieldset>           
             </div>
             <div class="addProduct-div-button">
@@ -131,33 +69,6 @@
             </div>
         </form>
     </main>
-    <footer>
-        <div class="container__footer">
-
-            <div class="container__footer-categorias">
-                <h3>Categorias</h3>
-                <ul>
-                    <a href=""><li>inicio</li></a>
-                    <a href=""><li>productos</li></a>
-                    <a href=""><li>contactos</li></a>
-                    <a href=""><li>preguntas frecuentes</li></a> 
-                </ul>
-            </div>
-
-            <div class="container__footer-contactos"> 
-                <h3>Contactos</h3>
-                <ul>
-                    <a href=""><i class="fa-brands fa-whatsapp"></i> <span>+54912345678</span></a>
-                    <a href=""><i class="fa-solid fa-phone"></i><span>(011)12345678</span></a>
-                    <a href=""><i class="fa-solid fa-envelope"></i><span>email@trainingshop.com</span></a>
-                    <a href=""><i class="fa-solid fa-location-dot"></i><span>Capital Federal, Buenos Aires, Argentina</span></a>
-                </ul>
-            </div>    
-
-        </div>
-        <div class="copy">
-            <p>Copyright Training Shop - Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <%- include('./partials/footer') %>
 </body>
 </html>
