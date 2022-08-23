@@ -4,7 +4,7 @@ const router = express.Router();
 const {detail, add, edit} = require ('../controllers/productsController')
 
 router
-    .get('/detail', detail)
+    .get('/detail/:id',  detail)
     .get('/add', add)
     .get('/edit', edit)
 

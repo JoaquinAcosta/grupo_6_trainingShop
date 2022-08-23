@@ -9,16 +9,59 @@
 
     <main class="main">
         <section class="main_section">
-            <!-- producto -->
-         <%- include('./partials/navbar') %>   
+            <nav>
+                <article>
+                    <div class="main_contenedor_superior">
+                        <h2 class="main_producto_titulo_mobile"><%=product.name%></h2>
+                        <div class="main_producto_imagen">
+                            <img src="/images/productsImage/<%= product.image %>" alt="">
+                        </div>
+                    </div>
+                    <div class="main_contenedor_inferior">
+                        <h2 class="main_producto_titulo_tablet"><%=product.name%></h2>
+                        <!-- <h2 class="main_producto_subtitulo">Suplemento dietario de proteinas y aminoacidos</h2> -->
+                        <p class="main_producto_precio"><%=toThousand(product.price)%></p>
+                        <p class="main_producto_cuotas">3 cuotas sin interes de $<%=toThousand(product.price/3)%></p>
+                        <nav class="main_producto_nav">
+                            <ul class="valoracion">
+                                <li class="_1"><i class="fa-solid fa-star"></i></li>
+                                <li class="_2"><i class="fa-solid fa-star"></i></li>
+                                <li class="_3"><i class="fa-solid fa-star"></i></li>
+                                <li class="_4"><i class="fa-solid fa-star"></i></li>
+                                <li class="_5"><i class="fa-solid fa-star"></i></li>
+                                <li class="_6">valoracion</li>
+                            </ul>
+                        </nav>
+                        <nav class="main_producto_nav_cantidad">
+                            <ul class="counter">
+                                <li class="btn"><i class="fa-solid fa-minus"></i></li>
+                                <li class="count-detail">2</li>
+                                <li class="btn"><i class="fa-solid fa-plus"></i></li>
+                            </ul>
+                        </nav>
+                        <form action="/productCart/cart"><button class="button">Comprar</button></form>
+                        <p class="main_producto_stock">Stock Disponible.</p>
+                    </div>  
+                </article>
+            </nav> 
         </section>
-
-        <!-- descripcion -->
-        <%- include('./partials/descripcion') %>   
-
-         <!-- informacion -->
-         <%- include('./partials/informacion') %>
-        
+        <section class="main_producto_section">
+            <h3 class="main_producto_section_h3">Descripcion del producto</h3>
+            <p class="main_producto_section_p"><%=product.description%> </p>
+        </section> 
+        <section>
+            <h3 class="main_producto_section_h3">Informacion Nutricional</h3>
+            <ul class="main_producto_section_ul_detalles">
+                <li>PORCIÓN: 40gr.</li>
+                <li>PORCIONES POR ENVASE: 25 POR PORCIÓN %IDR(*)</li>
+                <li>Proteínas 25 g. 45%</li>
+                <li>Bcaa 2gs</li>
+                <li>Glutamina 6gs</li>
+                <li>Grasas trans 0%</li>
+                <li>Carbohidratos 12 g. 4%</li>
+                <li>Valor energético 166 Kcal / 695Kj 8%</li>
+            </ul>
+        </section>
       </main>
 
     <%- include('./partials/footer') %>
