@@ -162,6 +162,9 @@
 
 /*MEDIA TABLET*/
 @media (min-width:768px){
+    .index__section__novedades{
+        width: 95%;
+    }
 
     .index__section__elipses{
     justify-content: space-around;
