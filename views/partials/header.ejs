@@ -16,8 +16,8 @@
             </div>
         </div>
         <div class="buscador">
-            <form action="">
-                <input type="text" placeholder="Que estas buscando?">
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" placeholder="Que estas buscando?" name="keywords">
                 <span><i class="fa-solid fa-magnifying-glass"></i></span>
             </form>
         </div>
@@ -28,9 +28,9 @@
                 <a href="/"><img src="/images/logo-superior.png" alt="logo-superior"></a>
             </div>
             <div class="buscador">
-                <form action="">
-                    <input type="text" placeholder="Que estas buscando?">
-                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" placeholder="Que estas buscando?" name="keywords">
+                    <span><button><i type="submit" class="fa-solid fa-magnifying-glass"></i></button></span>
                 </form>
             </div>
             <div class="logo-user-carrito">

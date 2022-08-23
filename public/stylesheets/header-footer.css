@@ -114,7 +114,8 @@ body {
     outline: none;
 }
 
-.buscador form span {
+.buscador form span button
+ {
     margin-left: -23px;
     color: var(--colorAzulClaro);
     border: none;
