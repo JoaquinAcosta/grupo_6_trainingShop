@@ -58,15 +58,5 @@
       "price": 15000,
       "brand": "Star nutrition",
       "category": "Multivitamínicos"
-   },
-   {
-      "id": 7,
-      "name": "saassafasf",
-      "description": "fasfsafsaf",
-      "image": "default-image.png",
-      "category": "Ganadores de peso",
-      "price": 123214,
-      "brand": "Nutrex Research",
-      "section": "novedades"
    }
 ]
