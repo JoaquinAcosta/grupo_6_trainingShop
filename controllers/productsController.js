@@ -16,6 +16,17 @@ module.exports = {
     add: (req, res) => {
         return res.render ('addProduct')
     },
+    destroy : (req,res) => {
+
+        const {id} = req.params; 
+        const products = loadProducts()
+
+        const productsfilter = products.filter( product => product.id !== +id);
+
+        storeProducts(productsfilter);
+        return res.redirect('/admin/')
+
+    },
     index: (req,res) => {
         
         const products = loadProducts();
@@ -31,7 +42,7 @@ module.exports = {
 	},
 	update: (req, res) => {
 		const products= loadProducts()
-		const {name, price, category, description, brand} = req.body
+		const {name, price, category, description, brand, section} = req.body
 		const productsModify = products.map(product => {
 			if(product.id === +req.params.id){
 				return{...product,
@@ -39,17 +50,18 @@ module.exports = {
 			    price: +price,
 				description: description.trim(),
 				brand,
-				category
+				category,
+                section
 			}
 			}
 			return product
 		})
 		storeProducts(productsModify)
-		return res.redirect('/products/detail/' + req.params.id)
+		return res.redirect('/admin')
 	},
     store: (req, res) => {
         
-        const {id,name,description,image,category,price,brand} = req.body
+        const {id,name,description,image,category,price,brand, section} = req.body
         const products = loadProducts();
 
         const newProduct = {
@@ -59,17 +71,15 @@ module.exports = {
             image : 'default-image.png',
             category,
             price : +price,
-            brand
+            brand,
+            section
         }
 
         const productsModify = [...products, newProduct];
 
         storeProducts(productsModify);
 
-        return res.redirect('/')
+        return res.redirect('/admin')
 
     },
-    
-
-
  } 

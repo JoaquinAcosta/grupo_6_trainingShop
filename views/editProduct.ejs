@@ -37,10 +37,21 @@
             </div>
         </div>
             <div class="addProduct-div-catYcolor">
+                <select name="section">
+                    <option value="destacados"<%= product.section === "destacados" && "selected" %> >destacados</option>
+                    <option value="novedades"<%= product.section === "novedades" && "selected" %> >novedades</option>
+                </select>
+
                 <select name="category">
-                    <option value="in-sale"<%= product.category === "in-sale" && "selected" %> >En oferta</option>
-					<option value="visited"<%= product.category === "visited" && "selected" %> >Últimos agregados</option>
-                </select>             
+                  <option value="Aminoácidos"<%= product.category === "Aminoácidos" && "selected" %>>Aminoácidos</option>
+                  <option value="Creatina"<%= product.category === "Creatina" && "selected" %>>Creatina</option>
+                  <option value="Ganadores de peso"<%= product.category === "Ganadores de peso" && "selected" %>>Ganadores de peso</option>
+                  <option value="Multivitamínicos"<%= product.category === "Multivitamínicos" && "selected" %>>Multivitamínicos</option>
+                  <option value="Pre-entreno"<%= product.category === "Pre-entreno" && "selected" %>>Pre-entreno</option>
+                  <option value="Proteínas"<%= product.category === "Proteínas" && "selected" %>>Proteínas</option>
+                  <option value="Quemadores"<%= product.category === "Quemadores" && "selected" %>>Quemadores</option>
+                  <option value="Veganos"<%= product.category === "Veganos" && "selected" %>>Veganos</option>
+                </select>    
             
                 <select name="brand">
                    <!--  <option value="Marca">Marca</option> -->

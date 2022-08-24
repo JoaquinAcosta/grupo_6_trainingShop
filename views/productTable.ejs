@@ -8,7 +8,7 @@
                 <div class="container">
                     <div class="d-flex align-items-center p-2">
                         <h2>Tabla de productos</h2>
-                        <a href="#" class="btn-trainingShopAdd">Ingresar Productos</a>
+                        <a href="/products/add/<%= products.id %> " class="btn-trainingShopAdd">Ingresar Productos</a>
                     </div>
                     
                 </div>
@@ -31,8 +31,13 @@
                                     <td><%= name %> </td>
                                     <td>$<%= toThousand(price) %> </td>
                                     <td>
-                                        <button type="button" class="btn-TraininShop">Editar</button>
-                                        <button type="button" class="btn-TraininShop">Borrar</button>
+                                        
+                                        <a href="/products/edit/<%= id %>""><button type="button" class="btn-TraininShop">Editar</button></a>
+                                      
+                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn-TraininShop">Borrar</button>
+                                        </form>
+                                        
                                     </td>
                                 </tbody>
                                 <% }) %> 
