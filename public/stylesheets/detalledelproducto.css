@@ -14,6 +14,9 @@
 .main_producto_titulo_tablet{
     display: none;
 }
+.main_producto_imagen {
+    text-align: center;
+}
 .main_producto_imagen img {
     background-position: 20%;
     padding: 10px 10px;
@@ -153,8 +156,7 @@
         padding: 20px;
     }
     .main_producto_imagen img{
-      width: 365px;
-       height: 380px;
+      width: 340px;
 
     }
     .main_contenedor_inferior{
@@ -202,8 +204,7 @@
 
 @media (min-width:1024px){
     .main_producto_imagen img{
-        width: 435px;
-         height: 450px;
+        width: 340px;
          }
          .main_producto_section_h3{
             font-size: 30px;

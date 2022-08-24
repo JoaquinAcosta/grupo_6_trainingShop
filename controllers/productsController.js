@@ -60,7 +60,7 @@ module.exports = {
 	},
     store: (req, res) => {
         
-        const {id,name,description,image,category,price,brand} = req.body
+        const {id,name,description,image,category,price,brand, section} = req.body
         const products = loadProducts();
 
         const newProduct = {
@@ -70,7 +70,8 @@ module.exports = {
             image : 'default-image.png',
             category,
             price : +price,
-            brand
+            brand,
+            section
         }
 
         const productsModify = [...products, newProduct];
