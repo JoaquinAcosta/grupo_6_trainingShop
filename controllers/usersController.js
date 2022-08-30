@@ -9,4 +9,9 @@ module.exports={
             title:'Login'
         })
     },
+    profile:(req,res)=>{
+        return res.render('profile',{
+            title: 'Mi Perfil'
+        })
+    }
 }
