@@ -1,20 +1,27 @@
 <header class="header">
     <section class="header__section">
         <div class="header__section__contenedor">
-            <div class="logo-menu"><i class="fa-solid fa-bars"></i></div>
+            <div class="logo-menu"><i class="fa-solid fa-bars"></i></div>          
             <a href="/"><img src="/images/logo-mobil-tablet.png" alt=""></a>
-            <div class="logo-user-carrito">
+                        <!-- ICONO ADMIN TABLET Y MOBILE -->
+            <% if (locals.userLogin) { %>
                 <div class="logo__user">
-                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                    <a href="/users/login"><p>Mi cuenta</p></a>
+                    <a href="/admin"><i class="fa-solid fa-user"></i></a>
+                    <a href="/admin"><p>Admin</p></a>
                 </div>
-                <div class="logo__carrito">
-                    <a href="/productCart/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="/productCart/cart"><p>Mi carrito</p></a>
+            <% } else{  %>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/users/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/productCart/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/productCart/cart"><p>Mi carrito</p></a>
+                    </div>
                 </div>
-                
             </div>
-        </div>
+            <% } %>                                
         <div class="buscador">
             <form action="/search" method="GET" class="search-form">
                 <input type="text" placeholder="Que estas buscando?" name="keywords">
@@ -33,16 +40,26 @@
                     <span><button><i type="submit" class="fa-solid fa-magnifying-glass"></i></button></span>
                 </form>
             </div>
-            <div class="logo-user-carrito">
-                <div class="logo__user">
-                    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                    <a href="/users/login"><p>Mi cuenta</p></a>
-                </div>
-                <div class="logo__carrito">
-                    <a href="/productCart/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="/productCart/cart"><p>Mi carrito</p></a>
-                </div>
-            </div>
+                    <!-- ICONO ADMIN 1024 -->
+            <% if (locals.userLogin) { %>
+                <div class="logo__user" style="margin: 15px 25px 5px 0px;">
+                    <!-- envio admin pero deberia ser profile-->
+                    <a href="/admin"><i class="fa-solid fa-user"></i></a>
+                    <a href="/admin"><p><%= userLogin.name %></p></a>
+                </div>  
+                    <!-- aca iria un icono que envie a /produst/profile --> 
+                    <!-- aca iria el icono para cerra session -->            
+            <% } else{  %>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/users/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/productCart/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/productCart/cart"><p>Mi carrito</p></a>
+                    </div>
+            <% } %>
 
     </section>
     <section class="header__section__inferior--2">
