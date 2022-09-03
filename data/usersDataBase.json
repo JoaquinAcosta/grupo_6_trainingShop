@@ -1,58 +1,67 @@
-[{
-   "id": 1,
-   "name": "Daniel",
-   "lastName": "Zambrana",
-   "email": "daniel@gmail.com",
-   "phone": "1166658",
-   "password": "1234",
-   "category": "vendedor",
-   "image": "default-image.png",
-   "rol": "user",
-   "avatar": null
-},
-{
-   "id": 2,
-   "name": "fabi",
-   "lastName": "coseglia",
-   "email": "fabi@gmail.com",
-   "phone": "1166658",
-   "password": "4321",
-   "category": "comprador",
-   "image": "default-image.png"
-},
-{
-   "id": 3,
-   "name": "Leandro",
-   "email": "lean@ass.com",
-   "phone": "1166658",
-   "password": "$2a$10$cs7iPZ.hpS4GdAuNci/YKOqDougKQLFuguYeKqqmsBwMscFMSFF1i",
-   "rol": "user",
-   "avatar": null
-},
-{
-   "id": 4,
-   "name": "Joaquin",
-   "email": "joaquin@gmail.com",
-   "phone": "1166658",
-   "password": "$2a$10$jMuy477MvMn.ackjH9kLcOISnwRaFDtJxqb/r/auTiUxhRfskahxy",
-   "rol": "user",
-   "avatar": null
-},
-{
-   "id": 5,
-   "name": "fabee",
-   "email": "fabis@gmail.com",
-   "password": "$2a$10$F7rfkOZPccNeHDFuKyPhm.tSwZlrqETnzOdFD29h4cIB95pRrO3rC",
-   "phone": "1166658",
-   "rol": "user",
-   "avatar": null
-},
-{
-   "id": 6,
-   "name": "Emiliano",
-   "email": "emiliano@gmail.com",
-   "password": "$2a$10$x0ix.CV7hRtMZHCdoiwQwevFzqo.jmkrf.0BvIgSrPER72rhypk2a",
-   "rol": "user",
-   "avatar": null
-}
+[
+   {
+      "id": 1,
+      "name": "Daniel",
+      "lastName": "Zambrana",
+      "email": "daniel@gmail.com",
+      "phone": "1166658",
+      "password": "1234",
+      "category": "vendedor",
+      "image": "default-image.png",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 2,
+      "name": "fabi",
+      "lastName": "coseglia",
+      "email": "fabi@gmail.com",
+      "phone": "1166658",
+      "password": "4321",
+      "category": "comprador",
+      "image": "default-image.png"
+   },
+   {
+      "id": 3,
+      "name": "Leandro",
+      "email": "lean@ass.com",
+      "phone": "1166658",
+      "password": "$2a$10$cs7iPZ.hpS4GdAuNci/YKOqDougKQLFuguYeKqqmsBwMscFMSFF1i",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 4,
+      "name": "Joaquin",
+      "email": "joaquin@gmail.com",
+      "phone": "1166658",
+      "password": "$2a$10$jMuy477MvMn.ackjH9kLcOISnwRaFDtJxqb/r/auTiUxhRfskahxy",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 5,
+      "name": "fabee",
+      "email": "fabis@gmail.com",
+      "password": "$2a$10$F7rfkOZPccNeHDFuKyPhm.tSwZlrqETnzOdFD29h4cIB95pRrO3rC",
+      "phone": "1166658",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 6,
+      "name": "Emiliano",
+      "email": "emiliano@gmail.com",
+      "password": "$2a$10$x0ix.CV7hRtMZHCdoiwQwevFzqo.jmkrf.0BvIgSrPER72rhypk2a",
+      "rol": "user",
+      "avatar": null
+   },
+   {
+      "id": 7,
+      "name": "floravargas",
+      "email": "vargas.flora@hotmail.com",
+      "password": "$2a$10$45PQWc4ozh/o9tbnTAEqI.SiuTjdUnoRh0TbN2nw12jNTkrY4lJUK",
+      "rol": "user",
+      "avatar": null
+   }
 ]
