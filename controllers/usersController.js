@@ -39,9 +39,31 @@ module.exports = {
     },
 
     profile:(req,res)=>{
+        const users = loadUsers();
+        const userlogged = users.find(user => user.id === req.session.userLogin.id)
         return res.render('profile',{
-            title: 'Mi Perfil'
+            title: 'Mi Perfil',
+            userlogged,
+            users
         })
+    },
+
+    profileUpdate:(req,res) =>{
+        const users= loadUsers()
+		const {name,email,password,phone} = req.body
+		const userModify = users.map(user => {
+			if(user.id === +req.params.id){
+				return{...user,
+				name: name.trim(),
+			    email: email.trim(),
+                phone,
+                password
+			}
+			}
+			return (users)
+		})
+		storeUsers(userModify)
+		return res.redirect('/users/profile')
     },
 
     processLogin : (req,res) => {
@@ -54,7 +76,7 @@ module.exports = {
             /* username,
             rol,
             avatar */ };
-            return res.redirect('/admin')
+            return res.redirect('/users/profile')
         }else {
             return res.render('login', {errors: errors.mapped()})
             
