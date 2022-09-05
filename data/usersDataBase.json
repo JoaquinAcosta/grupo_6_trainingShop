@@ -57,5 +57,13 @@
       "password": "$2a$10$x0ix.CV7hRtMZHCdoiwQwevFzqo.jmkrf.0BvIgSrPER72rhypk2a",
       "rol": "user",
       "avatar": null
+   },
+   {
+      "id": 7,
+      "name": "floravargas",
+      "email": "vargas.flora@hotmail.com",
+      "password": "$2a$10$45PQWc4ozh/o9tbnTAEqI.SiuTjdUnoRh0TbN2nw12jNTkrY4lJUK",
+      "rol": "user",
+      "avatar": null
    }
 ]
