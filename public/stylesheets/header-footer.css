@@ -60,7 +60,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.header__section__contenedor__btn{
+    height: 3px;
+    font-size: 14px;
 }
 
 .logo-menu {
@@ -100,7 +105,11 @@ body {
 
 .buscador {
     text-align: center;
+    margin: 0 auto;
+    width: 99%;
 }
+
+
 
 .buscador form input {
     margin: -4px;

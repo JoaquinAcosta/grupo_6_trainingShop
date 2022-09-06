@@ -22,7 +22,7 @@
       "name": "fabito",
       "email": "fabito@gmail.com",
       "password": "$2a$10$CQ4C.rBygbD7Yw45mtsZd.G30WqXsoAb4N5RCjjUh.bWWIG4VBP8q",
-      "rol": "user",
+      "rol": "admin",
       "avatar": null,
       "phone": 11214545
    }
