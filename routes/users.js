@@ -6,6 +6,7 @@ const {register,login, processLogin, processRegister,profile, profileUpdate,logo
 
 const loginValidation = require('../validations/loginValidation')
 const registerValidation=require('../validations/registerValidation')
+const profileValidation = require('../validations/profileValidation')
 
 const userSessionCheck = require('../middlewares/userSessionCheck')
 const guestSessionCheck = require('../middlewares/guestSessionCheck')
@@ -23,7 +24,7 @@ router
 
    .get('/profile', userSessionCheck, profile)
 
-   .put('/update/:id',profileUpdate)
+   .put('/update/:id',profileValidation,profileUpdate)
 
 
 module.exports = router;

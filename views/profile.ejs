@@ -23,17 +23,21 @@
                                     " type="file" name="image" id="image" multiple>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="name" class="form-label">Nombre y Apellido</label>
+                                    <label for="name" class="form-label ">Nombre y Apellido</label>
                                     <input type="text" name="name" class=" input-trainingShop form-control" id="name" value="<%= userlogged.name %>">
+                                    <p class=" mt-1 text-danger form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email</label>
                                     <input type="email" name="email" class=" input-trainingShop form-control" id="emai" value="<%= userlogged.email %>">
+                                    <p class=" mt-1 form__error__msg"><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="password4" class="form-label">Password</label>
                                     <input type="password" class=" input-trainingShop form-control" name="password"
                                         id="password4" value="<%= userlogged.password %>">
+                                        <p class=" mt-1 text-danger form__error__msg"><%= locals.errors && errors.password ? errors.password.msg : null%> </p>
+
                                 </div>
                                 <div class="col-4">
                                     <label for="phone" class="form-label">Numero celular</label>

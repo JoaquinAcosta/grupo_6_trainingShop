@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const loadUsers = () => {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, 'usersDataBase.json'),'utf-8'));
+    const usersFilePath = path.join(__dirname, 'usersDataBase.json');
+    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    return users;
+    /* return JSON.parse(fs.readFileSync(path.join(__dirname, 'usersDataBase.json'),'utf-8')); */
 };
 
 const storeUsers = (users) => {

@@ -1,11 +1,29 @@
 [
    {
       "id": 1,
-      "name": "Alberto",
-      "email": "alberto@gmail.com",
-      "password": "$2a$10$x0ix.CV7hRtMZHCdoiwQwevFzqo.jmkrf.0BvIgSrPER72rhypk2a",
+      "name": "fafafafa",
+      "email": "fabi@gmail.com",
+      "password": "123456",
       "rol": "admin",
       "avatar": null,
-      "phone": ""
+      "phone": 11245161
+   },
+   {
+      "id": 2,
+      "name": "ramon",
+      "email": "ramon@hotmail.com",
+      "password": "$2a$10$gs0t/cJQgmdpgkFiPeDrHu4azXXvvA75iSoDRqdkHUUgJMinmREyy",
+      "rol": "user",
+      "avatar": null,
+      "phone": 0
+   },
+   {
+      "id": 3,
+      "name": "fabito",
+      "email": "fabito@gmail.com",
+      "password": "$2a$10$CQ4C.rBygbD7Yw45mtsZd.G30WqXsoAb4N5RCjjUh.bWWIG4VBP8q",
+      "rol": "user",
+      "avatar": null,
+      "phone": 11214545
    }
 ]

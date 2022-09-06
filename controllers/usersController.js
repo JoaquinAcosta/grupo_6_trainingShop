@@ -12,7 +12,7 @@ module.exports = {
     processRegister: (req, res) => {
        let errors = validationResult(req)
         if (errors.isEmpty()) {
-            const { name, email, password } = req.body;
+            const { name, email, password,phone } = req.body;
             let users = loadUsers()
 
             let newUsers = {
@@ -21,13 +21,14 @@ module.exports = {
                 email: email.trim(),
                 password: bcryptjs.hashSync(password, 10),
                 rol: "user",
-                avatar: null
+                avatar: null,
+                phone: +phone
             }
 
             let userModify = [...users, newUsers];
             storeUsers(userModify)
 
-            return res.redirect('login')
+            return res.redirect('/users/login')
         }
         else {
             return res.render('register', { errors: errors.mapped(), old: req.body })
@@ -47,25 +48,41 @@ module.exports = {
             title: 'Mi Perfil',
             userlogged,
             users
+            
         })
     },
 
     profileUpdate:(req,res) =>{
-        const users= loadUsers()
-		const {name,email,password,phone} = req.body
-		const userModify = users.map(user => {
-			if(user.id === +req.params.id){
-				return{...user,
-				name: name.trim(),
-			    email: email.trim(),
-                phone,
-                password
-			}
-			}
-			return (users)
-		})
-		storeUsers(userModify)
-		return res.redirect('/users/profile')
+
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            const users= loadUsers();
+            const {name,email,password,phone} = req.body;
+            
+           
+           
+
+            const userModify = users.map(user => {
+                if(user.id === +req.params.id){
+                    return{...user,
+                    name: name.trim(),
+                    email: email.trim(),
+                    phone: +phone,
+                    password: bcryptjs.hashSync(password, 10)
+                }
+                }
+                return user
+            });
+            
+            storeUsers(userModify);
+		    return res.redirect('/users/profile');
+        }else {
+            const users= loadUsers();
+            const userlogged = users.find(user => user.id === req.session.userLogin.id)
+            return res.render('profile', { errors: errors.mapped(), old: req.body, userlogged,users});
+        }
+        
+		
     },
     processLogin: (req, res) => {
        /*  return res.send(req.body.remember) */
@@ -82,7 +99,7 @@ module.exports = {
 
             if (req.body.remenber) {
                 res.cookies('trainingshop', req.session.userLogin, {
-                    maxAge : 1000 * 60
+                    maxAge : 1000 * 600
                 })
             }
             return res.redirect('/users/profile')
