@@ -81,7 +81,7 @@ module.exports = {
             const userlogged = users.find(user => user.id === req.session.userLogin.id)
             return res.render('profile', { errors: errors.mapped(), old: req.body, userlogged,users});
         }
-        
+        //test//
 		
     },
     processLogin: (req, res) => {
