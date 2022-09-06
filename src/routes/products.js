@@ -4,15 +4,13 @@ const router = express.Router();
 
 const {detail, add, store, edit, update, index, destroy} = require ('../controllers/productsController')
 
-const adminUserCheck = require('../middlewares/adminUserCheck');
-
 router
     .get('/detail/:id',  detail)
-    .get('/add',adminUserCheck, add)
+    .get('/add', add)
     .delete('/delete/:id',destroy)
     //GET ALL PRODUCTS//
     .get('/', index)
-    .get('/edit/:id',adminUserCheck, edit)
+    .get('/edit/:id',edit)
     .put('/update/:id',update)
     .post('/store', store)
 

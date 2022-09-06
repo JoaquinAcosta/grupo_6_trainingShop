@@ -1,24 +1,29 @@
 [
-    {
-        "id": 1,
-        "name": "Daniel",
-        "lastName": "Zambrana",
-        "email": "daniel@gmail.com",
-        "phone": 123454566,
-        "password": "1234",
-        "category": "vendedor",
-        "image": "default-image.png"
-      
-    },
-    {
-        "id": 2,
-        "name": "fabi",
-        "lastName": "coseglia",
-        "email": "fabi@gmail.com",
-        "phone": 123454896,
-        "password": "4321",
-        "category": "comprador",
-        "image": "default-image.png"
-      
-    }
+   {
+      "id": 1,
+      "name": "fafafafa",
+      "email": "fabi@gmail.com",
+      "password": "123456",
+      "rol": "admin",
+      "avatar": null,
+      "phone": 11245161
+   },
+   {
+      "id": 2,
+      "name": "ramon",
+      "email": "ramon@hotmail.com",
+      "password": "$2a$10$gs0t/cJQgmdpgkFiPeDrHu4azXXvvA75iSoDRqdkHUUgJMinmREyy",
+      "rol": "user",
+      "avatar": null,
+      "phone": 0
+   },
+   {
+      "id": 3,
+      "name": "fabito",
+      "email": "fabito@gmail.com",
+      "password": "$2a$10$CQ4C.rBygbD7Yw45mtsZd.G30WqXsoAb4N5RCjjUh.bWWIG4VBP8q",
+      "rol": "admin",
+      "avatar": null,
+      "phone": 11214545
+   }
 ]
