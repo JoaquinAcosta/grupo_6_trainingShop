@@ -60,6 +60,10 @@
     color: var(--colorAzulClaro);
     font-weight: bold;}
 
+.form__error__msg{
+    color: red;
+}
+
 
     /*main tablet*/
 @media(min-width: 768px){
@@ -73,7 +77,8 @@
     position: relative;
     left: -70px;}
 .register-main-div{
-    display: flex;}
+    display: flex;flex-direction: column};
+     
 .register-main-label {
     width: 33%;
     align-self: center;
