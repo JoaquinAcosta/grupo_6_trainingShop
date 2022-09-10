@@ -10,6 +10,7 @@ const profileValidation = require('../validations/profileValidation')
 
 const userSessionCheck = require('../middlewares/userSessionCheck')
 const guestSessionCheck = require('../middlewares/guestSessionCheck')
+const {uploadImageProfile} = require('../middlewares/uploadImageProfile');
 
 router
    .get('/register',guestSessionCheck, register )
@@ -24,7 +25,7 @@ router
 
    .get('/profile', userSessionCheck, profile)
 
-   .put('/update/:id',profileValidation,profileUpdate)
+   .put('/update/:id',uploadImageProfile.single('avatar'),profileValidation,profileUpdate)
 
 
 module.exports = router;

@@ -21,7 +21,7 @@ module.exports = {
                 email: email.trim(),
                 password: bcryptjs.hashSync(password, 10),
                 rol: "user",
-                avatar: null,
+                avatar: 'default-image.png',
                 phone: +phone
             }
 
@@ -55,9 +55,9 @@ module.exports = {
     profileUpdate:(req,res) =>{
 
         let errors = validationResult(req);
-        if (errors.isEmpty()){
+        if (!errors.isEmpty()){
             const users= loadUsers();
-            const {name,email,password,phone} = req.body;
+            const {name,email,avatar,phone} = req.body;
             
            
            
@@ -68,14 +68,14 @@ module.exports = {
                     name: name.trim(),
                     email: email.trim(),
                     phone: +phone,
-                    password: bcryptjs.hashSync(password, 10)
+                    avatar : req.file ? req.file.filename : "default-image.png"
                 }
                 }
                 return user
             });
             
             storeUsers(userModify);
-		    return res.redirect('/users/profile');
+		    return res.redirect('/');
         }else {
             const users= loadUsers();
             const userlogged = users.find(user => user.id === req.session.userLogin.id)
