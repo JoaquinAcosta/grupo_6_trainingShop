@@ -10,29 +10,19 @@
    },
    {
       "id": 2,
-      "name": "ramon",
+      "name": "Rastita",
       "email": "ramon@hotmail.com",
-      "password": "$2a$10$gs0t/cJQgmdpgkFiPeDrHu4azXXvvA75iSoDRqdkHUUgJMinmREyy",
+      "password": "$2a$10$CzbHbffn3.pKbFJV1.Pm.eNJBNQjhfG8cdqtSS.ELUqPuH2097Lue",
       "rol": "user",
-      "avatar": null,
-      "phone": 0
+      "phone": 11252625
    },
    {
       "id": 3,
-      "name": "fabito",
-      "email": "fabito@gmail.com",
-      "password": "$2a$10$CQ4C.rBygbD7Yw45mtsZd.G30WqXsoAb4N5RCjjUh.bWWIG4VBP8q",
-      "rol": "admin",
-      "avatar": null,
-      "phone": 11214545
-   },
-   {
-      "id": 4,
-      "name": "Joaquin",
-      "email": "joaquin@gmail.com",
-      "password": "$2a$10$3wlvEmx.ZUXnuzMapRxykOzAnu5V75j4tFMyh74c7TMS/ngol63GS",
+      "name": "fabi",
+      "email": "fabian@gmail.com",
+      "password": "$2a$10$Bv4ROAAC7emBJ7.Z27MgSeU4ZODFk6MfNfHDI/eOggTJMho9Xwuna",
       "rol": "user",
-      "avatar": null,
-      "phone": 12345678
+      "phone": 0,
+      "avatar": "avatar-1662837650572.jpg"
    }
 ]
