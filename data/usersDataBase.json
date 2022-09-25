@@ -25,5 +25,14 @@
       "rol": "admin",
       "avatar": null,
       "phone": 11214545
+   },
+   {
+      "id": 4,
+      "name": "Joaquin",
+      "email": "joaquin@gmail.com",
+      "password": "$2a$10$3wlvEmx.ZUXnuzMapRxykOzAnu5V75j4tFMyh74c7TMS/ngol63GS",
+      "rol": "user",
+      "avatar": null,
+      "phone": 12345678
    }
 ]
