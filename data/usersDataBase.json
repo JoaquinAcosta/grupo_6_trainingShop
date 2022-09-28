@@ -21,8 +21,8 @@
       "name": "fabi",
       "email": "fabian@gmail.com",
       "password": "$2a$10$Bv4ROAAC7emBJ7.Z27MgSeU4ZODFk6MfNfHDI/eOggTJMho9Xwuna",
-      "rol": "user",
-      "phone": 0,
-      "avatar": "avatar-1662837650572.jpg"
+      "rol": "admin",
+      "phone": 11245,
+      "avatar": "default-image.png"
    }
 ]

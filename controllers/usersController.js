@@ -97,8 +97,8 @@ module.exports = {
             rol,
             avatar};
 
-            if (req.body.remenber) {
-                res.cookies('trainingshop', req.session.userLogin, {
+            if (req.body.remember) {
+                res.cookie('trainingshop', req.session.userLogin, {
                     maxAge : 1000 * 600
                 })
             }
@@ -112,8 +112,10 @@ module.exports = {
     },
     logout : (req,res) => {
         req.session.destroy();
+        res.cookie('trainingshop',null,{maxAge: -1});
         return res.redirect('/')
-
-
     }
+
+
+    
 }
