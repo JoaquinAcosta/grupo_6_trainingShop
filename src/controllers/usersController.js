@@ -56,8 +56,9 @@ module.exports = {
 
         let errors = validationResult(req);
         if (!errors.isEmpty()){
-            const users= loadUsers();
+            
             const {name,email,avatar,phone} = req.body;
+            const users= loadUsers();
             
            
            
