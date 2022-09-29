@@ -57,7 +57,7 @@ module.exports = {
         let errors = validationResult(req);
         if (!errors.isEmpty()){
             const users= loadUsers();
-            const {name,email,avatar,phone} = req.body;
+            const {name,email,avatar,phone,lastName} = req.body;
             
            
            
@@ -66,6 +66,7 @@ module.exports = {
                 if(user.id === +req.params.id){
                     return{...user,
                     name: name.trim(),
+                    lastName : lastName.trim(),
                     email: email.trim(),
                     phone: +phone,
                     avatar : req.file ? req.file.filename : "default-image.png"
@@ -75,7 +76,7 @@ module.exports = {
             });
             
             storeUsers(userModify);
-		    return res.redirect('/');
+		    return res.redirect('/users/profile');
         }else {
             const users= loadUsers();
             const userlogged = users.find(user => user.id === req.session.userLogin.id)

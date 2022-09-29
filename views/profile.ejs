@@ -23,11 +23,17 @@
                                     <input class="form-control" style="border: solid 3px #bbe1fa;
                                     " type="file" name="avatar" id="avatar">
                                 </div>
+                            
                                 <div class="col-md-12">
-                                    <label for="name" class="form-label ">Nombre y Apellido</label>
-                                    <input type="text" name="name" class=" input-trainingShop form-control" id="name" value="<%= userlogged.name %>">
-                                    <p class=" mt-1 text-danger form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+                                    <label class="register-main-label">Nombre:</label>
+                                    <input class="register-main-input" type="text" name="name" id="name" placeholder="ej: María" value="<%= userlogged.name %>">
+                                    <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
                                 </div>
+                                <div class="col-md-12">
+                                  <label class="register-main-label">Apellido:</label>
+                                  <input class="register-main-input" id="lastName" type="text" name="lastName" placeholder="ej: Perez" value="<%= userlogged.lastName %>">
+                                  <p class="form__error__msg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
+                              </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email</label>
                                     <input type="email" name="email" class=" input-trainingShop form-control" id="emai" value="<%= userlogged.email %>">

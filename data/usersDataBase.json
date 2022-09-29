@@ -24,5 +24,15 @@
       "rol": "admin",
       "phone": 11245,
       "avatar": "default-image.png"
+   },
+   {
+      "id": 4,
+      "name": "Emiliano",
+      "lastName": "Bernal",
+      "email": "emiliano@gmail.com",
+      "password": "$2a$10$/tqF6kBGsTzLkQ6ZQHB4VeHMa1F6Cdagcw1gXKv3BgG1F7ifs9mdu",
+      "rol": "user",
+      "avatar": "default-image.png",
+      "phone": 87654321
    }
 ]
