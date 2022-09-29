@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <main class="register-main">
+        <div class="register-main-hijo">
+        <nav>
+          <ul class="register-main-menu">
+            <li><a href="/">Inicio ></a></li>
+            <li><a href="/users/login">Mi cuenta ></a></li>
+            <li>Crear cuenta</li>
+          </ul>
+        </nav>
+        <h1 class="register-main-titulo">Crear cuenta</h1>
+      <form action="" method="post">
+        <div class="form__container"></div>
+        <div class="col-md-12">
+          <label class="register-main-label">Nombre:</label>
+          <input class="register-main-input" type="text" name="name" id="name" placeholder="ej: María" value="<%= locals.old ? old.name : null %>">
+          <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+      </div>
+      <div class="col-md-12">
+        <label class="register-main-label">Apellido:</label>
+        <input class="register-main-input" id="lastName" type="text" name="lastName" placeholder="ej: Perez" value="<%= locals.old ? old.lastName : null %>">
+        <p class="form__error__msg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
+    </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Email:</label>
+            <input class="register-main-input" type="email" name="email" placeholder="ej: tunombre@email.com" value="<%= locals.old ? old.email : null %>">
+            <p class="form__error__msg"><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Teléfono (opcional):</label>
+            <input class="register-main-input" type="tel" name="phone" placeholder="ej: 1123547689">
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Contraseña:</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="register-main-input" type="password" name="password" value="<%= locals.old ? old.password : null %>">
+            <p class="form__error__msg"><%= locals.errors && errors.password ? errors.password.msg : null%> </p>
+        </div>
+        <div class="register-main-div">
+            <label class="register-main-label">Confirmar Contraseña:</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="register-main-input" type="password" name="password2" value="<%= locals.old ? old.password2 : null %>">
+            <p class="form__error__msg"><%= locals.errors && errors.password2 ? errors.password2.msg : null%> </p>
+        </div>
+        <div class="register-main-div_button">
+            <button class="register-main-button" type="submit">Crear cuenta</button>
+        </div>
+        <p class="register-main-p">¿Ya tenés una cuenta? <a class="register-main-inicia_sesion" href="/users/login">Inicia Sesión</a></p>
+      </form>
+      </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

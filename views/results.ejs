@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head', { title : 'Resultado de la búsqueda' }) %>
+
+    <body class="result">
+        <%- include('./partials/header') %>
+
+            <main class="container">
+                <div class="row m-5">
+                    <h4>Resultado de la búsqueda: <%= keywords %></h4>
+                    <% if (products.length > 0) { %>
+                     
+                            <div class="glider">
+                                <% products.forEach(({id,name,price,image}) => { %>
+                                 <article class="index__section__novedades--article">
+                                  <div class="index__section__novedades--container"><img src="/images/productsImage/<%= image %> " alt=""></div>
+                                  <h4 class="index__section__h4"><%= name %> </h4>
+                                  <div class="article__price--flex">
+                                    <p>$<%= toThousand(price) %> </p>
+                                    <a a href="/products/detail">Comprar</a>
+                                  </div>
+                                </article>
+                                <% }) %>
+                              </div>
+                 
+                      
+                        <% }else{ %>
+                            <p>No hay resultados 😒</p>
+                            <% } %>
+                </div>
+            </main>
+    </body>
+
+</html>
