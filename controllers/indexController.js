@@ -8,6 +8,7 @@ module.exports = {
         const products = loadProducts();
         const novedades = products.filter(product => product.section === 'novedades');
         const destacados = products.filter(product => product.section === 'destacados');
+        
         return res.render('index', { 
           title: 'Home',
           novedades,
