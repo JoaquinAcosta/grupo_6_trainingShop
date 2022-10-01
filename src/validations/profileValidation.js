@@ -9,5 +9,5 @@ module.exports = [
         .notEmpty().withMessage('Debe ingresar un apellido').bail()
         .isAlpha('es-ES').withMessage('Solo se permite ingresar letras'),
      body('email').notEmpty().withMessage('Debe ingresar un email').bail()
-        .isEmail().withMessage('Debe colocar un email validó'),
+        .isEmail().withMessage('Debe colocar un email validó')
 ]

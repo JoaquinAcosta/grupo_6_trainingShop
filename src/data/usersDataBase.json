@@ -23,7 +23,8 @@
       "password": "$2a$10$Bv4ROAAC7emBJ7.Z27MgSeU4ZODFk6MfNfHDI/eOggTJMho9Xwuna",
       "rol": "admin",
       "phone": 11245,
-      "avatar": "default-image.png"
+      "lastName": "coseglia",
+      "avatar": "avatar-1664419840239.jpg"
    },
    {
       "id": 4,
@@ -37,12 +38,13 @@
    },
    {
       "id": 5,
-      "name": "Emiliano",
-      "email": "joaquin@gmail.com",
-      "password": "$2a$10$YVkvwmJJrELoaEX/orAtX.nkjeVpl8r.f0s4zYYnk0wj2kM7yqqdu",
-      "rol": "user",
-      "avatar": "avatar-1664592352340.jpg",
-      "phone": 12345678,
-      "lastName": "Bernal"
+      "name": "ema",
+      "lastName": "formar",
+      "email": "ema@formar.com",
+      "password": "$2a$10$r4sZbfbXBBUXvnZlP1g5JOgkY3zLVGeCrnjd3QvJWrfnsVyxij0vq",
+      "rol": "admin",
+      "avatar": "avatar-1664423076779.png",
+      "phone": 0
    }
+   
 ]
