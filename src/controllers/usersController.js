@@ -12,12 +12,13 @@ module.exports = {
     processRegister: (req, res) => {
        let errors = validationResult(req)
         if (errors.isEmpty()) {
-            const { name, email, password,phone } = req.body;
+            const { name, email, password,phone, lastName } = req.body;
             let users = loadUsers()
 
             let newUsers = {
                 id:  users[users.length - 1].id + 1,
                 name: name.trim(),
+                lastName: lastName.trim(),
                 email: email.trim(),
                 password: bcryptjs.hashSync(password, 10),
                 rol: "user",
@@ -55,9 +56,10 @@ module.exports = {
     profileUpdate:(req,res) =>{
 
         let errors = validationResult(req);
-        if (!errors.isEmpty()){
+        if (errors.isEmpty()){
             const users= loadUsers();
             const {name,email,avatar,phone,lastName} = req.body;
+            const userlogged = users.find(user => user.id === req.session.userLogin.id);
             
            
            
@@ -69,7 +71,7 @@ module.exports = {
                     lastName : lastName.trim(),
                     email: email.trim(),
                     phone: +phone,
-                    avatar : req.file ? req.file.filename : "default-image.png"
+                    avatar : req.file ? req.file.filename : userlogged.avatar
                 }
                 }
                 return user
@@ -90,11 +92,11 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-        let {id,name,/*  username,*/ rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+        let {id,name,lastName, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
         req.session.userLogin ={
             id,
             name,
-            /* username, */
+            lastName,
             rol,
             avatar};
 

@@ -16,11 +16,16 @@
         <h1 class="register-main-titulo">Crear cuenta</h1>
       <form action="" method="post">
         <div class="form__container"></div>
-        <div class="register-main-div">
-            <label class="register-main-label">Nombre y Apellido:</label>
-            <input class="register-main-input" type="text" name="name" placeholder="ej: María Perez" value="<%= locals.old ? old.name : null %>">
-            <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
-        </div>
+        <div class="col-md-12">
+          <label class="register-main-label">Nombre:</label>
+          <input class="register-main-input" type="text" name="name" id="name" placeholder="ej: María" value="<%= locals.old ? old.name : null %>">
+          <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+      </div>
+      <div class="col-md-12">
+        <label class="register-main-label">Apellido:</label>
+        <input class="register-main-input" id="lastName" type="text" name="lastName" placeholder="ej: Perez" value="<%= locals.old ? old.lastName : null %>">
+        <p class="form__error__msg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
+    </div>
         <div class="register-main-div">
             <label class="register-main-label">Email:</label>
             <input class="register-main-input" type="email" name="email" placeholder="ej: tunombre@email.com" value="<%= locals.old ? old.email : null %>">

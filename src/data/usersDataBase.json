@@ -37,12 +37,12 @@
    },
    {
       "id": 5,
-      "name": "Joaquin",
+      "name": "Emiliano",
       "email": "joaquin@gmail.com",
       "password": "$2a$10$YVkvwmJJrELoaEX/orAtX.nkjeVpl8r.f0s4zYYnk0wj2kM7yqqdu",
       "rol": "user",
-      "avatar": "default-image.png",
+      "avatar": "avatar-1664592352340.jpg",
       "phone": 12345678,
-      "lastName": "Acosta"
+      "lastName": "Bernal"
    }
 ]
