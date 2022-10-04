@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +7,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const localsUserCheck = require('./middlewares/localsUserCheck');
+
 
 const cookieCheck = require('./middlewares/cookieCheck');
 
