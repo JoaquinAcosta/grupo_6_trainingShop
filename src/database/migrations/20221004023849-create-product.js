@@ -18,13 +18,32 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       brandId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Brands'
+          },
+          key : 'id'
+        },
       },
       categoryId: {
-        type: Sequelize.INTEGER
-      },
+        type: Sequelize.INTEGER,
+        references: 
+          {
+            model : {
+              tableName : 'Categories'
+            },
+            key : 'id'
+          }
+       },
       sectionId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model : {
+            tableName : 'Sections'
+          },
+          key : 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +52,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      deletedAt: {
+        type: Sequelize.DATE,
+        allowNull: true
       }
     });
   },
