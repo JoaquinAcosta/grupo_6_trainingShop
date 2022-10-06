@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
       Product.hasMany(models.Image,{
         as: 'images',
         foreignKey: 'productId',
-        onDelete: 'cascade'
       });
       Product.belongsTo(models.Section,{
         as: 'sections',
