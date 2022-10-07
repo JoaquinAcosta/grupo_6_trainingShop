@@ -1,20 +1,32 @@
 [
     {
-       "image": "product1.png"
+       "image": "Vitamin-Max.jpeg"
     },
     {
-       "image": "productZMA.png"
+       "image": "Opti-Women.jpeg"
     },
     {
-       "image": "betaAlanine.png"
+       "image": "Creatine-Monohydrate.jpeg"
     },
     {
-       "image": "betaAlanine.png"
+       "image": "Creatine-Powder.jpeg"
     },
     {
-       "image": "product2.png"
+       "image": "Nitro-Tech.jpg"
     },
     {
-       "image": "product2.png"
+       "image": "Creatine-Xplode.jpeg"
+    },
+    {
+      "image": "Gold-Standard.jpg"
+    },
+    {
+      "image": "Natural-Premium-Whey.jpg"
+    },
+    {
+      "image": "GPLC-Booster.jpg"
+    },
+    {
+      "image": "Amino-Energy.png"
     }
  ]
