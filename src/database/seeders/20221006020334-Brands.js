@@ -10,7 +10,7 @@ const brands = [
     createdAt : new Date()
   },
   {
-    name : 'Optimum Nutritions',
+    name : 'Optimum Nutrition',
     createdAt : new Date()
   },
   {
@@ -37,6 +37,11 @@ const brands = [
     name : 'BSN',
     createdAt : new Date()
   },
+  {
+    name : 'Olimp Nutrition',
+    createdAt : new Date()
+  },
+
 ]
 
 module.exports = {

@@ -1,56 +1,92 @@
 [
     {
        "id": 1,
-       "name": "lipo",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 4500,
-       "brandId": "1",
-       "categoryId": "1",
+       "name": "Vitamin Max Multivitamin 60 Unidades",
+       "description": "VitaMax Pro Multivitamin es una mezcla de vitaminas y minerales para el día a día. Dosis Diaria Recomendada: 1 comprimido. Modo de Empleo: Tomar 1 comprimido con 200 ml de agua con una de las principales comidas.",
+       "price": 2185,
+       "brandId": "4",
+       "categoryId": "4",
        "sectionId": "1"
     },
     {
        "id": 2,
-       "name": "zma",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 8500,
-       "brandId": "2",
-       "categoryId": "2",
-       "sectionId": "2"
-    },
-    {
-       "id": 3,
-       "name": "Beta alanine",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 8500,
-       "brandId": "1",
-       "categoryId": "3",
-       "sectionId": "1"
-    },
-    {
-       "id": 4,
-       "name": "Beta alanine",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 10500,
-       "brandId": "2",
+       "name": "Opti-Women Multivitamin Capsulas",
+       "description": "Opti-Women de Optimum Nutrition combina 23 vitaminas y minerales esenciales con 17 ingredientes especiales para crear un multivitamínico integral para la mujer activa. Cada porción de apoyo nutritivo de gran alcance se entrega en Vcaps aprobados por la Sociedad Vegetariana.",
+       "price": 2431,
+       "brandId": "3",
        "categoryId": "4",
        "sectionId": "2"
     },
     {
+       "id": 3,
+       "name": "Creatine Monohydrate",
+       "description": "La Creatine Monohydrate de AMIX NUTRITION es un suplemento de creatina monohidrato 100% micronizada y tratada con el sistema HPLC CONTROL que es el único sistema que garantiza que la creatina esta totalmente libre de impurezas. La creatina es un compuesto que se encuentra de forma natural en nuestro organismo donde se utiliza para aportar energía para la contracción muscular. Se sintetiza a partir de los aminoácidos Arginina, Metionina, y Glicina, su mayor concentración se encuentra en la musculatura esquelética. Para mejorar nuestro rendimiento potencia y crecimiento muscular lo hacemos mediante el entrenamiento físico, por lo que si podemos entrenar más fuerte, con más potencia y durante más tiempo, lograremos nuestros objetivos mucho más rápido y la creatina es un suplemento que nos ayuda a lograrlo.",
+       "price": 3099,
+       "brandId": "4",
+       "categoryId": "2",
+       "sectionId": "1"
+    },
+    {
+       "id": 4,
+       "name": "Creatine Powder",
+       "description": "Se ha demostrado que el monohidrato de creatina altamente investigado es compatible con la fuerza muscular, la potencia y el tamaño cuando se combina con actividades de alta intensidad. Nuestro polvo de creatina micronizado está hecho con Creapure, un monohidrato de creatina conocido por su pureza excepcional. También es micronizado (para hacer las partículas más pequeñas), por lo que nuestro polvo se mezcla más fácilmente y permanece suspendido en líquido por más tiempo que los suplementos de creatina no micronizados. Hecho con Creapure Creatine Monohydrate",
+       "price": 1861,
+       "brandId": "3",
+       "categoryId": "2",
+       "sectionId": "2"
+    },
+    {
        "id": 5,
-       "name": "Dynamite explosive energy",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 15000,
+       "name": "Nitro-Tech",
+       "description": "Aislado de suero de rápida absorción con creatina Nitro Tech Performance Series de Muscletech es un producto elaborado a base de proteína de suero con una gran pureza, enriquecida con creatina y aminoácidos, para conseguir una fórmula superior, perfecta para favorecer una recuperación muscular óptima después del entrenamiento y apoyar ganancias máximas de fuerza y masa muscular. Está diseñado para atletas que desean mejorar la fuerza y el rendimiento, ayudándose de un producto natural que combina proteína de alta calidad pero que no quieren un exceso de carbohidratos ni grasa. Nitro Tech Performance Series está elaborado principalmente por aislado de proteína de suero de leche y aislado de proteína de suero de leche hidrolizada, enriquecida con aminoácidos claves para la reparación y crecimiento muscular, como son la L-alanina, glicina y taurina; aminoácidos que son rápidamente digeridos y absorbidos por el torrente sanguíneo y ayudan en la reparación muscular. Es perfecta para tomar después del entrenamiento, mejorando la rápida entrega de aminoácidos y favoreciendo la reparación muscular. ",
+       "price": 8676,
        "brandId": "1",
        "categoryId": "5",
        "sectionId": "1"
     },
     {
        "id": 6,
-       "name": "Dynamite xxx",
-       "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
-       "price": 15000,
-       "brandId": "2",
-       "categoryId": "6",
+       "name": "Creatine Xplode",
+       "description": "Avanzada composición con diferentes formas de creatina. El consumo de creatina aumenta el rendimiento físico rápidamente incrementando la potencia en las repeticiones de ejercicio intenso. (efecto que se obtiene por el consumo de 3 g de creatina al día). Creatine Xplode está recomendado para cualquiera que practique deporte, a cualquier nivel. Este innovador suplemento contribuirá a hacer tus avances notables y el tiempo de recuperación será menor. Usar Creatine Xplode será beneficioso para cualquiera que sea activo cada día debido a su trabajo u otras obligaciones.",
+       "price": 5202,
+       "brandId": "10",
+       "categoryId": "2",
        "sectionId": "2"
-    }
+    },
+    {
+      "id": 7,
+      "name": "Gold Standard 100% Whey",
+      "description": "Los aislados de proteína de suero son la forma más pura de proteína de suero que existe actualmente. Son costosos de usar, pero se clasifican entre las mejores proteínas que el dinero puede comprar. Es por eso que son el primer ingrediente que lee en la etiqueta Gold Standard 100% Whey. Al usar WPI como ingrediente principal junto con el concentrado de proteína de suero ultrafiltrado (WPC) premium, podemos empacar 24 gramos de proteína en cada porción para satisfacer sus necesidades de desarrollo muscular después del entrenamiento. La atención al detalle de ON también se extiende a la capacidad de mezcla. Este polvo de calidad superior se ha creado instantáneamente para mezclarlo fácilmente con un vaso mezclador o simplemente un vaso y una cuchara. No hay duda de que este es el estándar por el cual se miden todas las otras proteínas de suero. Ingrediente principal del aislado de proteína de suero (WPI) -Microfracciones de proteína de suero de aislados de proteína de suero y concentrado de proteína de suero ultrafiltrado -Más de 4 gramos de glutamina y ácido glutámico en cada porción -Más de 5 gramos de los aminoácidos de cadena ramificada (BCAA) de origen natural leucina, isoleucina y valina en cada porción.",
+      "price": 8877,
+      "brandId": "3",
+      "categoryId": "5",
+      "sectionId": "1"
+   },
+   {
+      "id": 8,
+      "name": "Natural Premium Whey",
+      "description": "Es un suplemento dietario a base de ultra concentrado, aislado e hidrolizado de proteínas de suero lácteo de máxima pureza, obtenida de métodos no agresivos que garantizan la calidad y estabilidad del producto. Su agradable sabor y alta disolución la convierten en la opción inteligente a la hora de agregar proteínas de alto valor biológico a nuestra dieta, o como parte de un programa nutricional deportivo. Es una fórmula diseñada para atletas y personas que busquen construir masa muscular, tener más fuerza, una mejor performance y menos grasa. Proveniente de ganado alimentado a pasto (GRASS FEED) con ingredientes, endulzantes y saborizantes 100% naturales. Apto para vegetarianos, endulzado con Stevia. Sin ingredientes artificiales, nocivos o de relleno. Sin colorantes ni concervantes. Libre de Aspartamo.",
+      "price": 6300,
+      "brandId": "2",
+      "categoryId": "5",
+      "sectionId": "2"
+   },
+   {
+      "id": 9,
+      "name": "GPLC Booster 90 Cápsulas",
+      "description": "Es un complemento alimenticio en cápsulas a base del ester propionil de carnitina y de glicina. Amix GPLC es una variedad especial de amino-carnitina a la que se incorpora glicina (gPLC) Dosis Diaria Recomendada: 1 cápsula Modo de empleo: Tomar una cápsula con 200ml de agua con una de las principales comidas",
+      "price": 3655,
+      "brandId": "4",
+      "categoryId": "1",
+      "sectionId": "1"
+   },
+   {
+      "id": 10,
+      "name": "Amino Energy 270 gr",
+      "description": "Todo el mundo quiere estar bien definido y musculado. Tenemos que comprometernos a una dieta rigurosa y un programa de entrenamiento que pondrá a prueba su fortaleza tanto mental como física. Para ayudar a satisfacer estas demandas hemos creado Essential Amino Energy. Essential Amino Energy de Optimum Nutrition combina una proporción óptima de la forma libre de aminoácidos de rápida absorción (incluyendo los constructores musculares BCAA y la arginina para conseguir bombeos vasculares más intensos) con energizantes naturales, beta Alanina e ingredientes potenciadores de Óxido Nítrico para ayudarte a alcanzar el siguiente nivel.",
+      "price": 2960,
+      "brandId": "3",
+      "categoryId": "1",
+      "sectionId": "2"
+   }
  ]
