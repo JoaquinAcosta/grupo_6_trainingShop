@@ -4,15 +4,24 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 module.exports = {
-    detail: (req, res) => {
+   /*  detail: (req, res) => {
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
         return res.render('detalledelproducto', {
             product,
             toThousand
         })
-
-    },
+    }, */
+    detail: (req, res) => {
+		db.Product.findByPk(req.params.id,{
+			include : ['images']
+		})
+			.then(product => res. render('detail', {
+				product,
+				toThousand
+			}))
+			.catch(error => console.log(error))
+	},
     add: (req, res) => {
         return res.render ('addProduct')
     },
