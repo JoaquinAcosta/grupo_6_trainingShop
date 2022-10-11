@@ -1,9 +1,7 @@
 const db = require('../database/models');
 const { decodeBase64 } = require('bcryptjs');
 const { promiseImpl } = require('ejs');
-const { loadProducts, storeProducts } = require('../data/productsModule');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db= require("../database/models")
 
 
 module.exports = {
@@ -53,7 +51,6 @@ module.exports = {
     },
  
     index: (req,res) => {
-        
         const products = loadProducts();
         return res.render('products',{
             products,
@@ -92,7 +89,7 @@ module.exports = {
         {
             ...req.body,
             name : req.body.name.trim(),
-            description : req.body.description.trim()
+            description : req.body.description.trim() 
 
         },
         {
