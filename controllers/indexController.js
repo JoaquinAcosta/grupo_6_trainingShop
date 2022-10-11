@@ -1,34 +1,11 @@
 
 const {loadProducts, storeProducts} = require ('../data/productsModule');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db = require("../database/models")
 
 module.exports = {
     index : function(req, res,) {
-      
-      let novedades = db.Product.findAll({
-        where: {
-          sectionId: 2,
-          
-        },
-        include: ['images']
-      })
-      let destacados = db.Product.findAll({
-        where: {
-          sectionId: 1,
-          
-        },
-        include: ['images']
-      })
-       Promise.all([novedades, destacados])
-       .then(([novedades, destacados]) => {
-        return res.render("index" , {
-          novedades, destacados, toThousand
-        })
-      }) .catch(error => console.log(error)) 
-
-
-     /* /*    const products = loadProducts();
+        
+        const products = loadProducts();
         const novedades = products.filter(product => product.section === 'novedades');
         const destacados = products.filter(product => product.section === 'destacados');
         
@@ -36,9 +13,9 @@ module.exports = {
           title: 'Home',
           novedades,
           destacados,
-          toThousand  
-        }); */
- },
+          toThousand 
+        });
+      },
       search: (req, res) => {
         // Do the magic
         

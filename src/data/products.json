@@ -88,5 +88,42 @@
       "brandId": "3",
       "categoryId": "1",
       "sectionId": "2"
-   }
+     },
+     {
+      "id": 11,
+      "name": "HTN BCAA Aminoacidos",
+      "description": "Sirve para retrasar la fatiga, mejorar el rendimiento y sirve como anticatabólicos, para evitar que utilices la proteína del músculo como energía. Esta indicado para todas aquellas personas que busquen mas energía y mejor recuperacíon a la hora de entrenar. Ayuda a tener una inmediata y sostenida reparación y reconstrucción de los músculos que trabajan duro. Excelente recuperador. Mejora eL crecimiento muscular. Proporciona energía metabólica a los músculos. Disminuye la degradación de proteínas durante ejercicios intensos.",
+      "price": 1300,
+      "brandId": "",
+      "categoryId": "",
+      "sectionId": ""
+   },
+   {
+      "id": 12,
+      "name": "GENERATION FIT Super Bcaa",
+      "description": "Compuesto exclusivamente por aminoácidos ramificados, considerado el mas eficaz en la suplementación con aminoácidos. Reduce el catabolismo proteico que se produce durante la realización de ejercicio físico, además aminora la fatiga y potencia la recuperación de una manera mas rápida y efectiva. Super bcaa 5000 tiene la dosis diaria de vitaminas B12, ideal para personas vegetarianas o veganas. Los aminoácidos ramificados son tres aminoácidos esenciales, es decir que el organismo humano no los puede producir por si mismo y debe ser administrados desde el exterior mediante la dieta y la suplementación.",
+      "price": 2630,
+      "brandId": "",
+      "categoryId": "",
+      "sectionId": ""
+   },
+   {
+      "id": 13,
+      "name": "Creatina Micronizada Max Power ",
+      "description": "Creatina HARDCORE sirve para que te recuperes más rápido entre series y puedas entrenar con mayor intensidad. Al recuperarte más rápido podés levantar más peso, levantar más peso implica una mayor ruptura de fibras.  Esas fibras que se dañan durante el entrenamiento se reconstruyen durante el descanso.  Romper, reconstruir, romper, recontruir en el tiempo hace que el músculo aumente de tamaño.Ayuda a liberar más energía potenciando la fuerza muscular, dándole al músculo mayor resistencia por más tiempo, lográs una recuperación post-entrenamiento más rápida.",
+      "price": 2265,
+      "brandId": "",
+      "categoryId": "",
+      "sectionId": ""
+   },
+   {
+      "id": 12,
+      "name": "GENERATION FIT Super Bcaa",
+      "description": "Compuesto exclusivamente por aminoácidos ramificados, considerado el mas eficaz en la suplementación con aminoácidos. Reduce el catabolismo proteico que se produce durante la realización de ejercicio físico, además aminora la fatiga y potencia la recuperación de una manera mas rápida y efectiva. Super bcaa 5000 tiene la dosis diaria de vitaminas B12, ideal para personas vegetarianas o veganas. Los aminoácidos ramificados son tres aminoácidos esenciales, es decir que el organismo humano no los puede producir por si mismo y debe ser administrados desde el exterior mediante la dieta y la suplementación.",
+      "price": 2630,
+      "brandId": "",
+      "categoryId": "",
+      "sectionId": ""
+   
+  }
  ]

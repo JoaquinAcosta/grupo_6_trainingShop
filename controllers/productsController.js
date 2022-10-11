@@ -1,18 +1,9 @@
 
 const { loadProducts, storeProducts } = require('../data/productsModule');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db= require("../database/models")
 
 
 module.exports = {
-
-     list: (req, res) => {
-        db.Product.findAll()
-            .then(Products => {
-                res.render('addProduct', { products })
-            });
-    }, 
-    
     detail: (req, res) => {
         const products = loadProducts();
         const product = products.find(product => product.id === +req.params.id);
@@ -25,7 +16,17 @@ module.exports = {
     add: (req, res) => {
         return res.render ('addProduct')
     },
- 
+    destroy : (req,res) => {
+
+        const {id} = req.params; 
+        const products = loadProducts()
+
+        const productsfilter = products.filter( product => product.id !== +id);
+
+        storeProducts(productsfilter);
+        return res.redirect('/admin/')
+
+    },
     index: (req,res) => {
         
         const products = loadProducts();
@@ -81,15 +82,4 @@ module.exports = {
         return res.redirect('/admin')
 
     },
-
-    destroy: function (req, res) {
-        db.Product.destroy({
-			where : {
-				id : req.params.id
-			}
-		})
-			.then( () => res.redirect('/admin'))
-			.catch( error => console.log(error));
-	}
-  
-};
+ } 

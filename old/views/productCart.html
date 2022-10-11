@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cart</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/e6f6cca573.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <section class="header__section">
+            <div class="header__section__contenedor">
+                <div class="logo-menu"><i class="fa-solid fa-bars"></i></div>
+                <a href="/"><img src="/images/logo-mobil-tablet.png" alt=""></a>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/product-cart"><p>Mi carrito</p></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="buscador">
+                <form action="">
+                    <input type="text" placeholder="Que estas buscando?">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </form>
+            </div>
+        </section>
+        <section class="header__section__superior--2">
+            
+                <div class="header__secction__logoSuperior">
+                    <a href="/"><img src="/images/logo-superior.png" alt="logo-superior"></a>
+                </div>
+                <div class="buscador">
+                    <form action="">
+                        <input type="text" placeholder="Que estas buscando?">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    </form>
+                </div>
+                <div class="logo-user-carrito">
+                    <div class="logo__user">
+                        <a href="/login"><i class="fa-solid fa-user"></i></a>
+                        <a href="/login"><p>Mi cuenta</p></a>
+                    </div>
+                    <div class="logo__carrito">
+                        <a href="/product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/product-cart"><p>Mi carrito</p></a>
+                    </div>
+                </div>
+
+        </section>
+        <section class="header__section__inferior--2">
+            <div class="header__section__inferior--logo">
+                <a href="/"><img src="/images/logo-inferior.png" alt=""></a>
+                
+            </div>
+            <div class="header__section__inferior--sections">
+                <ul>
+                    <a href="/"><li>inicio</li></a>
+                    <a href=""><li>productos</li></a>
+                    <a href=""><li>contactos</li></a>
+                    <a href=""><li>preguntas frecuentes</li></a>
+                </ul>
+            </div>
+        </section>
+    </header>
+    <main class="productCart__main">
+        <h2>Carrito de Compras</h2>
+        <section class="productCart__main__section--cart-items">
+            <article class="productCart__main__article--product-item">
+                <h5 class="title">Creatina Pura XPLODE 500gr</h5>
+                <div class="productCart__main__article--product-image"><img
+                        src="/images/creatine-xplode-grapefruit-500g.jpeg" alt="imagen-producto">
+                </div>
+                <div class="counter">
+                    <div class="btn"><i class="fa-solid fa-minus"></i></div>
+                    <div class="count">2</div>
+                    <div class="btn"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                
+                <div class="prices">
+                    <h3>$7500</h3>
+                </div>
+                <div class="remove"><i class="fa-solid fa-trash-can"></i></div>
+            </article>
+            <article class="productCart__main__article--product-item">
+                <h5 class="title">MuscleTech Nitro-Tech 1810gr</h5>
+                <div class="productCart__main__article--product-image"><img src="/images/muscleTech-nitroTech-1810g.jpg"
+                        alt="imagen-producto-2">
+                </div>
+                <div class="counter">
+                    <div class="btn"><i class="fa-solid fa-minus"></i></div>
+                    <div class="count">2</div>
+                    <div class="btn"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                
+                <div class="prices">
+                    <h3>$8000</h3>
+                </div>
+                <div class="remove"><i class="fa-solid fa-trash-can"></i></div>
+            </article>
+            <article class="productCart__main__article--product-item">
+                <h5 class="title">Amix Crea-Trix 824gr</h5>
+                <div class="productCart__main__article--product-image"><img src="/images/amix-crea-trix-824g.jpg"
+                        alt="imagen-producto-2">
+                </div>
+                <div class="counter">
+                    <div class="btn"><i class="fa-solid fa-minus"></i></div>
+                    <div class="count">1</div>
+                    <div class="btn"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                
+                <div class="prices">
+                    <h3>$7000</h3>
+                </div>
+                <div class="remove"><i class="fa-solid fa-trash-can"></i></div>
+            </article>
+        </section>
+        <section class="productCart__main__section-2">
+            <article class="productCart__main__article--discount">
+                <h4>¿Tenés un código de descuento?</h4>
+                <form action="">
+                    <input type="text" name="" placeholder="Código de descuento">
+                    <button>APLICAR</button>
+                </form>
+            </article>
+            <article>
+                <div class="productCart__main__article--subtotal">
+                    <div class="productCart__main__article--subtotal--top">
+                        <h3>Subtotal (sin envío):</h3>
+                        <h4>$38000</h4>
+                    </div>
+                    <div class="productCart__main__article--subtotal--bottom">
+                        <a href="/">Ver más productos</a>
+                        <h3 class="productCart__main__article--subtotal--bottom-continuar">Continuar compra</h3>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="index__section__novedades">
+            <h2 class="index__section__h2">NOVEDADES</h2>
+            <div class="article--flex">
+             <article class="index__section__novedades--article">
+                 <div class="index__section__novedades--container"><img src="/images/creatine-xplode-grapefruit-500g.jpeg" alt=""></div>
+                 <h4 class="index__section__h4">Creatina Pura XPLODE 500gr</h4>
+                 <div class="article__price--flex">
+                     <p>$7500</p>
+                     <a  a href="#">Comprar</a>
+                 </div>
+             </article>
+             <article class= "index__section__novedades--article articleCarrusel">
+                 <div class="index__section__novedades--container"><img src="/images/beta-alanine-300gr.jpg" alt=""></div>
+                 <h4 class="index__section__h4">BETA ALANINE 300gr</h4>
+                 <div class="article__price--flex">
+                     <p>$7500</p>
+                     <a href="#">Comprar</a>
+                 </div>
+             </article>
+             <article class= "index__section__novedades--article articleCarrusel">
+                 <div class="index__section__novedades--container"><img src="/images/tnt-dynamite-240gr.jpg" alt=""></div>
+                 <h4 class="index__section__h4">TNT Dynamite 240gr</h4>
+                 <div class="article__price--flex">
+                     <p>$7500</p>
+                     <a href="#">Comprar</a>
+                 </div>
+             </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container__footer">
+
+            <div class="container__footer-categorias">
+                <h3>Categorias</h3>
+                <ul>
+                    <a href="">
+                        <li>inicio</li>
+                    </a>
+                    <a href="">
+                        <li>productos</li>
+                    </a>
+                    <a href="">
+                        <li>contactos</li>
+                    </a>
+                    <a href="">
+                        <li>preguntas frecuentes</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="container__footer-contactos">
+                <h3>Contactos</h3>
+                <ul>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i> <span>+54912345678</span></a>
+                    <a href=""><i class="fa-solid fa-phone"></i><span>(011)12345678</span></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i><span>email@trainingshop.com</span></a>
+                    <a href=""><i class="fa-solid fa-location-dot"></i><span>Capital Federal, Buenos Aires,
+                            Argentina</span></a>
+                </ul>
+            </div>
+
+        </div>
+        <div class="copy">
+            <p>Copyright Training Shop - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
