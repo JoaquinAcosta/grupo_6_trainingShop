@@ -5,14 +5,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 module.exports = {
-
-     list: (req, res) => {
-        db.Product.findAll()
-            .then(Products => {
-                res.render('addProduct', { products })
-            });
-
-    }, 
+ 
     detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
             include : ['images']
