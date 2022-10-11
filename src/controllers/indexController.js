@@ -30,6 +30,7 @@ module.exports = {
             [Op.like]: "%" + req.query.keywords + "%",
           },
         },
+        include: ['images']
       });
       return res.render("results", {
         products: result,
