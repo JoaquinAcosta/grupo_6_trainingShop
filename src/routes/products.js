@@ -5,6 +5,7 @@ const router = express.Router();
 const {detail, add, store, edit, update, index, destroy} = require ('../controllers/productsController')
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
+const {uploadProductImage} = require('../middlewares/uploadImageProduct')
 
 router
     .get('/detail/:id',  detail)
@@ -13,8 +14,8 @@ router
     //GET ALL PRODUCTS//
     .get('/', index)
     .get('/edit/:id',adminUserCheck, edit)
-    .put('/update/:id',update)
-    .post('/store', store)
+    .put('/update/:id',uploadProductImage.array('images'),update)
+    .post('/store',uploadProductImage.array('images'), store)
 
 
 

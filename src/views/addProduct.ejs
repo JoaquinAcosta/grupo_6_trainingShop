@@ -16,7 +16,7 @@
       <div>
         <h2 class="addProduct-title-h2">Cargar nuevos productos</h2>
       </div>
-      <form action="/products/store" method="POST">
+      <form action="/products/store" method="POST" enctype="multipart/form-data">
         <div class="addProduct-div-general">
           <fieldset class="addProduct-fieldset">
             <legend>Ingrese el nombre del producto</legend>
@@ -31,38 +31,32 @@
         </div>
         <div class="addProduct-div-padre_img">
           <div class="addProduct-div-img_producto">
-            <label>Agregar imagen del producto</label>
-            <input type="file" name="image" accept="jpg" multiple>
+            <label id="image" for="image">Agregar imagen del producto</label>
+            
           </div>
         </div>
         <div class="addProduct-div-catYcolor">
-          <select name="section">
+          <select name="sectionId">
             <option value="">Sección</option>
-            <option value="destacados">destacados</option>
-            <option value="novedades">novedades</option>
+            <% sections.forEach(({id,name}) => { %>
+              <option value="<%= id %> "><%= name %> </option>
+            <% }) %>
+           
           </select>
-          <select name="category">
-            <option value="Categoría">Categoría</option>
-            <option value="Aminoácidos">Aminoácidos</option>
-            <option value="Creatina">Creatina</option>
-            <option value="Ganadores de peso">Ganadores de peso</option>
-            <option value="Multivitamínicos">Multivitamínicos</option>
-            <option value="Proteínas">Proteínas</option>
-            <option value="Quemadores">Quemadores</option>
+          <select name="categoryId">
+            <option value="category">Categoría</option>
+            <% categories.forEach(({id,name}) => { %>
+              <option value="<%= id %> "><%= name %> </option>
+            <% }) %>
+            
           </select>
 
-          <select name="brand">
+          <select name="brandId">
             <option value="Marca">Marca</option>
-            <option value="BSN">BSN</option>
-            <option value="ENA Sport">ENA Sport</option>
-            <option value="MuscleTech">MuscleTech</option>
-            <option value="Optimum Nutrition">Optimum Nutrition</option>
-            <option value="Protein Project">Protein Project</option>
-            <option value="Star Nutrition">Star Nutrition</option>
-            <option value="HTN">HTN</option>
-            <option value="Amix">Amix</option>
-            <option value="FitWhey">FitWhey</option>
-            <option value="Olimp Nutrition">Olimp Nutrition</option>
+            <% brands.forEach(({id,name}) => { %>
+              <option value="<%= id %> "><%= name %> </option>
+            <% }) %>
+            
           </select>
         </div>
         <div class="addProduct-div-general">
@@ -71,10 +65,12 @@
             <input type="number" name="price">
           </fieldset>
         </div>
+        <input type="file" name="images" id="image" for="image" multiple>
         <div class="addProduct-div-button">
           <button type="submit">Guardar</button>
           <button type="reset">Borrar</button>
         </div>
+       
       </form>
     </main>
     <%- include('./partials/footer') %>
