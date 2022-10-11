@@ -51,11 +51,14 @@ module.exports = {
     },
  
     index: (req,res) => {
-        const products = loadProducts();
-        return res.render('products',{
-            products,
-            toThousand
-        });
+        db.Product.findAll({
+            include : ['images']
+        })
+            .then(products => {
+                res.render('products', { products, toThousand })
+            })
+            .catch(error => console.log(error))
+        
     },
     edit: (req, res) => {
         let categories = db.Category.findAll({

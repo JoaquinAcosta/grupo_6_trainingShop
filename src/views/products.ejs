@@ -6,11 +6,11 @@
         <%- include('./partials/header') %>
             <main class="productsMain">
                 <h2 class="productsMain__h2">TODOS LOS PRUDUCTOS:</h2>
-                <% products.forEach(({id,name,image,description,price})=> { %>
+                <% products.forEach(({id,name,images,description,price})=> { %>
                     <article class="index__section__novedades--article sombra">
                         
                             <div class="index__section__novedades--container"><img
-                                    src="/images/productsImage/<%= image %> " alt=""></div>
+                                    src="/images/productsImage/<%= images[0].file %>" alt=""></div>
                             <h4 class="index__section__h4">
                                 <%= name %>
                             </h4>
