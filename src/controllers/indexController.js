@@ -1,11 +1,11 @@
-/* const { loadProducts, storeProducts } = require("../data/productsModule"); */
+const { loadProducts, storeProducts } = require("../data/productsModule");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const {Product} = require('../database/models');
 /* const db = require(__basedir + "/database/models"); */
 const { Op } = require("sequelize");
 
 module.exports = {
-  index: function (req, res) {
+  index: async (req, res) => {
     const products = loadProducts();
     const novedades = products.filter(
       (product) => product.section === "novedades"
@@ -19,7 +19,7 @@ module.exports = {
       novedades,
       destacados,
       toThousand,
-    });
+    }); 
   },
   search: async (req, res) => {
     
