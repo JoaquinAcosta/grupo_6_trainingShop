@@ -1,0 +1,62 @@
+[
+   {
+      "id": 1,
+      "name": "lipo",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "product1.png",
+      "section": "novedades",
+      "price": 4500,
+      "brand": "brand",
+      "category": "Multivitamínicos"
+   },
+   {
+      "id": 2,
+      "name": "zma",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "productZMA.png",
+      "section": "destacados",
+      "price": 8500,
+      "brand": "Star nutrition",
+      "category": "Multivitamínicos"
+   },
+   {
+      "id": 3,
+      "name": "Beta alanine",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "betaAlanine.png",
+      "section": "novedades",
+      "price": 8500,
+      "brand": "Star nutrition",
+      "category": "Aminoácidos"
+   },
+   {
+      "id": 4,
+      "name": "Beta alanine",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "betaAlanine.png",
+      "section": "destacados",
+      "price": 10500,
+      "brand": "Star nutrition",
+      "category": "Aminoácidos"
+   },
+   {
+      "id": 5,
+      "name": "Dynamite explosive energy",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "product2.png",
+      "section": "novedades",
+      "price": 15000,
+      "brand": "Star nutrition",
+      "category": "Multivitamínicos"
+   },
+   {
+      "id": 6,
+      "name": "Dynamite xxx",
+      "description": "Contiene un nivel de máxima pureza con una rápida absorción de suero lácteo, obtenida por métodos no agresivos que garantizan la calidad y estabilidad proteica. Además es baja en carbohidratos, ácidos grasos y una excelente calidad, garantizando una efectiva y rápida recuperación del tejido muscular. Aportando un alto contenido de aminoácidos esenciales para el organismo,obteniendo una excelente bioasimilación y absorción de micronutrientes.Su agradable sabor y alta disolución lo convierte en la opción inteligente a la hora de incorporar proteínas de alto valor biológico a nuestra dieta.",
+      "image": "product2.png",
+      "section": "destacados",
+      "price": 15000,
+      "brand": "Star nutrition",
+      "category": "Multivitamínicos"
+   }
+]

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main class="container p-4">
+
+                <div class="row">
+                    <h3 class="text-center">Mi Perfil</h3>
+                    <div class=" trainingShop-shadow  card mx-auto p-3 mt-3 mb-3 col-md-8">
+
+                       
+
+
+
+                        <div class="card-body">
+                            <form class="row g-3"action="/users/update/<%= userlogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                <label for="avatar" ><img class=" trainingShop-shadow mx-auto d-block rounded-circle" width="150px"
+                                    src="/images/profilesImage/<%= userlogged.avatar %> " style="cursor: pointer;" alt=""></label>
+                                <div class="mb-3">
+                                    <label for="avatar" class="form-label">Subir Imagen de Perfíl</label>
+                                    <input class="form-control" style="border: solid 3px #bbe1fa;
+                                    " type="file" name="avatar" id="avatar">
+                                </div>
+                            
+                                <div class="col-md-12">
+                                    <label class="register-main-label">Nombre:</label>
+                                    <input class="register-main-input" type="text" name="name" id="name" placeholder="ej: María" value="<%= userlogged.name %>">
+                                    <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+                                </div>
+                                <div class="col-md-12">
+                                  <label class="register-main-label">Apellido:</label>
+                                  <input class="register-main-input" id="lastName" type="text" name="lastName" placeholder="ej: Perez" value="<%= userlogged.lastName %>">
+                                  <p class="form__error__msg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
+                              </div>
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Email</label>
+                                    <input type="email" name="email" class=" input-trainingShop form-control" id="emai" value="<%= userlogged.email %>">
+                                    <p class=" mt-1 form__error__msg"><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
+                                </div>
+                            
+                                <div class="col-4">
+                                    <label for="phone" class="form-label">Numero celular</label>
+                                    <input name="phone" type="tel" class=" input-trainingShop form-control"
+                                        id="phone" value="<%= userlogged.phone %>" >
+                                </div>
+                                <!-- <div class="col-md-4">
+                                    <label for="city" class="form-label">Ciudad</label>
+                                    <select id="city" name="city" class=" input-trainingShop form-select">
+                                        <option selected>Seleccionar</option>
+                                        <option>CABA</option>
+                                        <option>San Miguel</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="ccp" class="form-label">CCP</label>
+                                    <input type="text" name="ccp" class="input-trainingShop form-control" id="ccp">
+                                </div>
+ -->
+                                <!-- <h6 class="text-center">intereses</h6>
+                                <div
+                                    class=" checkbox-traingShop container d-md-flex justify-content-around         align-items-center flex-wrap">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="proteinas"
+                                            id="proteinas">
+                                        <label class="form-check-label" for="proteinas">
+                                            proteinas
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Aminoácidos"
+                                            id="Aminoácidos">
+                                        <label class="form-check-label" for="Aminoácidos">
+                                            Aminoácidos
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Multivitamínicos"
+                                            id="Multivitamínicos">
+                                        <label class="form-check-label" for="Multivitamínicos">
+                                            Multivitamínicos
+                                        </label>
+                                    </div>
+                                    
+                                </div> -->
+                                
+                                <div class="addProduct-div-button">
+                                    <button type="submit">Editar</button>
+                                    
+                                </div>
+                                 <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-end ">
+                                     <a href="/" class="btn-TraininShop">Volver</a>
+                                    </div> -->
+                                
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>

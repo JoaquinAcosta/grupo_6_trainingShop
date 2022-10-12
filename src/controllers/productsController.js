@@ -1,21 +1,11 @@
 const db = require('../database/models');
 const { decodeBase64 } = require('bcryptjs');
 const { promiseImpl } = require('ejs');
-const { loadProducts, storeProducts } = require('../data/productsModule');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-// require db.models
-
 
 
 module.exports = {
-   /*  detail: (req, res) => {
-        const products = loadProducts();
-        const product = products.find(product => product.id === +req.params.id);
-        return res.render('detalledelproducto', {
-            product,
-            toThousand
-        })
-    }, */
+ 
     detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
             include : ['images']
@@ -50,35 +40,20 @@ module.exports = {
                     brands
 				})
 			})
-			.catch(error => console.log(error));
-
-
-        
-        
+			.catch(error => console.log(error));        
     },
-    destroy : (req,res) => {
-
-        const {id} = req.params; 
-        const products = loadProducts()
-
-        const productsfilter = products.filter( product => product.id !== +id);
-
-        storeProducts(productsfilter);
-        return res.redirect('/admin/')
-
-    },
+ 
     index: (req,res) => {
+        db.Product.findAll({
+            include : ['images']
+        })
+            .then(products => {
+                res.render('products', { products, toThousand })
+            })
+            .catch(error => console.log(error))
         
-        const products = loadProducts();
-        return res.render('products',{
-            products,
-            toThousand
-        });
     },
     edit: (req, res) => {
-		/* const products= loadProducts()
-		const product = products.find(product => product.id === +req.params.id)
-		return res.render('editProduct',{product}) */
         let categories = db.Category.findAll({
             attributes : ['id','name'],
             order : ['name']
@@ -106,28 +81,11 @@ module.exports = {
             .catch (error => console.log(error))
 	},
 	update: (req, res) => {
-		/* const products= loadProducts()
-		const {name, price, category, description, brand, section} = req.body
-		const productsModify = products.map(product => {
-			if(product.id === +req.params.id){
-				return{...product,
-				name: name.trim(),
-			    price: +price,
-				description: description.trim(),
-				brand,
-				category,
-                section
-			}
-			}
-			return product
-		})
-		storeProducts(productsModify)
-		return res.redirect('/admin') */
         db.Product.update(
         {
             ...req.body,
             name : req.body.name.trim(),
-            description : req.body.description.trim()
+            description : req.body.description.trim() 
 
         },
         {
@@ -166,4 +124,15 @@ module.exports = {
         .catch(error => console.log(error))
 
     },
- } 
+
+    destroy: function (req, res) {
+        db.Product.destroy({
+			where : {
+				id : req.params.id
+			}
+		})
+			.then( () => res.redirect('/admin'))
+			.catch( error => console.log(error));
+	}
+  
+};

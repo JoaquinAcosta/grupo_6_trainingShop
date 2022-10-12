@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <main class="login-main">
+        <div class="login-main-div">
+            <h1>Inicia sesión</h1>
+        </div>
+    <form action="" method="post">
+        <div class="login-main-div">
+            <label class="login-main-label">Email:</label>
+            <input class="login-main-input" type="email" name="email" placeholder="ej: tunombre@email.com">         
+        </div>
+        <% if (locals.errors && errors.email) { %>
+            <p style="color: red; font-weight: bold; text-align: end;"><%= errors.email.msg %> </p>
+           <% } %>
+        <div class="login-main-div">
+            <label class="login-main-label">Contraseña:</label>
+            <i class="fa-solid fa-eye-slash"></i>
+            <input class="login-main-input"  type="password" name="password">                    
+        </div>
+        <% if (locals.errors && errors.password) { %>
+            <p style="color: red; font-weight: bold; text-align: end;"><%= errors.password.msg %> </p>
+           <% } %>
+        <p class="login-main-olv-contraseña"><a href="">¿Olvidaste tu contraseña?</a></p>
+
+        <div class="text-center">
+            <input class="form_button--checkbox" type="checkbox" id="recordarme" name="remember"><label class="ms-1" for="recordarme">Recordarme</label>
+        </div>
+    
+
+
+        <div class="login-main-div-button">
+            <button class="login-main-button" type="submit">ACCEDER</button>
+        </div>
+        <p class="login-main-crear_cuenta">¿No tienes cuenta? <a class="login-main-a-crear_cuenta" href="/users/register">Crear cuenta</a></p>
+     </form>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

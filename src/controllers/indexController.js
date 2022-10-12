@@ -1,30 +1,36 @@
-const { loadProducts, storeProducts } = require("../data/productsModule");
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {Product} = require('../database/models');
-/* const db = require(__basedir + "/database/models"); */
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require("../database/models")
 const { Op } = require("sequelize");
 
 module.exports = {
-  index: async (req, res) => {
-    const products = loadProducts();
-    const novedades = products.filter(
-      (product) => product.section === "novedades"
-    );
-    const destacados = products.filter(
-      (product) => product.section === "destacados"
-    );
+    index : function(req, res,) {
+      
+      let novedades = db.Product.findAll({
+        where: {
+          sectionId: 2,
+          
+        },
+        include: ['images']
+      })
+      let destacados = db.Product.findAll({
+        where: {
+          sectionId: 1,
+          
+        },
+        include: ['images']
+      })
+       Promise.all([novedades, destacados])
+       .then(([novedades, destacados]) => {
+        return res.render("index" , {
+          novedades, destacados, toThousand
+        })
+      }) .catch(error => console.log(error)) 
 
-    return res.render("index", {
-      title: "Home",
-      novedades,
-      destacados,
-      toThousand,
-    }); 
-  },
-  search: async (req, res) => {
+ },
+      search: async(req, res) => { 
     
     try {
-      const result = await Product.findAll({
+      const result = await db.Product.findAll({
         where: {
           name: {
             [Op.like]: "%" + req.query.keywords + "%",
