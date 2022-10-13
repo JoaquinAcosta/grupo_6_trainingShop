@@ -117,7 +117,7 @@ module.exports = {
                 db.Image.bulkCreate(images,{
                     validate : true
                 }).then( (result) => console.log(result) )
-                return res.redirect('/products')
+                return res.redirect('/admin')
             }
             
         })
