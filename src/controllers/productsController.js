@@ -42,7 +42,7 @@ module.exports = {
 			})
 			.catch(error => console.log(error));        
     },
- 
+    
     index: (req,res) => {
         db.Product.findAll({
             include : ['images']
