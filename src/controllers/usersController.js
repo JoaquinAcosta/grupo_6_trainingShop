@@ -1,16 +1,33 @@
-const { loadUsers, storeUsers } = require('../data/db')
+const db = require('../database/models');
+/* const { loadUsers, storeUsers } = require('../data/db') */
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
 
 module.exports = {
     register:(req, res)=>{
-        return res.render('register',{
+     return res.render('register',{
             title:'Register'
         })
     },
 
     processRegister: (req, res) => {
-       let errors = validationResult(req)
+    const { name, lastName, email, phone, password } = req.body;
+    db.Users.create({
+      name: req.body.name.trim(),
+      lastName: lastName.trim(),
+      email: email.trim(),
+      phone: +phone,
+      password: bcryptjs.hashSync(password, 10),
+      rolId : 'user',
+      avatar : null,
+      createdAt : new Date()
+    })
+      .then((user) => {
+        console.log(user);
+        return res.redirect("/");
+      })
+      .catch((err) => console.log(err))
+       /* let errors = validationResult(req)
         if (errors.isEmpty()) {
             const { name, email, password,phone, lastName } = req.body;
             let users = loadUsers()
@@ -33,7 +50,7 @@ module.exports = {
         }
         else {
             return res.render('register', { errors: errors.mapped(), old: req.body })
-        }
+        }  */
     },
 
     login:(req, res)=>{
