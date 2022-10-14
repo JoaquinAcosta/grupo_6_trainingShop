@@ -1,30 +1,35 @@
 const db = require('../database/models');
-/* const { loadUsers, storeUsers } = require('../data/db') */
+const { loadUsers, storeUsers } = require('../data/db') 
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
-
+const sequelize = db.sequelize
 module.exports = {
     register:(req, res)=>{
-     return res.render('register',{
+        db.User.findAll()
+            .then((user) => {
+                console.log(user)
+                return res.render('register',{title : 'Register'})
+            })
+            .catch((err) => console.log(err));
+     /* return res.render('register',{
             title:'Register'
-        })
+        }) */
     },
-
     processRegister: (req, res) => {
     const { name, lastName, email, phone, password } = req.body;
-    db.Users.create({
-      name: req.body.name.trim(),
+    db.User.create({
+      name: name.trim(),
       lastName: lastName.trim(),
       email: email.trim(),
       phone: +phone,
       password: bcryptjs.hashSync(password, 10),
-      rolId : 'user',
-      avatar : null,
+      rolId : 2,
+      avatar : 'default-image.png',
       createdAt : new Date()
     })
-      .then((user) => {
-        console.log(user);
-        return res.redirect("/");
+      .then((users) => {
+        console.log(users);
+        return res.redirect("/users/login");
       })
       .catch((err) => console.log(err))
        /* let errors = validationResult(req)
