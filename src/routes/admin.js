@@ -7,7 +7,7 @@ const adminUserCheck = require('../middlewares/adminUserCheck');
 
 /*/admin*/
 router
-    .get('/',adminUserCheck, index);
+    .get('/',adminUserCheck, index)
 
 
 

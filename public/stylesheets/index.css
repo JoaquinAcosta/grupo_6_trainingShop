@@ -1,6 +1,15 @@
+/*ADMIN SECTION*/
+.adminSection{
+    width: 100%;
+}
+
+
 /*BANNER*/
 .index__section__carusel{
     width: 98%;
+}
+.index__section__banner{
+    margin-top: -50px;
 }
 .index__section__banner--img{
     width: 100%;

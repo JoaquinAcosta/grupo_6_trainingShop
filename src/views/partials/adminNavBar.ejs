@@ -1,0 +1,46 @@
+<section class="adminSection">
+    <% if (locals.userLogin) { %>
+      <% if (locals.userLogin.rol === 'admin') { %>
+          <div class="adminNav">
+  
+              <!--  -----ADMIN NAV BAR---- -->
+               <nav class="navbar navbar-dark bg-trainingShop">
+                   <div class="container-fluid">
+                     <h5 class="navTitle">Admin controllers</h5>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                       <span class="navbar-toggler-icon"></span>
+                     </button>
+                   </div>
+                 </nav>
+               
+                 <!-- ------- CONTENT OF NAV BAR------- -->
+               <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+                   <div class="offcanvas-header">
+                     <h2 class="offcanvas-title navTitle mx-auto d-block">DASHBOARD</h2>
+                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                   </div>
+                   <div class="offcanvas-body bg-trainingShop">
+                       <label class=" mx-auto d-block" for="avatar" ><img class="mx-auto d-block rounded-circle" width="130px"
+                           src="/images/profilesImage/default-image.png" alt=""></label>
+                           <p class="text-center text-muted mt-2 ">Bienvenido *name*</p>
+                       
+                       <div class="container mt-4">
+                          
+                           <a href="#" class="d-block  mt-3"><i class="fa-solid fa-table i-dashboard"></i>tabla productos</a>
+                           <a href="#" class="d-block  mt-3"><i class="fa-solid fa-copyright i-dashboard"></i>Ingresar una nueva marca</a>
+                           <a href="#" class="d-block  mt-3"><i class="fa-solid fa-users i-dashboard"></i>tabla usuarios</a>
+                       </div>
+                       <div class="dashLogo d-block mx-auto">
+                           <img src="/images/logo-superior.png" width="120px" alt="" class="d-block mx-auto">
+                           <img src="/images/logo-inferior.png" width="120px" alt="" class="d-block mx-auto">
+                       </div>
+                     
+                   </div>
+                 </div>
+               
+                
+               
+           </div>
+      <% } %>
+  <% } %> 
+  </section>
