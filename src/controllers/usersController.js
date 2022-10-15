@@ -1,5 +1,4 @@
 const db = require('../database/models');
-const { loadUsers, storeUsers } = require('../data/db')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
 const { promiseImpl } = require('ejs');
@@ -48,14 +47,12 @@ module.exports = {
             .catch((error) => console.log(error));
     },
     profile:(req,res) => {
-        db.User.findByPk(req.params.id,{ 
-            include : ['userLogin']
-       })
+        const userlogged = req.session.userLogin.id
+        db.User.findByPk(userlogged)
        .then(user => res.render('profile', {
-                title: 'Mi perfil',
-                userlogged,
-                user
-        }))
+                title: 'Mi perfil', userlogged, user
+              
+        })) 
             .catch(error => console.log(error))
 },         
 

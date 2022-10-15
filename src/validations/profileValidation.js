@@ -1,5 +1,4 @@
 const { body } = require('express-validator');
-const users = require('../data/db').loadUsers();
 
 module.exports = [
     body('name')
