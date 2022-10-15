@@ -52,13 +52,12 @@
           </select>
 
           <select name="brandId">
-            <option value="Marca">Marca</option>
+            <option value="">Marca</option>
             <% brands.forEach(({id,name}) => { %>
               <option value="<%= id %>"><%= name %> </option>
             <% }) %>
-              <option value="" name="otro" >Otra marca</option>
-            
           </select>
+          <input type="text" placeholder="Otra marca" name="otro">
         </div>
         <div class="addProduct-div-general">
           <fieldset class="addProduct-fieldset">
