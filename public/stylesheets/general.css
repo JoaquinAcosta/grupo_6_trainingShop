@@ -35,3 +35,6 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    color: #c1a126 ;
+}

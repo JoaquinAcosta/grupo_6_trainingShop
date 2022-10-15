@@ -44,6 +44,7 @@
                 <span><button class="header__section__contenedor__btn"><i type="submit" class="fa-solid fa-magnifying-glass"></i></button></span>
             </form>
         </div>
+        
     </section>
     <section class="header__section__superior--2">
         
@@ -76,8 +77,8 @@
                         </div> 
                         <% if (locals.userLogin.rol === "admin") { %>
                             <div class="logo__user">
-                                <a href="/admin"><i class="fa-solid fa-user"></i></a>
-                                <a href="/admin"><p>Admin</p></a>
+                                <a href="/users/profile"><i class="fa-solid fa-user"></i></a>
+                                <a href="/users/profile"><p>profile</p></a>
                             </div>
                         <% } %>          
                     <% } else{  %>
@@ -93,6 +94,7 @@
                 
 
     </section>
+    
 
     <section class="header__section__inferior--2">
         <div class="header__section__inferior--logo">
@@ -108,5 +110,8 @@
                 <a href=""><li>preguntas frecuentes</li></a>
             </ul>
         </div>
+        
     </section>
+    
+    
 </header>

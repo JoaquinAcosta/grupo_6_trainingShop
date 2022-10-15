@@ -6,36 +6,37 @@
         <%- include('./partials/header') %>
         <%- include('./partials/adminNavBar') %> 
             <main class="container">
-                <div class="container">
+                <h3>Tabla de Usuarios</h3>
+                <!-- <div class="container">
                     <div class="d-flex align-items-center p-2">
-                        <h2>Tabla de productos</h2>
-                        <a href="/products/add/<%= products.id %> " class="btn-trainingShopAdd">Ingresar Productos</a>
+                        <h2>Tabla de Usuarios</h2>
+                        <a href="#" class="btn-trainingShopAdd">Ingresar nuevo usuario</a>
                     </div>
                     
-                </div>
+                </div> -->
                 
                 <div class="cotainer">
                     <div class="row">
                         <div class="col">
-                            <table class="table table-striped table-hover table-bordered">
+                            <table class="table table-striped table-hover table-bordered tabla-users">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>PRODUCTO</th>
-                                        <th>PRECIO</th>
-                                        <th>ACCIONES</th>
+                                        <th>NOMBRE</th>
+                                        <th>EMAIL</th>
+                                        <th>de</th>
                                     </tr>
                                 </thead>
-                                <% products.forEach(({id,name,price}) => { %>
+                                <% users.forEach(({id,name,lastname,email}) => { %>
                                  <tbody >
                                     <td><%= id %> </td>
                                     <td><%= name %> </td>
-                                    <td>$<%= toThousand(price) %> </td>
+                                    <td><%= email %> </td>
                                     <td>
                                         
-                                        <a href="/products/edit/<%= id %>"><button type="button" class="btn-TraininShop">Editar</button></a>
+                                        <a href="#"><button type="button" class="btn-TraininShop">Editar</button></a>
                                       
-                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+                                        <form action="#" method="POST">
                                             <button type="submit" class="btn-TraininShop">Borrar</button>
                                         </form>
                                         
