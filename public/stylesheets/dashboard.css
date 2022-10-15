@@ -1,0 +1,41 @@
+.adminNav{
+    position: relative;
+}
+.bg-trainingShop{
+    background-color: #1B262C;
+}
+
+.navTitle{
+    color: #c1a126 ;
+    text-align: center;
+}
+
+.content{
+    display: none;
+}
+
+.i-dashboard{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.dashLogo{
+    position: absolute;
+    right: 50%;
+    left: 35%;
+    bottom: 10px;
+    opacity:0.5;
+    z-index:99;
+    color:white;
+} 
+
+
+/* -----users table----- */
+.tabla-users{
+    font-size: 12px;
+}
+
+@media (min-width:768px){
+    .tabla-users{
+        font-size: 15px;
+    }
+}

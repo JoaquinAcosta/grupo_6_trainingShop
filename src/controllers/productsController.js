@@ -93,7 +93,7 @@ module.exports = {
             }
         }
     )
-        .then( () => res.redirect('/admin'))
+        .then( () => res.redirect('/admin/products'))
         .catch((error) => console.log(error))
 	},
     store: (req, res) => {
@@ -116,7 +116,7 @@ module.exports = {
                 db.Image.bulkCreate(images,{
                     validate : true
                 }).then( (result) => console.log(result) )
-                return res.redirect('/admin')
+                return res.redirect('/admin/products')
             }
             
         })
@@ -130,7 +130,7 @@ module.exports = {
 				id : req.params.id
 			}
 		})
-			.then( () => res.redirect('/admin'))
+			.then( () => res.redirect('/admin/products'))
 			.catch( error => console.log(error));
 	},
  }
