@@ -1,5 +1,5 @@
 const { body } = require('express-validator');
-const users = require('../database/models')
+const db = require('../database/models')
 
 
 
@@ -10,9 +10,16 @@ module.exports = [
     body('lastName')
         .notEmpty().withMessage('Debe ingresar un apellido').bail()
         .isAlpha('es-ES').withMessage('Solo se permite ingresar letras'),
+<<<<<<< HEAD
     body('email').notEmpty().withMessage('Debe ingresar un email').bail()
         .isEmail().withMessage('Debe colocar un email validó'),
         /* .custom((value, { req }) => {
+=======
+    /* body('email').notEmpty().withMessage('Debe ingresar un email').bail()
+        .isEmail().withMessage('Debe colocar un email validó')
+        .custom((value, { req }) => {
+            const users = db.User.findOne({ where: { email } }); 
+>>>>>>> be6d297186c7f235f62387bdd2b53371a37a9296
         let user = users.find(user => user.email === value.trim());
         return !!!user;
         }).withMessage('El email ya se encuentra registrado'), */
@@ -26,4 +33,17 @@ module.exports = [
                 return true
             }
         }).withMessage('Las contraseñas no coinciden'),
+        body('email', 'debe ingresar un mail valido').exists().isEmail().trim().escape().custom(userEmail=> {
+            return new Promise((resolve, reject) => {
+                db.User.findOne({ where: { email: userEmail } })
+                .then(emailExist => {
+                    if(emailExist !== null){
+                        reject(new Error('el email ya existe'))
+                    }else{
+                        resolve(true)
+                    }
+                })
+                
+            })
+        }), //extraido
 ]
