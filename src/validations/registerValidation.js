@@ -10,16 +10,10 @@ module.exports = [
     body('lastName')
         .notEmpty().withMessage('Debe ingresar un apellido').bail()
         .isAlpha('es-ES').withMessage('Solo se permite ingresar letras'),
-<<<<<<< HEAD
-    body('email').notEmpty().withMessage('Debe ingresar un email').bail()
-        .isEmail().withMessage('Debe colocar un email validó'),
-        /* .custom((value, { req }) => {
-=======
     /* body('email').notEmpty().withMessage('Debe ingresar un email').bail()
         .isEmail().withMessage('Debe colocar un email validó')
         .custom((value, { req }) => {
             const users = db.User.findOne({ where: { email } }); 
->>>>>>> be6d297186c7f235f62387bdd2b53371a37a9296
         let user = users.find(user => user.email === value.trim());
         return !!!user;
         }).withMessage('El email ya se encuentra registrado'), */
