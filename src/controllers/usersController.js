@@ -1,6 +1,7 @@
 const { loadUsers, storeUsers } = require('../data/db')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
+const db = require('../database/models')
 
 module.exports = {
     register:(req, res)=>{
@@ -13,23 +14,21 @@ module.exports = {
        let errors = validationResult(req)
         if (errors.isEmpty()) {
             const { name, email, password,phone, lastName } = req.body;
-            let users = loadUsers()
-
-            let newUsers = {
-                id:  users[users.length - 1].id + 1,
-                name: name.trim(),
-                lastName: lastName.trim(),
-                email: email.trim(),
-                password: bcryptjs.hashSync(password, 10),
-                rol: "user",
-                avatar: 'default-image.png',
-                phone: +phone
-            }
-
-            let userModify = [...users, newUsers];
-            storeUsers(userModify)
-
-            return res.redirect('/users/login')
+            
+        db.User.create({
+            name: name.trim(),
+            lastName: lastName.trim(),
+            email: email.trim(),
+            phone: +phone,
+            password: bcryptjs.hashSync(password, 10),
+            rolId: 2,
+            avatar: "default-image.png",
+            createdAt: new Date(),
+          })
+          .then(user => {
+            res.render('products', {user})
+        })
+        .catch(error => console.log(error))
         }
         else {
             return res.render('register', { errors: errors.mapped(), old: req.body })
