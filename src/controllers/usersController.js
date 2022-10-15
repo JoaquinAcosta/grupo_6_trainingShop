@@ -108,20 +108,34 @@ module.exports = {
     },
 
 
-    processLogin: (req, res) => {
-
+    processLogin: async(req, res) => {
+        //nota: agregar el if con las validaciones, tambien ya puede leer los datos de profile :)
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-            let {id,name,lastName, rol, avatar} = db.User.findByPk(req.body.email)
-            .then( () => res.redirect('/'))
+            try{
+           const {email} = req.body;
+           const user = await db.User.findOne({ where: { email } });
+           
+                req.session.userLogin ={
+                    name: user.name,
+                    lastname: user.lastname,
+                    avatar:user.avatar,
+                    rolId: user.rolId }
+            
+            return res.redirect('/')
+                
+            }catch(error){
+                console.log(error)
+            }
+           /*  const {email, password} = req.body
+            const { rolId,name,lastname,avatar } = db.User.findOne({ where: { email } })
+            .then( ()=> res.redirect('/'))
             .catch(error => console.log(error))
 
             req.session.userLogin ={
-                id,
                 name,
-                lastName,
-                rol,
+                lastname,
+                rolId,
                 avatar};
 
                 if (req.body.remember) {
@@ -129,19 +143,15 @@ module.exports = {
                         maxAge : 1000 * 600
                     })
                 }
-                
+                console.log(req.session.userLogin)
                 return res.redirect('/')
             }else {
                 return res.render('login', {errors: errors.mapped()})
                 
-            }
+            } */
 
-            
-
-
-
-
-    },
+    }
+    ,
     logout : (req,res) => {
         req.session.destroy();
         res.cookie('trainingshop',null,{maxAge: -1});
