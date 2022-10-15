@@ -1,3 +1,4 @@
+const db = require('../database/models');
 const { loadUsers, storeUsers } = require('../data/db')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
@@ -37,9 +38,12 @@ module.exports = {
     },
 
     login:(req, res)=>{
-        return res.render('login',{
-            title:'Login'
-        })
+        db.User.findAll()
+            .then((user) => {
+                console.log(user)
+                return res.render('login',{title : 'Login'})
+            })
+            .catch((error) => console.log(error));
     },
 
     profile:(req,res)=>{
@@ -88,28 +92,36 @@ module.exports = {
 		
     },
     processLogin: (req, res) => {
-       /*  return res.send(req.body.remember) */
+
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-        let {id,name,lastName, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
-        req.session.userLogin ={
-            id,
-            name,
-            lastName,
-            rol,
-            avatar};
+            let {id,name,lastName, rol, avatar} = db.User.findByPk(req.body.email)
+            .then( () => res.redirect('/'))
+            .catch(error => console.log(error))
 
-            if (req.body.remember) {
-                res.cookie('trainingshop', req.session.userLogin, {
-                    maxAge : 1000 * 600
-                })
+            req.session.userLogin ={
+                id,
+                name,
+                lastName,
+                rol,
+                avatar};
+
+                if (req.body.remember) {
+                    res.cookie('trainingshop', req.session.userLogin, {
+                        maxAge : 1000 * 600
+                    })
+                }
+                
+                return res.redirect('/')
+            }else {
+                return res.render('login', {errors: errors.mapped()})
+                
             }
-            return res.redirect('/users/profile')
-        }else {
-            return res.render('login', {errors: errors.mapped()})
+
             
-        }
+
+
 
 
     },
