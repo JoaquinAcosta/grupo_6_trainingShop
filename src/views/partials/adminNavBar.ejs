@@ -21,14 +21,14 @@
                    </div>
                    <div class="offcanvas-body bg-trainingShop">
                        <label class=" mx-auto d-block" for="avatar" ><img class="mx-auto d-block rounded-circle" width="130px"
-                           src="/images/profilesImage/default-image.png" alt=""></label>
-                           <p class="text-center text-muted mt-2 ">Bienvenido *name*</p>
+                           src="/images/profilesImage/<%= locals.userLogin.avatar %>" alt=""></label>
+                           <p class="text-center text-muted mt-3 ">Bienvenido <%= locals.userLogin.name %> </p>
                        
                        <div class="container mt-4">
                           
-                           <a href="#" class="d-block  mt-3"><i class="fa-solid fa-table i-dashboard"></i>tabla productos</a>
+                           <a href="/admin/products" class="d-block  mt-3"><i class="fa-solid fa-table i-dashboard"></i>tabla productos</a>
+                           <a href="/admin/users" class="d-block  mt-3"><i class="fa-solid fa-users i-dashboard"></i>tabla usuarios</a>
                            <a href="#" class="d-block  mt-3"><i class="fa-solid fa-copyright i-dashboard"></i>Ingresar una nueva marca</a>
-                           <a href="#" class="d-block  mt-3"><i class="fa-solid fa-users i-dashboard"></i>tabla usuarios</a>
                        </div>
                        <div class="dashLogo d-block mx-auto">
                            <img src="/images/logo-superior.png" width="120px" alt="" class="d-block mx-auto">

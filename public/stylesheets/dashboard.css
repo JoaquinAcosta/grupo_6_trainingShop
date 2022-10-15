@@ -27,3 +27,15 @@
     z-index:99;
     color:white;
 } 
+
+
+/* -----users table----- */
+.tabla-users{
+    font-size: 12px;
+}
+
+@media (min-width:768px){
+    .tabla-users{
+        font-size: 15px;
+    }
+}

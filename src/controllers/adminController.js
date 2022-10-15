@@ -4,16 +4,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports= {
 
-    index: (req,res)=>{
-        /* products = loadProducts();
-        res.render('productTable',{
-            products,
-            toThousand
-        }) */
+    productsTable: (req,res)=>{
         db.Product.findAll()
             .then(products => res.render('productTable',{
                 products,
                 toThousand
+            }))
+    },
+    usersTable: (req,res) =>{
+        db.User.findAll()
+            .then(users => res.render('usersTable',{
+                users
             }))
     }
     
