@@ -65,10 +65,7 @@ module.exports = {
             const users= loadUsers();
             const {name,email,avatar,phone,lastName} = req.body;
             const userlogged = users.find(user => user.id === req.session.userLogin.id);
-            
-           
-           
-
+    
             const userModify = users.map(user => {
                 if(user.id === +req.params.id){
                     return{...user,
@@ -116,15 +113,8 @@ module.exports = {
                 
                 return res.redirect('/')
             }else {
-                return res.render('login', {errors: errors.mapped()})
-                
+                return res.render('login', {errors: errors.mapped()})         
             }
-
-            
-
-
-
-
     },
     logout : (req,res) => {
         req.session.destroy();
