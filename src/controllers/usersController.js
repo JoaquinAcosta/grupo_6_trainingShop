@@ -4,13 +4,16 @@ const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
 const db = require('../database/models')
 
-module.exports = {
-    register:(req, res)=>{
-        return res.render('register',{
-            title:'Register'
-        })
-    },
 
+module.exports = {
+  register: (req, res) => {
+    db.User.findAll()
+      .then((user) => {
+        console.log(user);
+        return res.render("register", { title: "Register" });
+      })
+      .catch((err) => console.log(err));
+  },
     processRegister: (req, res) => {
        let errors = validationResult(req)
         if (errors.isEmpty()) {
@@ -26,8 +29,13 @@ module.exports = {
             avatar: "default-image.png",
             createdAt: new Date(),
           })
+<<<<<<< HEAD
           .then(user => {
             res.render('products', {user})
+=======
+          .then(() => {
+            res.redirect('/users/login')
+>>>>>>> ad0c6b1d1ec9268756bd91e27a305c4ddc54c4d7
         })
         .catch(error => console.log(error))
         }
