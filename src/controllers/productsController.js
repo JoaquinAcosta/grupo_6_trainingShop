@@ -5,7 +5,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 module.exports = {
- 
     detail: (req, res) => {
 		db.Product.findByPk(req.params.id, {
             include : ['images']
@@ -88,7 +87,7 @@ module.exports = {
             description : req.body.description.trim() 
 
         },
-        {
+        { 
             where : {
                 id : req.params.id
             }
@@ -133,6 +132,7 @@ module.exports = {
 		})
 			.then( () => res.redirect('/admin'))
 			.catch( error => console.log(error));
-	}
-  
-};
+	},
+ }
+
+

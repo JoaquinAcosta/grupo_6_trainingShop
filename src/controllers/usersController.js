@@ -1,6 +1,8 @@
+const db = require('../database/models');
 const { loadUsers, storeUsers } = require('../data/db')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
+const { promiseImpl } = require('ejs');
 
 module.exports = {
     register:(req, res)=>{
@@ -41,19 +43,38 @@ module.exports = {
             title:'Login'
         })
     },
+    profile:(req,res) => {
+        db.User.findByPk(req.params.id,{ 
+            include : ['userLogin']
+       })
+       .then(user => res.render('profile', {
+                title: 'Mi perfil',
+                userlogged,
+                user
+        }))
+            .catch(error => console.log(error))
+},         
 
-    profile:(req,res)=>{
-        const users = loadUsers();
-        const userlogged = users.find(user => user.id === req.session.userLogin.id)
-        return res.render('profile',{
-            title: 'Mi Perfil',
-            userlogged,
-            users
-            
+/*     profileUpdate:(req,res) =>{
+        db.Users.profileUpdate({
+            ...req.body,
+            name : req.body.name,
+            email : req.body.email,
+            avatar : req.body.avatar,
+            phone : req.body.phone,
+            lastName : req.body.lastName,
         })
-    },
+        .then(user => {
 
-    profileUpdate:(req,res) =>{
+            if(){
+
+            }
+
+        })
+        .catch(error => console.log(error))
+    },
+ */
+     profileUpdate:(req,res) =>{
 
         let errors = validationResult(req);
         if (errors.isEmpty()){
@@ -61,9 +82,6 @@ module.exports = {
             const {name,email,avatar,phone,lastName} = req.body;
             const userlogged = users.find(user => user.id === req.session.userLogin.id);
             
-           
-           
-
             const userModify = users.map(user => {
                 if(user.id === +req.params.id){
                     return{...user,
@@ -87,6 +105,8 @@ module.exports = {
         //test//
 		
     },
+
+
     processLogin: (req, res) => {
        /*  return res.send(req.body.remember) */
         let errors = validationResult(req);
@@ -117,8 +137,5 @@ module.exports = {
         req.session.destroy();
         res.cookie('trainingshop',null,{maxAge: -1});
         return res.redirect('/')
-    }
-
-
-    
+    }   
 }
