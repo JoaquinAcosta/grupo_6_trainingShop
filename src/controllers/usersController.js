@@ -2,15 +2,17 @@ const db = require('../database/models');
 const { loadUsers, storeUsers } = require('../data/db')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
-const db = require('../database/models')
+
 
 module.exports = {
-    register:(req, res)=>{
-        return res.render('register',{
-            title:'Register'
-        })
-    },
-
+  register: (req, res) => {
+    db.User.findAll()
+      .then((user) => {
+        console.log(user);
+        return res.render("register", { title: "Register" });
+      })
+      .catch((err) => console.log(err));
+  },
     processRegister: (req, res) => {
        let errors = validationResult(req)
         if (errors.isEmpty()) {
@@ -26,8 +28,8 @@ module.exports = {
             avatar: "default-image.png",
             createdAt: new Date(),
           })
-          .then(user => {
-            res.render('products', {user})
+          .then(() => {
+            res.redirect('/users/login')
         })
         .catch(error => console.log(error))
         }
