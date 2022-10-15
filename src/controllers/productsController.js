@@ -127,13 +127,14 @@ module.exports = {
     }
 },
 
-  destroy: function (req, res) {
-    db.Product.destroy({
-      where: {
-        id: req.params.id,
-      },
-    })
-      .then(() => res.redirect("/admin"))
-      .catch((error) => console.log(error));
-  },
+    destroy: function (req, res) {
+        db.Product.destroy({
+			where : {
+				id : req.params.id
+			}
+		})
+			.then( () => res.redirect('/admin/products'))
+			.catch( error => console.log(error));
+	}
+  
 };
