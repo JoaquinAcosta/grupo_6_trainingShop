@@ -135,6 +135,7 @@ module.exports = {
 		})
 			.then( () => res.redirect('/admin/products'))
 			.catch( error => console.log(error));
-	}
-  
-};
+	},
+ }
+
+
