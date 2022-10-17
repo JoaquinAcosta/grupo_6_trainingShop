@@ -46,14 +46,30 @@ module.exports = {
             })
             .catch((error) => console.log(error));
     },
-    profile:(req,res) => {
-        const userlogged = req.session.userLogin.id
+    profile:async(req,res) => {
+        
+        try{
+            const id = req.session.userLogin.id;
+            const user = await db.User.findByPk(id);
+
+            return res.render('profile',{
+                user
+            });
+        }catch(error){
+            console.log(error)
+        }
+        
+        
+      /*   const userlogged = req.session.userLogin.id
         db.User.findByPk(userlogged)
-       .then(user => res.render('profile', {
+       
+        .then((user)=>res.send(user)) */
+       
+        /* .then(user => res.render('profile', {
                 title: 'Mi perfil', userlogged, user
               
-        })) 
-            .catch(error => console.log(error))
+        })) */ 
+            /* .catch(error => console.log(error)) */
 },         
 
 /*     profileUpdate:(req,res) =>{
@@ -75,9 +91,56 @@ module.exports = {
         .catch(error => console.log(error))
     },
  */
-     profileUpdate:(req,res) =>{
+     profileUpdate: async(req,res) =>{
 
-        let errors = validationResult(req);
+        try{
+            const id = req.params.id;
+            const user = await db.User.findByPk(id);
+            const {name,lastName,email,phone,avatar} = req.body;
+
+            user.name = name 
+            user.lastName = lastName
+            user.email = email
+            user.phone = phone
+            user.avatar = req.file?.filename || user.avatar
+
+            await user.save();
+            return res.redirect('/users/profile');
+
+        }catch(error){
+            console.log(error)
+        }
+
+
+
+
+
+
+
+       /*  try{
+            
+            const {name,lastName,email,phone,avatar} = req.body;
+            const user= await db.Users.Update({
+                ...req.body,
+                name: name.trim(),
+                lastName: lastName.trim(),
+                email: email.trim(),
+                phone,
+                avatar: 'default-image.png'
+            },
+            {
+                where: {
+                  id: req.params.id,
+                },
+              },)
+
+            return res.send(user);
+
+        }catch(error){
+            console.log(error);
+        }
+ */
+       /*  let errors = validationResult(req);
         if (errors.isEmpty()){
             const users= loadUsers();
             const {name,email,avatar,phone,lastName} = req.body;
@@ -102,8 +165,7 @@ module.exports = {
             const users= loadUsers();
             const userlogged = users.find(user => user.id === req.session.userLogin.id)
             return res.render('profile', { errors: errors.mapped(), old: req.body, userlogged,users});
-        }
-        //test//
+        } */
 		
     },
 
@@ -117,10 +179,13 @@ module.exports = {
            const user = await db.User.findOne({ where: { email } });
            
                 req.session.userLogin ={
+                    id: user.id,
                     name: user.name,
-                    lastname: user.lastname,
+                    lastName: user.lastName,
                     avatar:user.avatar,
-                    rolId: user.rolId }
+                    rolId: user.rolId,
+                    email: user.email,
+                    phone: user.phone }
             
             return res.redirect('/')
                 
