@@ -88,6 +88,9 @@ module.exports = {
     },
  */
   profileUpdate: async (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
+
     try {
       const id = req.params.id;
       const user = await db.User.findByPk(id);
@@ -101,9 +104,12 @@ module.exports = {
 
       await user.save();
       return res.redirect("/users/profile");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {console.log(error);}
+  }else {
+    const id = req.params.id;
+    const user = await db.User.findByPk(id);
+    return res.render('profile', { errors: errors.mapped(), old: req.body, user});
+}
 
     /*  try{
             
@@ -188,8 +194,14 @@ module.exports = {
             rolId,
             email: emailUser,
             password: passwordHash,
-            phone,
+            phone: phone || 0,
           };
+
+          if (req.body.remember) {
+            res.cookie('trainingshop', req.session.userLogin, {
+                maxAge : 1000 * 600
+            })
+        }
 
           return res.redirect("/");
         } else {
