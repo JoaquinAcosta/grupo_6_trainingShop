@@ -1,6 +1,6 @@
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs");
+const { hashSync, compare, hash } = require("bcryptjs");
 const { promiseImpl } = require("ejs");
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
         lastName: lastName.trim(),
         email: email.trim(),
         phone: +phone,
-        password: bcryptjs.hashSync(password, 10),
+        password: hashSync(password, 10),
         rolId: 2,
         avatar: "default-image.png",
         createdAt: new Date(),
@@ -44,17 +44,28 @@ module.exports = {
       })
       .catch((error) => console.log(error));
   },
-  profile: (req, res) => {
-    const userlogged = req.session.userLogin.id;
-    db.User.findByPk(userlogged)
-      .then((user) =>
-        res.render("profile", {
-          title: "Mi perfil",
-          userlogged,
-          user,
-        })
-      )
-      .catch((error) => console.log(error));
+  profile: async (req, res) => {
+    try {
+      const id = req.session.userLogin.id;
+      const user = await db.User.findByPk(id);
+
+      return res.render("profile", {
+        user,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    /*   const userlogged = req.session.userLogin.id
+        db.User.findByPk(userlogged)
+       
+        .then((user)=>res.send(user)) */
+
+    /* .then(user => res.render('profile', {
+                title: 'Mi perfil', userlogged, user
+              
+        })) */
+    /* .catch(error => console.log(error)) */
   },
 
   /*     profileUpdate:(req,res) =>{
@@ -76,77 +87,125 @@ module.exports = {
         .catch(error => console.log(error))
     },
  */
-  profileUpdate: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const users = loadUsers();
-      const { name, email, avatar, phone, lastName } = req.body;
-      const userlogged = users.find(
-        (user) => user.id === req.session.userLogin.id
-      );
+  profileUpdate: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const user = await db.User.findByPk(id);
+      const { name, lastName, email, phone, avatar } = req.body;
 
-      const userModify = users.map((user) => {
-        if (user.id === +req.params.id) {
-          return {
-            ...user,
-            name: name.trim(),
-            lastName: lastName.trim(),
-            email: email.trim(),
-            phone: +phone,
-            avatar: req.file ? req.file.filename : userlogged.avatar,
-          };
-        }
-        return user;
-      });
+      user.name = name;
+      user.lastName = lastName;
+      user.email = email;
+      user.phone = phone;
+      user.avatar = req.file?.filename || user.avatar;
 
-      storeUsers(userModify);
+      await user.save();
       return res.redirect("/users/profile");
-    } else {
-      const users = loadUsers();
-      const userlogged = users.find(
-        (user) => user.id === req.session.userLogin.id
-      );
-      return res.render("profile", {
-        errors: errors.mapped(),
-        old: req.body,
-        userlogged,
-        users,
-      });
+    } catch (error) {
+      console.log(error);
     }
-    //test//
+
+    /*  try{
+            
+            const {name,lastName,email,phone,avatar} = req.body;
+            const user= await db.Users.Update({
+                ...req.body,
+                name: name.trim(),
+                lastName: lastName.trim(),
+                email: email.trim(),
+                phone,
+                avatar: 'default-image.png'
+            },
+            {
+                where: {
+                  id: req.params.id,
+                },
+              },)
+
+            return res.send(user);
+
+        }catch(error){
+            console.log(error);
+        }
+ */
+    /*  let errors = validationResult(req);
+        if (errors.isEmpty()){
+            const users= loadUsers();
+            const {name,email,avatar,phone,lastName} = req.body;
+            const userlogged = users.find(user => user.id === req.session.userLogin.id);
+            
+            const userModify = users.map(user => {
+                if(user.id === +req.params.id){
+                    return{...user,
+                    name: name.trim(),
+                    lastName : lastName.trim(),
+                    email: email.trim(),
+                    phone: +phone,
+                    avatar : req.file ? req.file.filename : userlogged.avatar
+                }
+                }
+                return user
+            });
+            
+            storeUsers(userModify);
+		    return res.redirect('/users/profile');
+        }else {
+            const users= loadUsers();
+            const userlogged = users.find(user => user.id === req.session.userLogin.id)
+            return res.render('profile', { errors: errors.mapped(), old: req.body, userlogged,users});
+        } */
   },
+
+  //test//
 
   processLogin: async (req, res) => {
     //nota: agregar el if con las validaciones, tambien ya puede leer los datos de profile :)
+
     let errors = validationResult(req);
+
 
     if (errors.isEmpty()) {
       try {
-        const { email } = req.body;
-        const user = await db.User.findOne({ where: { email } });
+        const { email, password } = req.body;
+        const {
+          id,
+          name,
+          lastName,
+          avatar,
+          rolId,
+          email: emailUser,
+          phone,
+          password: passwordHash,
+        } = await db.User.findOne({ where: { email } });
 
-        req.session.userLogin = {
-          name: user.name,
-          lastname: user.lastname,
-          avatar: user.avatar,
-          rolId: user.rolId,
-        };
+        const isPassValid = await compare(password, passwordHash);
+        if (isPassValid && email == emailUser) {
+          req.session.userLogin = {
+            id,
+            name,
+            lastName,
+            avatar,
+            rolId,
+            email: emailUser,
+            password: passwordHash,
+            phone,
+          };
 
-        if (req.body.remember) {
-            res.cookie('trainingshop', req.session.userLogin, {
-                maxAge : 1000 * 600
-            })
+          return res.redirect("/");
+        } else {
+          return res.render("login", {
+            errors: errors.mapped(),
+            old: req.body,
+            // validaciones con db
+          });
         }
-
-        return res.redirect("/");
       } catch (error) {
         console.log(error);
       }
     } else {
       return res.render("login", { errors: errors.mapped() });
     }
-  },
-  /*  const {email, password} = req.body
+    /*  const {email, password} = req.body
             const { rolId,name,lastname,avatar } = db.User.findOne({ where: { email } })
             .then( ()=> res.redirect('/'))
             .catch(error => console.log(error))
@@ -170,6 +229,7 @@ module.exports = {
             } 
 
      */
+  },
 
   logout: (req, res) => {
     req.session.destroy();
