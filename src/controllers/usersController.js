@@ -89,27 +89,32 @@ module.exports = {
  */
   profileUpdate: async (req, res) => {
     let errors = validationResult(req);
-    if (errors.isEmpty()){
+    if (errors.isEmpty()) {
+      try {
+        const id = req.params.id;
+        const user = await db.User.findByPk(id);
+        const { name, lastName, email, phone, avatar } = req.body;
 
-    try {
+        user.name = name;
+        user.lastName = lastName;
+        user.email = email;
+        user.phone = phone;
+        user.avatar = req.file?.filename || user.avatar;
+
+        await user.save();
+        return res.redirect("/users/profile");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
       const id = req.params.id;
       const user = await db.User.findByPk(id);
-      const { name, lastName, email, phone, avatar } = req.body;
-
-      user.name = name;
-      user.lastName = lastName;
-      user.email = email;
-      user.phone = phone;
-      user.avatar = req.file?.filename || user.avatar;
-
-      await user.save();
-      return res.redirect("/users/profile");
-    } catch (error) {console.log(error);}
-  }else {
-    const id = req.params.id;
-    const user = await db.User.findByPk(id);
-    return res.render('profile', { errors: errors.mapped(), old: req.body, user});
-}
+      return res.render("profile", {
+        errors: errors.mapped(),
+        old: req.body,
+        user,
+      });
+    }
 
     /*  try{
             
@@ -169,7 +174,6 @@ module.exports = {
 
     let errors = validationResult(req);
 
-
     if (errors.isEmpty()) {
       try {
         const { email, password } = req.body;
@@ -198,10 +202,10 @@ module.exports = {
           };
 
           if (req.body.remember) {
-            res.cookie('trainingshop', req.session.userLogin, {
-                maxAge : 1000 * 600
-            })
-        }
+            res.cookie("trainingshop", req.session.userLogin, {
+              maxAge: 1000 * 600,
+            });
+          }
 
           return res.redirect("/");
         } else {
@@ -247,5 +251,18 @@ module.exports = {
     req.session.destroy();
     res.cookie("trainingshop", null, { maxAge: -1 });
     return res.redirect("/");
+  },
+
+  destroy: async (req, res) => {
+    try {
+        await db.User.destroy({
+          where: {
+            id: req.params.id,
+          },
+        })
+        return res.redirect('/admin/users')
+        
+    } catch (error) {console.log(error)}
+
   },
 };
