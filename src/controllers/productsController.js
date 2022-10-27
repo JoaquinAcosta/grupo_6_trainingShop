@@ -93,7 +93,7 @@ module.exports = {
       },
       
     )
-      .then(() => res.redirect("/admin"))
+      .then(() => res.redirect("/admin/products"))
       .catch((error) => console.log(error));
   },
   store: async (req, res) => {
