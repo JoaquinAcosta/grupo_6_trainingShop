@@ -15,7 +15,7 @@ router
     .get('/', index)
     .get('/edit/:id',adminUserCheck, edit)
     .put('/update/:id',uploadProductImage.array('images'),update)
-    .post('/store',uploadProductImage.array('images'), store)
+    .post('/store',uploadProductImage.array('image'), store)
 
 
 
