@@ -8,12 +8,13 @@ module.exports = {
     db.Product.findByPk(req.params.id, {
       include: ["images"],
     })
-      .then((product) =>
+      .then((product) => 
         res.render("detalledelproducto", {
           product,
           toThousand,
         })
       )
+
       .catch((error) => console.log(error));
   },
   add: (req, res) => {
