@@ -120,7 +120,7 @@ module.exports = {
         });
         let result = await db.Image.bulkCreate(images, { validate: true});
         console.log(result);
-        return res.redirect('/admin')
+        return res.redirect('/admin/products')
     }
 
     catch (error) {
@@ -128,15 +128,27 @@ module.exports = {
     }
 },
 
-    destroy: function (req, res) {
-        db.Product.destroy({
-			where : {
-				id : req.params.id
-			}
-		})
-			.then( () => res.redirect('/admin/products'))
-			.catch( error => console.log(error));
-	},
+    destroy:  async(req, res) =>{
+      try{
+        await db.Image.destroy({
+          where:
+          {
+            id:req.params.id
+          }
+        });
+
+        await db.Product.destroy({
+          where : {
+            id : req.params.id
+          }
+        });
+
+        return res.redirect('/admin/products')
+
+      }catch(error){
+        console.log(error);
+      }
+    },
  }
 
 

@@ -22,13 +22,13 @@
                 <textarea type="text" name="description"><%= product.description %></textarea>
               </fieldset>
             </div>  
-        <div class="addProduct-div-padre_img">           
-            <div class="addProduct-div-img_producto">  
-                <!-- <label for="image">Agregar imagen del producto</label>
-                <input type="file" name="image" id="image" multiple> -->   
-                <img width="200" src="/images/productsImage/<%= product.image %>" alt="<%= product.name%>">   
+            <div class="addProduct-div-padre_img">
+              <div class="addProduct-div-img_producto">
+                <!-- <label id="image" for="image">Agregar imagen del producto</label> -->
+                <label for="image">Agregar imagen del producto</label>
+                <input type="file" name="image" id="image" multiple>  
+              </div>
             </div>
-        </div>
             <div class="addProduct-div-catYcolor">
                 <select name="sectionId">
                     <% sections.forEach(({id, name}) => { %>
