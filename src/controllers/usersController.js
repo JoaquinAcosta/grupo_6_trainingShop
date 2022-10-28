@@ -1,7 +1,8 @@
-const db = require("../database/models");
-const { validationResult } = require("express-validator");
-const { hashSync, compare, hash } = require("bcryptjs");
-const { promiseImpl } = require("ejs");
+const db = require('../database/models');
+const { validationResult } = require('express-validator')
+const bcryptjs = require('bcryptjs')
+const { promiseImpl } = require('ejs');
+
 
 module.exports = {
   register: (req, res) => {
@@ -12,42 +13,44 @@ module.exports = {
       })
       .catch((err) => console.log(err));
   },
-  processRegister: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const { name, email, password, phone, lastName } = req.body;
-
-      db.User.create({
-        name: name.trim(),
-        lastName: lastName.trim(),
-        email: email.trim(),
-        phone: +phone,
-        password: hashSync(password, 10),
-        rolId: 2,
-        avatar: "default-image.png",
-        createdAt: new Date(),
-      })
-        .then(() => {
-          res.redirect("/users/login");
+    processRegister: (req, res) => {
+       let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            const { name, email, password,phone, lastName } = req.body;
+            
+        db.User.create({
+            name: name.trim(),
+            lastName: lastName.trim(),
+            email: email.trim(),
+            phone: +phone,
+            password: bcryptjs.hashSync(password, 10),
+            rolId: 2,
+            avatar: "default-image.png",
+            createdAt: new Date(),
+          })
+          .then(() => {
+            res.redirect('/users/login')
         })
-        .catch((error) => console.log(error));
-    } else {
-      return res.render("register", { errors: errors.mapped(), old: req.body });
-    }
-  },
+        .catch(error => console.log(error))
+        }
+        else {
+            return res.render('register', { errors: errors.mapped(), old: req.body })
+        }
+    },
 
-  login: (req, res) => {
-    db.User.findAll()
-      .then((user) => {
-        console.log(user);
-        return res.render("login", { title: "Login" });
-      })
-      .catch((error) => console.log(error));
-  },
-  profile: async (req, res) => {
-    try {
-      const id = req.session.userLogin.id;
-      const user = await db.User.findByPk(id);
+    login:(req, res)=>{
+        db.User.findAll()
+            .then((user) => {
+                console.log(user)
+                return res.render('login',{title : 'Login'})
+            })
+            .catch((error) => console.log(error));
+    },
+    profile:async(req,res) => {
+        
+        try{
+            const id = req.session.userLogin.id;
+            const user = await db.User.findByPk(id);
 
             return res.render('profile',{
                 user
@@ -60,25 +63,19 @@ module.exports = {
 
      profileUpdate: async(req,res) =>{
 
-    try {
-      const id = req.params.id;
-      const user = await db.User.findByPk(id);
-      const { name, lastName, email, phone, avatar } = req.body;
+        try{
+            const id = req.params.id;
+            const user = await db.User.findByPk(id);
+            const {name,lastName,email,phone,avatar} = req.body;
 
-      user.name = name;
-      user.lastName = lastName;
-      user.email = email;
-      user.phone = phone;
-      user.avatar = req.file?.filename || user.avatar;
+            user.name = name 
+            user.lastName = lastName
+            user.email = email
+            user.phone = phone
+            user.avatar = req.file?.filename || user.avatar
 
-      await user.save();
-      return res.redirect("/users/profile");
-    } catch (error){console.log(error);}
-  }else {
-    const id = req.params.id;
-    const user = await db.User.findByPk(id);
-    return res.render('profile', { errors: errors.mapped(), old: req.body, user});
-}
+            await user.save();
+            return res.redirect('/users/profile');
 
         }catch(error){
             console.log(error)
