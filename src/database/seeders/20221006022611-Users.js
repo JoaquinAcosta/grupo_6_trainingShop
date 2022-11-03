@@ -21,7 +21,7 @@ const users = [
     phone : 345678,
     rolId : 2,
     createdAt : new Date()
-  },
+  }
 ]
 
 module.exports = {

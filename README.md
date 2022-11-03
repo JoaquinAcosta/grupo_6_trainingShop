@@ -28,11 +28,11 @@ El cliente final son aquellas personas que estan dedicadas a la actividad físic
 
 
 ## Integrantes:
-- Joaquin Acosta, 22 anios, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
+- Joaquin Acosta, 22 años, soy de La Matanza, Provincia de Buenos Aires, anteriormente estudiaba ingeniería aeronáutica pero cambié de rubro para aspirar a dedicarme a mi actual pasión. Aspiro a trabajar de FullStack.
 
-- Flora Vargas, tengo 30 anios, soy de San Miguel, conocí el mundo de la programación por curiosidad, aprendiendo de manera autodidacta lo que termino gustándome mucho, actualmente estoy cursando la técnicatura en Informática.
+- Flora Vargas, tengo 30 años, soy de San Miguel, conocí el mundo de la programación por curiosidad, aprendiendo de manera autodidacta lo que termino gustándome mucho, actualmente estoy cursando la técnicatura en Informática.
 
-- Daniel Zambrana, 25 anios, Vivo en Villa celina Provincia de Buenos Aires. Siempre me intereso el mundo de la tecnologia, asi que decidi estudiar programacion por el tipo de calidad que brinda y como se manejan en el ambito laboral. Al finalizar el curso y luego de conseguir trabajo planeo seguir estudiando y capacitarme en una carrera universitaria.
+- Daniel Zambrana, 25 años, Vivo en Villa celina Provincia de Buenos Aires. Siempre me intereso el mundo de la tecnologia, asi que decidi estudiar programacion por el tipo de calidad de vida que brinda y como se manejan en el ambito laboral. Al finalizar el curso y luego de conseguir trabajo planeo seguir estudiando y capacitarme en una carrera universitaria.
 
 - Fabian Coseglia, soy de San Miguel estudiaba profesorado en educación física pero a nada de finalizar la carrera decidí cambiar de categoría y pasar de la actividad física al mundo IT.
 mis intereses principales y quizas objetivos a largo plazos son la ciberseguridad y el hacking ético. 
@@ -46,6 +46,6 @@ mis intereses principales y quizas objetivos a largo plazos son la cibersegurida
 ### [Retrospectiva SPRINT 3](https://github.com/JoaquinAcosta/grupo_6_trainingShop/blob/retrospectivas/RETRO%203/README.md)
 ### [Retrospectiva SPRINT 4](https://github.com/JoaquinAcosta/grupo_6_trainingShop/blob/retrospectivas/RETRO%204/README.md)
 ### [Retrospectiva SPRINT 5](https://github.com/JoaquinAcosta/grupo_6_trainingShop/blob/retrospectivas/RETRO%205/README.md)
-
+### [Retrospectiva SPRINT 6](https://github.com/JoaquinAcosta/grupo_6_trainingShop/blob/retrospectivas/RETRO%206)
 
 ## TRELLO: https://trello.com/b/DqiRCpm0/c16-grupo6-training-shop

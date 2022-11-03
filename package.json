@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www"
+    "start": "node ./src/bin/www",
+    "dev": "nodemon ./src/bin/www",
+    "create:db": "sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "reset:db": "sequelize db:drop && npm run create:db",
+    "dev:reset":"npm run reset:db && nodemon ./src/bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
