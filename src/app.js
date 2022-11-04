@@ -39,6 +39,7 @@ app.use('/users', usersRouter);
 app.use('/productCart', productCartRouter);
 app.use('/products', productsRouter);
 app.use('/admin',adminRouter);
+app.use('/api/users', require('./routes/APis/apiUsers'))
 
 
 // catch 404 and forward to error handler
