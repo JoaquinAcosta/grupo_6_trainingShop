@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crear producto</title>
-  <link rel="stylesheet" href="/stylesheets/styles.css">
-  <script src="https://kit.fontawesome.com/df7032ec01.js" crossorigin="anonymous"></script>
-</head>
+  <%- include('./partials/head') %>
 
 <body>
   <%- include('./partials/header') %>
@@ -32,8 +25,9 @@
         </div>
         <div class="addProduct-div-padre_img">
           <div class="addProduct-div-img_producto">
-            <label id="image" for="image">Agregar imagen del producto</label>
-            
+            <!-- <label id="image" for="image">Agregar imagen del producto</label> -->
+            <label for="image">Agregar imagen del producto</label>
+            <input type="file" name="image" id="image" multiple>  
           </div>
         </div>
         <div class="addProduct-div-catYcolor">
@@ -66,7 +60,7 @@
             <input type="number" name="price">
           </fieldset>
         </div>
-        <input type="file" name="images" id="image" for="image" multiple>
+        <!-- <input type="file" name="images" id="image" for="image" multiple> -->
         <div class="addProduct-div-button">
           <button type="submit">Guardar</button>
           <button type="reset">Borrar</button>
@@ -75,6 +69,7 @@
       </form>
     </main>
     <%- include('./partials/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
 </html>
