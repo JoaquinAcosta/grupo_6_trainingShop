@@ -4,12 +4,17 @@
     margin-bottom: 30px;
     text-align: center;
 }
+
 .addProduct-title-h2{
     text-decoration: underline;
     margin: 30px 0px;
 }
 .addProduct-div-general{
     margin: 7px 0px;
+}
+.form-select-celeste{
+    background-color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
 }
 .addProduct-fieldset{
     border-radius: 8px;
