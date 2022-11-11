@@ -1,6 +1,4 @@
 const db = require("../database/models");
-const { decodeBase64 } = require("bcryptjs");
-const { promiseImpl } = require("ejs");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -101,7 +99,7 @@ module.exports = {
     let { brandId, otro } = req.body
     let new_brand;
     try {
-        if (brandId == "" && otro) {
+        if (brandId === "" && otro) {
             new_brand = await db.Brand.create({name: otro})
             new_brand = new_brand.id
         }
