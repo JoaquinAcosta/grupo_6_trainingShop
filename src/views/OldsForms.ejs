@@ -1,0 +1,112 @@
+<form action="/products/store" method="POST" enctype="multipart/form-data">
+    <div class="addProduct-div-general">
+      <fieldset class="addProduct-fieldset">
+        <legend>Ingrese el nombre del producto</legend>
+        <input type="text" name="name" required>
+      </fieldset>
+    </div>
+    <div class="addProduct-div-general">
+      <fieldset class="addProduct-fieldset">
+        <legend>Descripción del producto</legend>
+        <textarea name="description" required></textarea>
+      </fieldset>
+    </div>
+    <div class="addProduct-div-padre_img">
+      <div class="addProduct-div-img_producto">
+        <!-- <label id="image" for="image">Agregar imagen del producto</label> -->
+        <label for="image">Agregar imagen del producto</label>
+        <input type="file" name="image" id="image" multiple>  
+      </div>
+    </div>
+    <div class="addProduct-div-catYcolor">
+      <select name="sectionId">
+        <option value="">Sección</option>
+        <% sections.forEach(({id,name}) => { %>
+          <option value="<%= id %>"><%= name %> </option>
+        <% }) %>
+       
+      </select>
+      <select name="categoryId">
+        <option value="category">Categoría</option>
+        <% categories.forEach(({id,name}) => { %>
+          <option value="<%= id %>"><%= name %> </option>
+        <% }) %>
+        
+      </select>
+
+      <select name="brandId">
+        <option value="">Marca</option>
+        <% brands.forEach(({id,name}) => { %>
+          <option value="<%= id %>"><%= name %> </option>
+        <% }) %>
+      </select>
+      <input type="text" placeholder="Otra marca" name="otro">
+    </div>
+    <div class="addProduct-div-general">
+      <fieldset class="addProduct-fieldset">
+        <legend>Precio</legend>
+        <input type="number" name="price">
+      </fieldset>
+    </div>
+    <div class="addProduct-div-button">
+      <button type="submit">Guardar</button>
+      <button type="reset">Borrar</button>
+    </div>
+   
+  </form>
+
+
+
+
+  <!-- /// E D I T    F O R M //  -->
+  <form action="/products/update/<%= product.id %>?_method=PUT" method="POST">
+    <div class="addProduct-div-general">
+      <fieldset class="addProduct-fieldset">
+        <legend>Ingrese el nombre del producto</legend>
+        <input type="text" name="name" value="<%= product.name %>" required>
+      </fieldset>
+    </div>              
+    <div class="addProduct-div-general">
+      <fieldset class="addProduct-fieldset">  
+        <legend>Descripción del producto</legend>
+        <textarea type="text" name="description"><%= product.description %></textarea>
+      </fieldset>
+    </div>  
+    <div class="addProduct-div-padre_img">
+      <div class="addProduct-div-img_producto">
+        <!-- <label id="image" for="image">Agregar imagen del producto</label> -->
+        <label for="image">Agregar imagen del producto</label>
+        <input type="file" name="image" id="image" multiple>  
+      </div>
+    </div>
+    <div class="addProduct-div-catYcolor">
+        <select name="sectionId">
+            <% sections.forEach(({id, name}) => { %>
+              <option value="<%= id %>" <%= id === product.sectionId && 'selected' %>><%= name %></option>
+             <% }) %>
+        </select>
+
+        <select name="categoryId">
+          <% categories.forEach(({id, name}) => { %>
+           <option value="<%= id %>" <%= id === product.categoryId && 'selected' %>><%= name %></option>
+          <% }) %>
+        </select>    
+    
+        <select name="brandId">
+           <!--  <option value="Marca">Marca</option> -->                   
+            <% brands.forEach(({id, name}) => { %>
+              <option value="<%= id %>" <%= id === product.brandId && 'selected' %>><%= name %></option>
+             <% }) %>
+        </select>
+    </div>
+    <div class="addProduct-div-general"> 
+      <fieldset class="addProduct-fieldset">   
+        <legend>Precio</legend>
+        <input type="number" name="price" value="<%= product.price %>"> 
+      </fieldset>           
+    </div>
+    <div class="addProduct-div-button">
+        <button type="submit">Editar</button>
+        <a href="/admin/products"><button>Cancelar</button></a>
+    </div>
+</form>
