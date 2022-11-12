@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-const {register,login, processLogin, processRegister,profile, profileUpdate,logout, destroy}=require('../controllers/usersController')
+const {register,login, processLogin, processRegister,profile, profileUpdate,logout,destroy}=require('../controllers/usersController')
 
 const loginValidation = require('../validations/loginValidation')
 const registerValidation=require('../validations/registerValidation')
