@@ -1,11 +1,18 @@
 const { unlinkSync } = require("fs");
 const path = require("path");
 const { literal, Op } = require("sequelize");
-const db = require("../database/models");
-const { literalQueryUrlImage } = require("../helpers/literalQueryUrlImage");
-const { sendJsonError } = require("../helpers/sendJsonError");
+const db = require("../../database/models");
+const { literalQueryUrlImage } = require("../../helpers/literalQueryUrlImage");
+const { sendJsonError } = require("../../helpers/sendJsonError");
 
 module.exports = {
+
+  // API -> GET IMAGE IN VIEW
+  image: (req, res) => {
+    res.sendFile(
+      path.join(__dirname, `../../../public/images/productsImage/${req.params.img}`)
+    );
+  },
   
     // API -> DETAIL PRODUCT
     detail: async (req, res) => {
@@ -28,7 +35,19 @@ module.exports = {
             },
           },
           {
-            association: "category",
+            association: "brand",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "categories",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "sections",
             attributes: {
               exclude: ["createdAt", "updatedAt", "deletedAt"],
             },
