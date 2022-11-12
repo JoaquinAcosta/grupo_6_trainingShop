@@ -87,6 +87,13 @@
     transition: 0.5s;
 }
 
+.divTextareaContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
      /*addProduct Tablet*/
 @media(min-width: 768px){
@@ -97,7 +104,63 @@
 
      /*addProduct*/
 @media(min-width: 1024px){
-    .addProduct-main{
-        width: 55%;
+    .divInputTexts{
+        display: flex;
+        justify-content: space-around;
     }
+    .divInputName{
+        width: 270px;
+        margin-top: 9px;
+    }
+    .divInputPrice{
+        width: 270px;
+        margin-left: -111px;
+    }
+    .divInputSelect1{
+        display: flex;
+        
+        gap: 38px;
+        justify-content: space-around;
+    }
+    .divInputSection{
+        width: 271px;
+        margin-top: 9px;
+    }
+    .divInputCategory{
+        width: 271px;
+    }
+    .divInputBrandId{
+        width: 270px;
+    }
+
+    .divTextareaContainer{
+        flex-direction: row;
+    }
+
+    .imgForm{
+        width: 193px
+    }
+   
+    .butonAddImg{
+        padding: 8px
+    }
+    .textAreaForm{
+        height: 260px;
+        width: 257px;
+        margin-left: -9px;
+    }
+    }
+
+    @media(min-width: 1440px){
+        
+        .divInputSelect1{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 38px;
+            justify-content: space-around;
+        }
+        
+        .registerLabelPrice{
+            margin-left: -66px;
+        }
     }

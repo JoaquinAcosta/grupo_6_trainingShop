@@ -29,6 +29,7 @@ router
    .put('/update/:id',uploadImageProfile.single('avatar'),profileValidation,profileUpdate)
    
    .delete('/delete/:id',destroy)
+   
    //APIs
    .get('/',usersList)
    
