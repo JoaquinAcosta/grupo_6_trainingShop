@@ -16,9 +16,8 @@ var usersRouter = require('./routes/users');
 var productCartRouter = require('./routes/productCart');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
-const apiProductsRouter = require('./routes/APIs/apiProducts');
+const apiProductRouter = require('./routes/APIs/apiProducts')
 
-const { sendJsonError } = require("./helpers/sendJsonError");
 var app = express();
 
 // view engine setup
@@ -42,7 +41,7 @@ app.use('/users', usersRouter);
 app.use('/productCart', productCartRouter);
 app.use('/products', productsRouter);
 app.use('/admin',adminRouter);
-app.use('/api/Products',apiProductsRouter);
+app.use('/api/products', apiProductRouter);
 
 app.use((err, req, res, next) => {
 
@@ -57,6 +56,7 @@ app.use((err, req, res, next) => {
   // res.status(err.status || 500);
   // res.render("error");
 });
+
 
 
 // catch 404 and forward to error handler

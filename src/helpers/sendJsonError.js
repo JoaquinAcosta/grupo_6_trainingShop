@@ -11,21 +11,11 @@ const mapped = (errors = []) =>
   },{})
 } */
 
-const sendJsonError = (
-  err /* credenciales invalidas */,
-  res,
-  codeStatus = /[sequelize|AggregateError]/i.test(err.name)
-    ? 422
-    : 500 /* 404 */
-) => {
-  /* console.log(err.errors[0]);  */
-
-  // return res.send(err.errors[0].errors.errors)
-
+const sendJsonError = (err ,res,codeStatus = /[sequelize|AggregateError]/i.test(err.name)? 422: 500) => {
   let prop = "error";
   let responseError;
   let errorsArray;
-
+  console.log("error", err.message);
   if (typeof err === "string") {
     responseError = err;
   } else if (/[sequelize|AggregateError]/i.test(err.name)) {
@@ -37,9 +27,9 @@ const sendJsonError = (
 
     prop += "s";
     responseError = mapped(errorsArray);
-  } else if (err.message) {
-    responseError = err.message;
-  }
+
+  } 
+  responseError = err.message ? err.message : responseError 
 
   return res.status(codeStatus).json({
     ok: false,

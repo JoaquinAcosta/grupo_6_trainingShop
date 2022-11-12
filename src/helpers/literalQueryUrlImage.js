@@ -4,7 +4,8 @@ const literalQueryUrlImage = (
   req,
   field,
   alias,
-  pathRoute = "/apiProducts"
+
+  pathRoute = "/products"
 ) => {
   const urlImage = () => `${req.protocol}://${req.get("host")}${pathRoute}/image/`;
 
