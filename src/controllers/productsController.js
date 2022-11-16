@@ -1,6 +1,4 @@
 const db = require("../database/models");
-const { decodeBase64 } = require("bcryptjs");
-const { promiseImpl } = require("ejs");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -68,15 +66,18 @@ module.exports = {
     });
 
     let product = db.Product.findByPk(req.params.id);
+    let image = db.Image.findByPk(req.params.id);
 
-    Promise.all([categories, product, sections, brands])
-      .then(([categories, product, sections, brands]) => {
+    Promise.all([categories, product, sections, brands,image])
+      .then(([categories, product, sections, brands,image]) => {
         return res.render("editProduct", {
           product,
           categories,
           sections,
           brands,
+          image,
         });
+        
       })
       .catch((error) => console.log(error));
   },
@@ -101,7 +102,7 @@ module.exports = {
     let { brandId, otro } = req.body
     let new_brand;
     try {
-        if (brandId == "" && otro) {
+        if (brandId === "" && otro) {
             new_brand = await db.Brand.create({name: otro})
             new_brand = new_brand.id
         }
@@ -133,7 +134,7 @@ module.exports = {
         await db.Image.destroy({
           where:
           {
-            id:req.params.id
+           productId: req.params.id
           }
         });
 
