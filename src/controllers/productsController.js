@@ -134,7 +134,7 @@ module.exports = {
         await db.Image.destroy({
           where:
           {
-            id:req.params.id
+           productId: req.params.id
           }
         });
 
