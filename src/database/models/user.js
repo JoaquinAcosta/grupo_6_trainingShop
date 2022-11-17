@@ -25,14 +25,28 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
+  /* login de usuario */
   User.init({
     name: DataTypes.STRING,
+    validate: {
+      is: {
+        args: /^[a-z]+$/i,
+        msg: "No debe contener numeros(name)"
+      }
+    },
     lastName: DataTypes.STRING,
+    validate: {
+      is: {
+        args: /^[a-z]+$/i,
+        msg: "No debe contener numeros (lastName)"
+      }
+    },
     avatar: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     phone: DataTypes.INTEGER,
-    rolId: DataTypes.INTEGER
+    rolId: DataTypes.INTEGER,
+ 
   }, {
     sequelize,
     modelName: 'User',
