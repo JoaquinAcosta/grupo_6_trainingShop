@@ -11,4 +11,4 @@ router
    // .patch('/:id', uploadImageProduct.array('images'), checkToken, checkRol, update)
     //.delete('/:id', checkToken, checkRol, destroy)
     .get('/image/:img', image)
-module.exports = router    
+module.exports = router
