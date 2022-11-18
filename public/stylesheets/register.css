@@ -24,7 +24,7 @@
 .register-main-div i{
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 45%;
     cursor: pointer;}
 .register-main-label{
     width: 100%;}
@@ -62,11 +62,6 @@
 .form__error__msg{
     color: red;
     font-weight: bold;
-    text-align: end
-}
-
-.form__error__msg{
-    color: red;
 }
 
 
@@ -88,7 +83,7 @@
     padding-right: 10px;}
 .register-main-div i {
     right: 5px;
-    top: 35%;}
+    top: 45%;}
 .register-main-div_button{
     text-align: center;}
 .register-main-button {
