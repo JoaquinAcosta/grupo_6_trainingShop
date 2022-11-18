@@ -63,6 +63,26 @@
               
 
 
+<<<<<<< HEAD
+=======
+          <select name="brandId">
+            <option value="">Marca</option>
+            <% brands.forEach(({id,name}) => { %>
+              <option value="<%= id %>"><%= name %> </option>
+            <% }) %>
+          </select>
+          <input type="text" placeholder="Otra marca" name="otro">
+        </div>
+        <div class="addProduct-div-general">
+          <fieldset class="addProduct-fieldset">
+            <legend>Precio</legend>
+            <input type="number" name="price">
+          </fieldset>
+        </div>
+        <div class="addProduct-div-button">
+          <button type="submit">Guardar</button>
+          <button type="reset">Borrar</button>
+>>>>>>> develop
         </div>
 
         <div class="mt-3 col-12 divTextareaContainer ">
