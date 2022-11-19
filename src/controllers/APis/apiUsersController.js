@@ -1,10 +1,6 @@
 const db = require("../../database/models");
-
-const { unlinkSync } = require("fs");
 const path = require("path");
-const { literal, Op } = require("sequelize");
 const { literalQueryUrlImage } = require("../../helpers/literalQueryUrlImage");
-const { sendJsonError } = require("../../helpers/sendJsonError");
 
 module.exports = {
     image: (req, res) => {
