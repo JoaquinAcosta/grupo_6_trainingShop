@@ -71,14 +71,15 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: {
           args: true,
           msg: "Ingrese un email valido",
-          async email(value){ "emailemail"  /* : Unknown word. */
-          const exist = await this.existEmail(value)
-          if(exist){
-            throw new error('El mail ya existe');
-          }
-          }
+        },
+        async email(value){ /* "emailemail" : Unknown word.  */
+        const exist = await this.existEmail(value)
+        if(exist){
+          throw new error('El mail ya existe');
+        }
         }
       }
+    
     },
     password: {
       type: DataTypes.STRING,
