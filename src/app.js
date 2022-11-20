@@ -16,7 +16,7 @@ var usersRouter = require('./routes/users');
 var productCartRouter = require('./routes/productCart');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
-const apiProductRouter = require('./routes/APIs/apiProducts')
+const apiProductRouter = require('./routes/APIsRoutes/apiProducts')
 
 var app = express();
 
