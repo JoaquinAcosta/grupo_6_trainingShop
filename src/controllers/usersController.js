@@ -75,7 +75,6 @@ module.exports = {
       console.log(error);
     }
   },
-
   processLogin: async (req, res) => {
     let errors = validationResult(req);
 

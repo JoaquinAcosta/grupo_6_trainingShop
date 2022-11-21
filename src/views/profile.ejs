@@ -16,9 +16,9 @@
 
 
                         <div class="card-body">
-                            <form class="row g-3"action="/users/update/<%= user.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <form id="formUserProfile" class="row g-3"action="/users/update/<%= user.id %>/?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <label for="avatar" ><img class=" trainingShop-shadow mx-auto d-block rounded-circle" width="150px"
-                                    src="/images/profilesImage/<%= user.avatar %> " style="cursor: pointer;" alt=""></label>
+                                    src="/images/profilesImage/<%= user.avatar %> " style="cursor: pointer;" alt="" id="imagePrev"></label>
                                 <div class="mb-3">
                                     <label for="avatar" class="form-label">Subir Imagen de Perfíl</label>
                                     <input class="form-control" style="border: solid 3px #bbe1fa;
@@ -28,19 +28,19 @@
                                 <div class="col-md-12">
                                     <label class="register-main-label">Nombre:</label>
                                     <input class="register-main-input" type="text" name="name" id="name" placeholder="ej: María" value="<%= user.name %>">
-                                    <p class="form__error__msg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+                                    <p class="form__error__msg" id="nameMsg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
                                 </div>
                                 <div class="col-md-12">
                                   <label class="register-main-label">Apellido:</label>
                                   <input class="register-main-input" id="lastName" type="text" name="lastName" placeholder="ej: Perez" value="<%= user.lastName %>">
-                                  <p class="form__error__msg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
+                                  <p class="form__error__msg" id="lastNameMsg"><%= locals.errors && errors.lastName ? errors.lastName.msg : null%> </p>
                               </div>
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">Email</label>
-                                    <input type="email" name="email" class=" input-trainingShop form-control" id="emai" value="<%= user.email %>">
-                                    <p class=" mt-1 form__error__msg"><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
+                                    <input type="email" name="email" class=" input-trainingShop form-control" id="email" value="<%= user.email %>">
+                                    <p class=" mt-1 form__error__msg" id="emailMsg"><%= locals.errors && errors.email ? errors.email.msg : null%> </p>
                                 </div>
-                            
+                    
                                 <div class="col-4">
                                     <label for="phone" class="form-label">Numero celular</label>
                                     <input name="phone" type="tel" class=" input-trainingShop form-control" id="phone" value="<%= user.phone %>" >
@@ -82,19 +82,14 @@
                                         <label class="form-check-label" for="Multivitamínicos">
                                             Multivitamínicos
                                         </label>
-                                    </div>
-                                    
-                                </div> -->
-                                
+                                    </div>                                   
+                                </div> -->                                
                                 <div class="addProduct-div-button">
-                                    <button type="submit">Editar</button>
-                                    
+                                    <button type="submit" id="submit" disabled>Editar</button> 
                                 </div>
                                  <!-- <div class="col-12 d-flex justify-content-center justify-content-sm-end ">
                                      <a href="/" class="btn-TraininShop">Volver</a>
                                     </div> -->
-                                
-                               
                             </form>
                         </div>
                     </div>
