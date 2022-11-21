@@ -44,7 +44,7 @@
                                 <div class="col-4">
                                     <label for="phone" class="form-label">Numero celular</label>
                                     <input name="phone" type="tel" class=" input-trainingShop form-control" id="phone" value="<%= user.phone %>" >
-                                    <p class="form__error__msg"><%= locals.errors && errors.phone ? errors.phone.msg : null%> </p>
+                                    <p class="form__error__msg" id="phoneMsg"><%= locals.errors && errors.phone ? errors.phone.msg : null%> </p>
                                 </div>
                                 <!-- <div class="col-md-4">
                                     <label for="city" class="form-label">Ciudad</label>

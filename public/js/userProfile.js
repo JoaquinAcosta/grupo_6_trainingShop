@@ -4,6 +4,7 @@ const formUserProfile = $("formUserProfile");
 const elements = formUserProfile.elements;
 const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+const exRegPhone = /^\d{10}$/ ;
 
 const checkFields = () => {
     let error = false;
@@ -44,7 +45,7 @@ $("name").addEventListener("blur", function (e) {
     checkFields()
   });
 
-  $("lastName").addEventListener("focus", function (e) {
+$("lastName").addEventListener("focus", function (e) {
     $('lastNameMsg').innerHTML = "Ingrese un apellido";
     $('lastNameMsg').style.color = "green"
   });
@@ -92,6 +93,26 @@ $("email").addEventListener("blur", function (e) {
             $("emailMsg").innerHTML = "El email tiene un formato inválido", e;
             break;
         default: $('emailMsg').innerHTML = null;
+            break;
+    }
+    checkFields()
+  });
+
+$("phone").addEventListener("focus", function (e) {
+    $('phoneMsg').innerHTML = "Ingrese un número telefonico";
+    $('phoneMsg').style.color = "green"
+  });
+$("phone").addEventListener("blur", function (e) {
+    switch (true){
+        case !this.value.trim():
+            $("phoneMsg").style.color = "red";
+            $("phoneMsg").innerHTML = "Debe colocar un telefono";
+            break;
+        case  !exRegPhone.test(this.value):
+            $("phoneMsg").style.color = "red";
+            $("phoneMsg").innerHTML = "Ingrese número valido ej:1198765432", e;
+            break;
+        default: $('phoneMsg').innerHTML = null;
             break;
     }
     checkFields()
