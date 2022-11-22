@@ -64,6 +64,10 @@
     font-weight: bold;
 }
 
+.heightInputsErrors{
+    height: 60px;
+}
+
 
     /*main tablet*/
 @media(min-width: 768px){
@@ -88,4 +92,8 @@
     text-align: center;}
 .register-main-button {
     width: 75%;}
+
+    .heightInputsErrors{
+        height: 50px;
+    }
 }

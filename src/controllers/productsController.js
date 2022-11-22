@@ -38,7 +38,9 @@ module.exports = {
           sections,
           brands,
         });
+        
       })
+      
       .catch((error) => console.log(error));
   },
 
