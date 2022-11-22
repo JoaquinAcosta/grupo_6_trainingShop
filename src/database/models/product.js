@@ -44,7 +44,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate:{
-        ...defaultValidationsRequiredFields
+        ...defaultValidationsRequiredFields,
+        len:objectValidate([3],"Longitud minima 3 caracteres")
       }
     },
     description: {
@@ -52,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate:{
         ...defaultValidationsRequiredFields,
-        len: objectValidate([20], "Logitud minima 20 caracteres")
+        len: objectValidate([20], "Longitud minima 20 caracteres")
       }
     },
     price: {

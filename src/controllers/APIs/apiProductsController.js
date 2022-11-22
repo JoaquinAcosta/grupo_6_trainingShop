@@ -241,5 +241,79 @@ module.exports = {
         sendJsonError(error, res);
       }
     },
+
+  update: async (req, res) => {
+    const { name, description, price, brandId, categoryId, sectionId } = req.body;
+    const { id } = req.params;
+    const { deletePreviousImages } = req.query;
+    try {
+      const product = await db.Product.findByPk(id, {
+        include: [
+          {
+            association: "images",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "brand",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "categories",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "sections",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+        ],
+      });
+
+      product.name = name?.trim() || product.name;
+      product.price = +price || product.price;
+      product.description = description?.trim() || product.description;
+      product.brandId = +brandId || product.brandId;
+      product.categoryId = +categoryId || product.categoryId;
+      product.sectionId = +sectionId || product.sectionId;
+
+      await product.save()
+
+      if (+deletePreviousImages === 1) {
+        product.images.forEach(async (img) => {
+          await img.destroy();
+          unlinkSync(
+            path.join(__dirname, `../../../public/images/productsImage/${img.file}`)
+          );
+        });
+      }
+
+      if (req.files?.length) {
+        const images = req.files.map((file) => {
+          return {
+            file: file.filename,
+            productId: product.id,
+          };
+        });
+
+        await db.Image.bulkCreate(images);
+      }
+
+      res.status(200).json({
+        ok:true,
+        status:200,
+        url: `${req.protocol}://${req.get("host")}/api/products/${product.id}`,
+      })
+
+    } catch (error) {
+      sendJsonError(error, res);
+    }
+  }
   
   };
