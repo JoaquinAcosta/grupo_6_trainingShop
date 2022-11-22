@@ -10,7 +10,7 @@
       
       <div class="trainingShop-shadow card mx-auto p-3 mt-3 mb-3 col-md-12">
         <div class="card-body">
-          <form action="/products/store" method="POST" class="col-12" enctype="multipart/form-data">
+          <form action="/products/store" method="POST" class="col-12" enctype="multipart/form-data" id="form">
             <div>
               <h2 class="addProduct-title-h2">Ingrese nuevo producto:</h2>
             </div>
@@ -82,9 +82,9 @@
           
           <div>
             <div class="card-body mt-3">
-              <img src="/images/productsImage/default-image.png" alt="" class="trainingShop-shadow imgForm" width="192">
+              <img src="/images/productsImage/default-image.png" alt="" class="trainingShop-shadow imgForm" width="192" id="imagePrev">
             </div>
-            <label for="image" class="register-main-input label-add  text-center butonAddImg">Agregar imagen</label>
+            <label for="image" class="form-control register-main-input label-add  text-center butonAddImg" id="imageLabel">Agregar imagen</label>
             <input type="file" name="image" id="image" hidden>
             <small class="d-block text-danger text-start imageError"></small>
           </div>
@@ -103,7 +103,7 @@
 
 
           <div class="addProduct-div-button mt-4">
-            <button type="submit">Guardar</button>
+            <button type="submit" id="saveButton">Guardar</button>
             <button type="reset">Borrar</button>
           </div>
           </form>
@@ -114,162 +114,7 @@
     </main>
     <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script>
-      window.onload = function(){
-      
-      //capturas
-      let name = document.getElementById('name');
-      let price = document.getElementById('price');
-      let sectionId = document.getElementById('sectionId');
-      let categoryId = document.getElementById('categoryId');
-      let brandId = document.getElementById('brandId');
-      let image = document.getElementById('image');
-      let newBrand = document.getElementById('newBrand');
-      let description = document.getElementById('floatingTextarea2');
-
-
-      //error fields
-      let nameError = document.querySelector('.nameError');
-      let priceError = document.querySelector('.priceError');
-      let sectionError = document.querySelector('.sectionError');
-      let categoryError = document.querySelector('.categoryError');
-      let brandError = document.querySelector('.brandError');
-      let newBrandError = document.querySelector('.newBrandError');
-      let descriptionError = document.querySelector('.descriptionError');
-
-      //name validations
-     name.addEventListener('focus',function(){
-      nameError.innerHTML = "";
-      name.classList.remove('is-valid') || name.classList.remove('is-invalid');
-      });
-
-      name.addEventListener('blur',function(e){
-        switch (true) {
-          case name.value !== "":
-            name.classList.add('is-valid');
-            break;
-          case name.value ==="":
-            name.classList.add('is-invalid');
-            nameError.innerHTML='Debe ingresar el nombre del producto'
-            break;
-        }
-      });
-
-      //price validation:
-      price.addEventListener('focus',function(){
-        priceError.innerHTML = "";
-        price.classList.remove('is-valid') || price.classList.remove('is-invalid');
-      });
-
-      price.addEventListener('blur',function(){
-        if(price.value <= 0 || ""){
-          price.classList.add('is-invalid');
-          priceError.innerHTML='El precio debe ser mayor a 0';
-        };
-        if(price.value >0){
-          price.classList.add('is-valid');
-        }
-
-      });
-
-      //selection validations
-      sectionId.addEventListener('focus',function(){
-        sectionError.innerHTML = "";
-        sectionId.classList.remove('is-valid') || sectionId.classList.remove('is-invalid');
-        });
-
-      sectionId.addEventListener('blur',function(){
-
-        if(sectionId.value == 0){
-          sectionId.classList.add('is-invalid');
-          sectionError.innerHTML = "Debe seleccionar una sección";
-          console.log(sectionId.value)
-        };
-        if(sectionId.value != 0){
-          sectionId.classList.add('is-valid');
-          console.log(sectionId.value)
-        };
-
-      })
-      //category validations
-      categoryId.addEventListener('focus',function(){
-        categoryError.innerHTML="";
-        categoryId.classList.remove('is-invalid') || categoryId.classList.remove('is-valid');
-      });
-
-      categoryId.addEventListener('blur',function(){
-        if(categoryId.value == 0){
-          categoryId.classList.add('is-invalid');
-          categoryError.innerHTML = "Debe seleccionar una categoria";
-          
-        };
-        if(categoryId.value != 0){
-          categoryId.classList.add('is-valid');
-          
-        };
-      });
-
-      //brand validation
-      brandId.addEventListener('focus',function(){
-        brandError.innerHTML="";
-        brandId.classList.remove('is-invalid') || brandId.classList.remove('is-valid');
-       });
-
-      brandId.addEventListener('blur',function(){
-        if(brandId.value == 0){
-          brandId.classList.add('is-invalid');
-          brandError.innerHTML = "Debe seleccionar una marca";
-          
-        };
-        if(brandId.value != 0){
-          brandId.classList.add('is-valid');
-          
-        };
-      });
-
-      //"otro" = new brand && no existen validaciónes porque solo funcionará cuando se agregue una nueva marca no existente previamente.
-      newBrand.addEventListener('focus',function(){
-        newBrandError.innerHTML = 'agregue la nueva marca SÓLO si no existe';
-        
-      });
-      newBrand.addEventListener('blur',function(){
-        newBrandError.innerHTML = '';
-      })
-      
-     //description validation 
-      let totalCharacters = 255;
-      let numberCharacters = 255;
-
-     description.addEventListener('focus',function(){
-      descriptionError.innerHTML = '';
-      description.classList.remove('is-invalid') || description.classList.remove('is-valid');
-     });
-
-     description.addEventListener('blur',function(){
-      console.log(description.value)
-      /* if(description.value === ""){
-        descriptionError.innerHTML = 'Debe ingresar una descripción';
-      };
-      if(description.value.trim().length < 20){
-        descriptionError.innerHTML = 'Debe tener más de 20 caracteres';
-      }
- */
-
-      switch (true) {
-        case description.value === "":
-          descriptionError.innerHTML = 'Debe ingresar una descripción';
-          break;
-        
-        case description.value.trim().length < 20:
-          descriptionError.innerHTML = 'Debe tener más de 20 caracteres';
-        break;
-      }
-     })
-
-      
-
-    }
-</script>
+    <script src="/js/addProductValidations.js"></script>
 </body>
 
 </html>
