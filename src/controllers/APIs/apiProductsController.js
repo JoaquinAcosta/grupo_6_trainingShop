@@ -302,7 +302,7 @@ module.exports = {
           };
         });
 
-        await db.Image.bulkCreate(images);
+        await db.Image.bulkCreate(images,{validate:true});
       }
 
       res.status(200).json({

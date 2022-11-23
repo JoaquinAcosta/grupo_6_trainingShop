@@ -43,7 +43,7 @@ app.use('/products', productsRouter);
 app.use('/admin',adminRouter);
 app.use('/api/products', apiProductRouter);
 
-app.use((err, req, res, next) => {
+/* app.use((err, req, res, next) => {
 
   sendJsonError(err,res)
 
@@ -55,7 +55,7 @@ app.use((err, req, res, next) => {
   // // render the error page
   // res.status(err.status || 500);
   // res.render("error");
-});
+}); */
 
 
 
