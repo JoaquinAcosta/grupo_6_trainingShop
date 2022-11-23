@@ -63,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isImage(value){
           if(!/.png|.jpg|.jpeg|.webp/i.test(value)){
-            unlinkSync(join)
+            unlinkSync(join(__dirname,`../../../public/images/avatars/${value}`))
             throw new Error ("Archivo invalido")
           }
         }
@@ -101,14 +101,19 @@ module.exports = (sequelize, DataTypes) => {
           user.password =hashSync(value)
         })
        }
-
-
       },
     },
     
 
+    phone:{ 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        ...defaultValidationsRequiredFields,
 
-    phone: DataTypes.INTEGER,
+        len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "),
+      }
+    },
     rolId: DataTypes.INTEGER,
  
   }, {
