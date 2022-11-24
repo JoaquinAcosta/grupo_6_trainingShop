@@ -72,7 +72,11 @@ module.exports = {
       await user.save();
       return res.redirect("/users/profile");
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        ok: false,
+        status: 500,
+        msg: error.message || "Ocurrió un error",
+      });
     }
   },
   processLogin: async (req, res) => {
