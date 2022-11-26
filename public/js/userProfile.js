@@ -5,6 +5,7 @@ const elements = formUserProfile.elements;
 const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 const exRegPhone = /^\d{10}$/ ;
+const exRegAvatar = /(.jpg|.jpeg|.png|.webp)$/i;
 
 
 const checkFields = () => {
@@ -77,6 +78,14 @@ $('avatar').addEventListener('change', (e) => {
     reader.onload = () => {
       $('imagePrev').src = reader.result
     };
+    switch (true){
+      case  !exRegAvatar.test(this.value):
+          $("avatarMsg").style.color = "red";
+          $("avatarMsg").innerHTML = "La imagen debe tener uno de los siguientes fotmatos jpg, jpeg, png", e;
+          break;
+      default: $('avatarMsg').innerHTML = null;
+          break;
+  }
     checkFields()
 });
 
