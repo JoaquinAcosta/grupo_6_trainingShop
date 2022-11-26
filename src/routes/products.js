@@ -14,7 +14,7 @@ router
     //GET ALL PRODUCTS//
     .get('/', index)
     .get('/edit/:id',adminUserCheck, edit)
-    .put('/update/:id',uploadProductImage.array('images'),update)
+    .put('/update/:id',uploadProductImage.array('image'),update)
     .post('/store',uploadProductImage.array('image'), store)
 
 
