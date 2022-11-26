@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate:{
         ...defaultValidationsRequiredFields,
-        isInt: objectValidate(/[0-9]/g, "el precio tiene valor invalido")
+        isInt: objectValidate(/[0-9]/g, "el precio debe ser un número")
       }
     },
     brandId: {
