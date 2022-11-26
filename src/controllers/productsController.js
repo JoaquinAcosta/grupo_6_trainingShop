@@ -104,7 +104,8 @@ module.exports = {
     let { brandId, otro } = req.body
     let new_brand;
     try {
-        if (brandId === "" && otro) {
+      
+        if (brandId === '11' && otro) {
             new_brand = await db.Brand.create({name: otro})
             new_brand = new_brand.id
         }

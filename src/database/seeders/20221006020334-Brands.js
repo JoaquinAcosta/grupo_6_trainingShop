@@ -41,6 +41,10 @@ const brands = [
     name : 'Olimp Nutrition',
     createdAt : new Date()
   },
+  {
+    name : 'Otra Marca',
+    createdAt : new Date()
+  }
 
 ]
 
