@@ -51,8 +51,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
       validate:{
-        ...defaultValidationsRequiredFields,
-        len: objectValidate([20], "Logitud minima 20 caracteres")
+        ...defaultValidationsRequiredFields
+        
       }
     },
     price: {
@@ -60,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate:{
         ...defaultValidationsRequiredFields,
-        isInt: objectValidate(/[0-9]/g, "el precio tiene valor invalido")
+        isInt: objectValidate(/[0-9]/g, "el precio debe ser un número")
       }
     },
     brandId: {
