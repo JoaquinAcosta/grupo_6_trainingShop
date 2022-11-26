@@ -6,9 +6,29 @@ const exRegAlfa = /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/;
 const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 const exRegPhone = /^\d{10}$/ ;
 
+const verifyEmail = async (email) => {
+  try {
+      const data = JSON.stringify({
+          email : email
+      });
+      let response = await fetch('/api/users/verify-email',{
+          method : 'POST',
+          body : data,
+          headers : {
+              'Content-Type': 'application/json'}
+  });
+      let result = await response.json();
+      console.log(result.data)
+      return result.data   
+  } catch (error) {
+      console.error}
+}
+
+
 const checkFields = () => {
     let error = false;
     for (let i = 0; i < elements.length - 1; i++) {
+      console.log(elements)
       if(!elements[i].value) {
         error = true
       }
@@ -82,7 +102,7 @@ $("email").addEventListener("focus", function (e) {
     $('emailMsg').innerHTML = "Ingrese un email";
     $('emailMsg').style.color = "green"
   });
-$("email").addEventListener("blur", function (e) {
+$("email").addEventListener("blur",async function (e) {
     switch (true){
         case !this.value.trim():
             $("emailMsg").style.color = "red";
@@ -91,6 +111,9 @@ $("email").addEventListener("blur", function (e) {
         case  !exRegEmail.test(this.value):
             $("emailMsg").style.color = "red";
             $("emailMsg").innerHTML = "El email tiene un formato inválido", e;
+            break;
+        case await verifyEmail(this.value):
+            msgError('errorEmail',"El email ya se encuentra registrado", e);
             break;
         default: $('emailMsg').innerHTML = null;
             break;
@@ -128,11 +151,13 @@ $("phone").addEventListener("blur", function (e) {
     e.preventDefault();
     let error = false;
     const elements = $('formUserProfile').elements;
+    /* return console.log(elements) 
 
-    for (let i = 0; i < elements.length - 1; i++) {
+    for (let i = 0; i < elements.length -1 ; i++) {
+       /* console.log(elements[i].value) 
         if (!elements[i].value) {
           error = true}
     }
 
     !error && $('formUserProfile').submit()
-}) */
+}) */ 
