@@ -5,7 +5,7 @@ const { literalQueryUrlImage } = require("../../helpers/literalQueryUrlImage");
 module.exports = {
     image: (req, res) => {
         res.sendFile(
-          path.join(__dirname, `../../../public/images/productsImage/${req.params.img}`)
+          path.join(__dirname, `../../../public/images/profilesImage/${req.params.img}`)
         );
       },
 
@@ -14,7 +14,7 @@ module.exports = {
             const user = await db.User.findByPk(req.params.id,{ 
                 attributes: {
                     association: "images",
-                    include: [ literalQueryUrlImage(req, "avatar", "avatar", "/users")],
+                    include: [ literalQueryUrlImage(req, "avatar", "avatar", "/apiUsers")],
                     exclude: ["createdAt", "updatedAt", "deletedAt", "productId", "password", "rolId"]
                             }
                 })
