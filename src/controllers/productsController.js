@@ -38,7 +38,9 @@ module.exports = {
           sections,
           brands,
         });
+        
       })
+      
       .catch((error) => console.log(error));
   },
 
@@ -102,7 +104,8 @@ module.exports = {
     let { brandId, otro } = req.body
     let new_brand;
     try {
-        if (brandId === "" && otro) {
+      
+        if (brandId === '11' && otro) {
             new_brand = await db.Brand.create({name: otro})
             new_brand = new_brand.id
         }
@@ -134,7 +137,7 @@ module.exports = {
         await db.Image.destroy({
           where:
           {
-            id:req.params.id
+           productId: req.params.id
           }
         });
 

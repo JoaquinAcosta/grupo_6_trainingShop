@@ -22,6 +22,7 @@ const sendJsonError = (err ,res,codeStatus = /[sequelize|AggregateError]/i.test(
     errorsArray = err.errors;
 
     if (/AggregateError/i.test(err.name)) {
+      err.errors[0].errors.errors[0].path = 'images'
       errorsArray = err.errors[0].errors.errors;
     }
 

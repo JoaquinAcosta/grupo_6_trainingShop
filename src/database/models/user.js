@@ -1,3 +1,4 @@
+
 'use strict';
 const { hashSync } = require('bcryptjs');
 const { Model, /* UnknownConstraintError */} = require('sequelize');
@@ -26,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
 
+    
     static associate(models) {
       // define association here
       User.hasMany(models.Address,{
@@ -124,3 +126,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return User;
 };
+
