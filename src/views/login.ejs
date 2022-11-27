@@ -76,6 +76,10 @@
             email.classList.add("is-invalid");
             emailError.innerHTML = "El email tiene un formato invalido";
             break;
+        case verifyEmail(this.value):
+            email.classList.add("is-invalid");
+            emailError.innerHTML = "El mail ya se encuentra registrado";
+            break;
     }
     console.log(email.value)
   });

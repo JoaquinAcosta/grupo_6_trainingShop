@@ -18,6 +18,8 @@ module.exports = {
     },
     verifyEmail : async (req, res) =>{
         try {
+            console.log(req.body)
+            
             const {email} = req.body;
             let user = await db.User.findOne({
                 where : {
