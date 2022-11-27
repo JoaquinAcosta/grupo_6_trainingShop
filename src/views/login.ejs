@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %>
@@ -13,7 +15,7 @@
         <div class="has-validation">
             <div class="login-main-div">
                 <label class="login-main-label">Email:</label>
-                <input class="login-main-input form-control" type="email" id="email" name="email" placeholder="ej: tunombre@email.com" required>         
+                <input class="login-main-input form-control" type="email" id="email" name="email" placeholder="ej: tunombre@email.com" >         
             </div>
         </div>
              <p id="emailError" class="d-block text-danger text-start"></p>
@@ -24,7 +26,7 @@
                 <div class="login-main-div">
                     <label class="login-main-label">Contraseña:</label>
                     <i class="fa-solid fa-eye-slash eye-logo" ></i>
-                    <input class="login-main-input form-control"  type="password" id="password" name="password" required>                           
+                    <input class="login-main-input form-control"  type="password" id="password" name="password" >                           
                 </div>
             </div>
             <p id="passwordError" class="d-block text-danger text-start "></p>  
@@ -44,75 +46,9 @@
     </main>
     <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <%- include('partials/scripts') %>
-    <script src="/public/js"></script>
+    
+    <script src="/js/userLogin.js"></script>
 
-    <script>
-        
-        window.onload= function(){
-            const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-            let email= document.getElementById("email")
-            let password= document.getElementById("password")
-
-            let emailError= document.getElementById("emailError")
-            let passwordError= document.getElementById("passwordError")
-
-                //email validations
-    email.addEventListener("focus", function () {
-        emailError.innerHTML = "";
-        email.classList.remove("is-valid") || email.classList.remove("is-invalid");
-    });
-
-    email.addEventListener("blur", function (e) {
-        switch (true) {
-        case exRegEmail.test(email.value):
-            email.classList.add("is-valid");
-            break;
-        case email.value === "":
-            email.classList.add("is-invalid");
-            emailError.innerHTML = "Debe ingresar el email";
-            break;
-        case !exRegEmail.test(this.value):
-            email.classList.add("is-invalid");
-            emailError.innerHTML = "El email tiene un formato invalido";
-            break;
-        case verifyEmail(this.value):
-            email.classList.add("is-invalid");
-            emailError.innerHTML = "El mail ya se encuentra registrado";
-            break;
-    }
-    console.log(email.value)
-  });
-  //password validations
-  password.addEventListener("focus", function () {
-    passwordError.innerHTML = "";
-    password.classList.remove("is-invalid");
-  });
-
-  password.addEventListener("blur", function () {
-    switch (true) {
-      case password.value === "":
-        password.classList.add("is-invalid");
-        passwordError.innerHTML = "Debe ingresar la contraseña";
-        break;
-    }
-  })
-
-   let formulario = document.getElementById("formulario");
-
-  //Button disable
-  formulario.addEventListener("submit", function (e) {
-  
-  let inputsValid = document.querySelectorAll(".is-valid");
-  let inputsInvalid = document.querySelectorAll('.is-invalid');
-  if (inputsValid.length < 1 || inputsInvalid.length > 0) {
-    console.log("disable");
-    e.preventDefault();
-  }
-});
-}
-
-    </script>
-
+   </script>
 </body>
 </html>
