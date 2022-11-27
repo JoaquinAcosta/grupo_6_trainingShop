@@ -1,3 +1,4 @@
+
 window.onload= function(){
     const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     let email= document.getElementById("email")

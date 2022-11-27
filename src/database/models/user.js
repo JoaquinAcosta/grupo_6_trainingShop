@@ -1,4 +1,3 @@
-
 'use strict';
 const { hashSync } = require('bcryptjs');
 const { Model, /* UnknownConstraintError */} = require('sequelize');
@@ -27,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
 
 
 
-    
     static associate(models) {
       // define association here
       User.hasMany(models.Address,{
@@ -49,13 +47,13 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
     validate: {
-      is: objectValidate(/^[a-z]+$/i,"No debe contener numeros(name)")
+      is: objectValidate(/^[a-z]+$/i,"Nombre no puede estar vacio ni contener números")
       }
     },
     lastName: {
       type: DataTypes.STRING,
       validate: {
-        is: objectValidate(/^[a-z]+$/i,"No debe contener numeros(lastName)")
+        is: objectValidate(/^[a-z]+$/i,"Apellido no puede estar vacio ni debe contener números")
       }
     },
    
@@ -106,14 +104,16 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     
-
     phone:{ 
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        ...defaultValidationsRequiredFields,
-
-        len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "),
+        ...defaultValidationsRequiredFields,     
+       /*  len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "), */
+       len: {
+        args: [8,12],
+        msg: "Nº de celular: longitud invalida, (mas de 8 y menos de 12)"
+      }
       }
     },
     rolId: DataTypes.INTEGER,
@@ -126,4 +126,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return User;
 };
-
