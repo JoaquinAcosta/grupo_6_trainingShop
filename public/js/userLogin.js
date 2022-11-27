@@ -1,4 +1,7 @@
 
+console.log('userLogin.js success');
+
+
 window.onload= function(){
     const exRegEmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     let email= document.getElementById("email")
@@ -7,13 +10,39 @@ window.onload= function(){
     let emailError= document.getElementById("emailError")
     let passwordError= document.getElementById("passwordError")
 
+
+//llamado a la Api
+const verifyEmail = async (email) => {
+    try{
+        const data = JSON.stringify
+        
+        let response = await fetch ('/api/users/check-email', {
+            method : 'POST',
+            body : JSON.stringify({
+                email : email
+            }),
+            headers : {
+                'content-Type' : 'aplication/json'
+            }
+        });
+            let result = await response.json();
+            return result.data;
+
+        } catch (error){
+            console.error
+    }
+}
+
+
         //email validations
 email.addEventListener("focus", function () {
 emailError.innerHTML = "";
 email.classList.remove("is-valid") || email.classList.remove("is-invalid");
 });
 
-email.addEventListener("blur", function (e) {
+
+
+email.addEventListener("blur", async function (e) {
 switch (true) {
 case exRegEmail.test(email.value):
     email.classList.add("is-valid");
@@ -26,12 +55,15 @@ case !exRegEmail.test(this.value):
     email.classList.add("is-invalid");
     emailError.innerHTML = "El email tiene un formato invalido";
     break;
-/* case verifyEmail(this.value):
+case await verifyEmail(this.value):
     email.classList.add("is-invalid");
-    emailError.innerHTML = "El mail ya se encuentra registrado";
-    break; */
+    emailError.innerHTML = "El email ya se encuentra registrado";
+    break;
+default:
+    varidFied('errorEmail')
+    break;
 }
-console.log(email.value)
+/* console.log(email.value) */
 });
 
 
