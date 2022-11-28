@@ -200,7 +200,7 @@ window.onload = function () {
   
     let inputsValid = document.querySelectorAll(".is-valid");
     let inputsInvalid = document.querySelectorAll('.is-invalid');
-    if (inputsValid.length < 7 || inputsInvalid.length > 0) {
+    if (inputsValid.length < 6 || inputsInvalid.length > 0) {
       console.log("disable");
       e.preventDefault();
     }
