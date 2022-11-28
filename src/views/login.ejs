@@ -19,7 +19,9 @@
             </div>
         </div>
              <p id="emailError" class="d-block text-danger text-start"></p>
-        
+             <% if (locals.errors && errors.email) { %>
+                <p style="color: red; font-weight: bold; text-align: end;"><%= errors.email.msg %> </p>
+               <% } %>
 
         <div>
             <div class="has-validation">
