@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
 
 'use strict';
 const { hashSync } = require('bcryptjs');
-const { Model, /* UnknownConstraintError */} = require('sequelize');
+const { Model} = require('sequelize');
 const { objectValidate, defaultValidationsRequiredFields } = require('../resource');
 const {unlinkSync} =require ('fs')
 const {join} = require ('path')
@@ -49,11 +49,6 @@ const {join} = require ('path')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /*
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
 
     existEmail(value) {
       return new Promise ((resolve, reject) => {
@@ -67,7 +62,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
     static associate(models) {
-      // define association here
+      
       User.hasMany(models.Address,{
         as: 'address',
         foreignKey: 'userId'
@@ -82,7 +77,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  /* login de usuario */
+
   User.init({
     name: {
       type: DataTypes.STRING,
@@ -116,8 +111,6 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       validate: {
           ...defaultValidationsRequiredFields,
-          isNull:objectValidate(false,"Ingrese un mail valido"),
-
           async email(value){
             const exist = await this.existEmail(value)
             if(exist){
@@ -131,8 +124,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         ...defaultValidationsRequiredFields,
-
-       isAlphanumeric: objectValidate( true, "Contraseña invalida, solo numeros y letras"),
        len: objectValidate ([8,16],"longitud invalida, (mas de 8 y menos de 16) "),
        is: objectValidate(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/ , "la contrasenia debe tener entre 8 y 16 caracteres, almenos una minuscula,almenos una mayuscula"),
 
