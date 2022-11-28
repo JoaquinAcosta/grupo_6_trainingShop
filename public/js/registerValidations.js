@@ -153,18 +153,22 @@ $('pass2').addEventListener('focus', function({target}){
     }
     !error &&  $('formRegister').submit()
 }) */
-/* let estadoTerms = $('terms').checked
+let terms = $('terms');
+terms.addEventListener('click', function(){
+    console.log(terms.checked);
+})
+
 console.log(); 
     const isInvalid = document.querySelectorAll('.is-invalid')
     let form = document.getElementById('formRegister')
     form.addEventListener("submit", function (e) {
-        if (isInvalid.length > 0 || estadoTerms === false) {
+        if (isInvalid.length > 0 || terms.checked === false) {
             e.preventDefault() 
             $('termsError').innerText = "Debe aceptar las bases y condiciones"
             $('msgError').innerText = "Algunos tienen errores y/o están vacíos."
         }
     
-    }) */
+    })
 
 
 
