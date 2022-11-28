@@ -1,4 +1,8 @@
 'use strict';
+
+const { unlinkSync } = require("fs");
+const {join} = require("path");
+const { defaultValidationsRequiredFields, objectValidate } = require('../resource');
 const {
   Model
 } = require('sequelize');
@@ -31,11 +35,19 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
      },
-    productId: DataTypes.INTEGER
-  },{
+    productId: {
+      type:DataTypes.INTEGER,
+      allowNull:false,
+      validate: {
+        ...defaultValidationsRequiredFields,
+        isInt:objectValidate(true,"Valor inválido")
+      }
+    },
+    deletedAt: DataTypes.DATE,
+  }, {
     sequelize,
     modelName: 'Image',
-    paranoid: true
+    paranoid: true,
     
   });
   return Image;
