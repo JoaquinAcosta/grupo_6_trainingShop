@@ -138,14 +138,6 @@ module.exports = (sequelize, DataTypes) => {
     phone:{ 
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        ...defaultValidationsRequiredFields,     
-       /*  len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "), */
-       len: {
-        args: [8,12],
-        msg: "Nº de celular: longitud invalida, (mas de 8 y menos de 12)"
-      }
-      }
     },
     rolId: DataTypes.INTEGER,
  
