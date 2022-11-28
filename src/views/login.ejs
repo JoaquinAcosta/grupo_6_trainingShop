@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %>
@@ -8,22 +10,28 @@
         <div class="login-main-div">
             <h1>Inicia sesión</h1>
         </div>
-    <form action="" method="post">
-        <div class="login-main-div">
-            <label class="login-main-label">Email:</label>
-            <input class="login-main-input" type="email" name="email" placeholder="ej: tunombre@email.com">         
+    <form action="" id="formulario" method="post" class="needs-validation" novalidate> 
+        
+        <div class="has-validation">
+            <div class="login-main-div">
+                <label class="login-main-label">Email:</label>
+                <input class="login-main-input form-control" type="email" id="email" name="email" placeholder="ej: tunombre@email.com" >         
+            </div>
         </div>
-        <% if (locals.errors && errors.email) { %>
-            <p style="color: red; font-weight: bold; text-align: end;"><%= errors.email.msg %> </p>
-           <% } %>
-        <div class="login-main-div">
-            <label class="login-main-label">Contraseña:</label>
-            <i class="fa-solid fa-eye-slash"></i>
-            <input class="login-main-input"  type="password" name="password">                    
-        </div>
-        <% if (locals.errors && errors.password) { %>
-            <p style="color: red; font-weight: bold; text-align: end;"><%= errors.password.msg %> </p>
-           <% } %>
+             <p id="emailError" class="d-block text-danger text-start"></p>
+             <% if (locals.errors && errors.email) { %>
+                <p style="color: red; font-weight: bold; text-align: end;"><%= errors.email.msg %> </p>
+               <% } %>
+
+        <div>
+            <div class="has-validation">
+                <div class="login-main-div">
+                    <label class="login-main-label">Contraseña:</label>
+                    <i class="fa-solid fa-eye-slash eye-logo" ></i>
+                    <input class="login-main-input form-control"  type="password" id="password" name="password" >                           
+                </div>
+            </div>
+            <p id="passwordError" class="d-block text-danger text-start "></p>  
         <p class="login-main-olv-contraseña"><a href="">¿Olvidaste tu contraseña?</a></p>
 
         <div class="text-center">
@@ -40,5 +48,9 @@
     </main>
     <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    
+    <script src="/js/userLogin.js"></script>
+
+   </script>
 </body>
 </html>
