@@ -7,5 +7,6 @@ module.exports = [
     .notEmpty().withMessage('El email es obligatorio').bail()
     .isEmail().withMessage('De ser un email válido'),
     body('password')
-    .notEmpty().withMessage('La contraseña es obligatoria').bail()
+    .notEmpty().withMessage('La contraseña es obligatoria').bail(),
+    
 ]
