@@ -1,104 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
+
   <%- include('./partials/head') %>
+
 <body>
-
-    <%- include('./partials/header') %>
-    <%- include('./partials/adminNavBar') %> 
+  <%- include('./partials/header') %>
+  <%- include('./partials/adminNavBar') %>
     <main class="addProduct-main">
-        
-        
-
-        <div class="trainingShop-shadow card mx-auto p-3 mt-3 mb-3 col-md-12">
-          <div class="card-body">
-            <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" class="col-12" enctype="multipart/form-data">
-              <div>
-                <h2 class="addProduct-title-h2">Editar producto: <%= product.name %></h2>
-              </div>
-              <div class="mt-3 col-12 divInputSelect1">
-                <div class="">
-                  
-                  <input class="register-main-input mt-2 divInputBrandId " type="text" name="name" id="name" value="<%= product.name %>">
-                </div>
-                <div class=" ">
-                  
-                  <input class="register-main-input mt-2 divInputBrandId" type="number" name="price" value="<%= product.price %>">
-                </div>
+      
+      <div class="trainingShop-shadow card mx-auto p-3 mt-3 mb-3 col-md-12">
+        <div class="card-body">
+          <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" class="col-12" enctype="multipart/form-data" id="form">
+            <div>
+              <h2 class="addProduct-title-h2">Editar producto: <%= product.name %></h2>
+            </div>
+            <div class="mt-3 col-12 divInputSelect1">
+              <div class="heightInputsErrors">
+                
+                <input class="register-main-input mt-2 divInputBrandId form-control" type="text" name="name" id="name" placeholder="Ingrese nombre producto" value="<%= product.name %>">
+                <small class="d-block text-danger text-start nameError"></small>
               </div>
               
-          
-                <!-- selects -->
+              <div class="heightInputsErrors">
                 
-                <div class="mt-3 col-12 divInputSelect1"> 
-                    <select name="sectionId" class="form-select form-select-celeste divInputSection">
-                      <option value="">Sección</option>
-                      <% sections.forEach(({id,name}) => { %>
-                        <option value="<%= id %>" <%= id === product.sectionId && 'selected' %>><%= name %></option>
-                      <% }) %>
-                    </select>
-    
-                  <select name="categoryId" class="form-select form-select-celeste mt-2 divInputCategory">
-                    <option value="category">Categoría</option>
-                    <% categories.forEach(({id,name}) => { %>
-                      <option value="<%= id %>" <%= id === product.categoryId && 'selected' %>><%= name %></option>
+                <input class="register-main-input mt-2 divInputBrandId form-control" type="number" name="price" id="price" placeholder="Ingrese precio" value="<%= product.price %>">
+                <small class="d-block text-danger text-start priceError"></small>
+              </div>
+            </div>
+            
+        
+              <!-- selects -->
+              <div class="mt-3 col-12 divInputSelect1">
+                <div class="heightInputsErrors">
+                  <select name="sectionId" class="form-select form-select-celeste divInputSection form-control sectionOption" id="sectionId">
+                    <option value="0"selected>Sección</option>
+                    <% sections.forEach(({id,name}) => { %>
+                      <option value="<%= id %>" <%= id === product.sectionId && 'selected' %>><%= name %></option>
                     <% }) %>
                   </select>
-                </div>
-               
-                <div>
-                  <div class="mt-3 col-12 divInputSelect1">
-                    <select name="brandId" class="form-select mt-2 form-select-celeste col-lg-4 divInputBrandId">
-                      <option value="">Marca</option>
-                      <% brands.forEach(({id,name}) => { %>
-                        <option value="<%= id %>" <%= id === product.brandId && 'selected' %>><%= name %></option>
+                  <small class="d-block text-danger text-start sectionError"></small>
+                </div> 
+                  <div class="heightInputsErrors">
+                    <select name="categoryId" id="categoryId" class="form-select form-select-celeste mt-2 divInputCategory form-control">
+                      <option value="0">Categoría</option>
+                      <% categories.forEach(({id,name}) => { %>
+                        <option value="<%= id %>" <%= id === product.categoryId && 'selected' %>><%= name %></option>
                       <% }) %>
                     </select>
-                    <div>
-                      <input type="text" placeholder="Ingrese nueva marca..." name="otro" class="register-main-input mt-2 divInputBrandId">
-                    </div>
-      
-                </div>
+                    <small class="d-block text-danger text-start categoryError"></small>
+                  </div>
                 
-                   
-                </div>
-                
-  
-  
-          </div>
-  
-          <div class="mt-3 col-12 divTextareaContainer ">
-            
-            <div>
-              <div class="card-body mt-3">
-                <img src="/images/productsImage/<%= image.file %>" alt="" class="trainingShop-shadow imgForm" width="192">
               </div>
-              <label for="image" class="register-main-input label-add  text-center butonAddImg">Agregar imagen</label>
-              <input type="file" name="image" id="image" hidden>
-            </div>
-            
-  
-            <div class="form-floating mt-2">
-              <textarea class="form-control register-main-input textAreaForm" placeholder="Descripción del producto..." id="floatingTextarea2" name="description" style="
-                height: 260px;
-                width: 257px;
-                margin-left: -9px;"><%= product.description %></textarea>
-              <label for="floatingTextarea2" >Descripción del producto:</label>
-            </div>
-  
-          </div> 
-  
-  
-          <div class="addProduct-div-button">
-            <button type="submit">Editar</button>
-            <a href="/admin/products"><button>Cancelar</button></a>
+             
+              <div>
+                <div class="mt-3 col-12 divInputSelect1 ">
+                  <div class="heightInputsErrors">
+                    <select name="brandId" class="form-select mt-2 form-select-celeste col-lg-4 divInputBrandId form-control" id="brandId">
+                      <option value="0">Marca</option>
+                      <% brands.forEach(({id,name}) => { %>
+                        <option value="<%= id %>" <%= id === product.brandId && 'selected' %>><%= name %></option>
+                        <% }) %>
+                    </select>
+                    <small class="d-block text-danger text-start brandError"></small>
+                  </div>
+                  
+                  <div class="heightInputsErrors">
+                    <input type="text" placeholder="Ingrese nueva marca..." name="otro" class="register-main-input mt-2 divInputBrandId form-control" id="newBrand">
+                    <small class="d-block text-danger text-start newBrandError"></small>
+                  </div>
+    
+              </div>
+              
+                 
+              </div>
+              
+
+
         </div>
-            </form>
-         
-            
+
+        <div class="mt-3 col-12 divTextareaContainer  ">
           
+          <div>
+            <div class="card-body mt-3">
+              <img src="/images/productsImage/<%= image.file %>" alt="" class="trainingShop-shadow imgForm" width="192" id="imagePrev">
+            </div>
+            <label for="image" class="form-control register-main-input label-add  text-center butonAddImg" id="imageLabel" style="cursor: pointer;">Agregar imagen</label>
+            <input type="file" name="image" id="image" hidden>
+            <small class="d-block text-danger text-start imageError"></small>
+          </div>
+          
+
+          <div class="form-floating mt-2">
+            <textarea class="form-control register-main-input textAreaForm" placeholder="Descripción del producto..." id="floatingTextarea2" name="description" style="
+              height: 260px;
+              width: 257px;
+              margin-left: -9px;"><%= product.description %></textarea>
+            <label for="floatingTextarea2" >Descripción del producto:</label>
+            <small class="d-block text-danger text-start descriptionError"></small>
+          </div>
+
+        </div> 
+
+
+        <div class="addProduct-div-button">
+          <button type="submit">Editar</button>
+          <a class='buttonA' href="/admin/products">Cancelar</a>
         </div>
+          </form>
+       
+          
+        
+      </div>
     </main>
     <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+   <script src="/js/editProductValidations.js"></script>
 </body>
+
 </html>

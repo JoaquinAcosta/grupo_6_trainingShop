@@ -1,5 +1,5 @@
-   /*main mobile*/
-.register-main{
+ /*main mobile*/
+ .register-main{
     display: flex;
     justify-content: center;}
 .register-main-hijo{
@@ -24,7 +24,7 @@
 .register-main-div i{
     position: absolute;
     right: 10px;
-    top: 50%;
+    top: 45%;
     cursor: pointer;}
 .register-main-label{
     width: 100%;}
@@ -62,12 +62,29 @@
 .form__error__msg{
     color: red;
     font-weight: bold;
-    text-align: end
 }
 
-.form__error__msg{
-    color: red;
+.heightInputsErrors{
+    height: 60px;
 }
+
+.buttonA{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    background-color: var(--colorAzulOscuro);
+    border-radius: 8px;
+    border: none;
+    color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    margin-top: 10px;
+    cursor: pointer;
+    display: block;
+}
+.buttonA:hover{
+    background-color: var(--colorAzul);
+    transition: 0.5s;
+    color:var(--colorCeleste) ;}
 
 
     /*main tablet*/
@@ -88,9 +105,13 @@
     padding-right: 10px;}
 .register-main-div i {
     right: 5px;
-    top: 35%;}
+    top: 45%;}
 .register-main-div_button{
     text-align: center;}
 .register-main-button {
     width: 75%;}
+
+    .heightInputsErrors{
+        height: 50px;
+    }
 }

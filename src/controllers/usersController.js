@@ -57,7 +57,7 @@ module.exports = {
     }
   },
 
-  profileUpdate: async (req, res) => {
+  /* profileUpdate: async (req, res) => {
     try {
       const id = req.params.id;
       const user = await db.User.findByPk(id);
@@ -72,9 +72,44 @@ module.exports = {
       await user.save();
       return res.redirect("/users/profile");
     } catch (error) {
-      console.log(error);
+      res.status(500).json({
+        ok: false,
+        status: 500,
+        msg: error.message || "Ocurrió un error",
+      });
+    }
+  }, */
+
+
+  profileUpdate: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const user = await db.User.findByPk(id);
+      const { name, lastName, email, phone, avatar } = req.body;
+      const errors = validationResult(req)
+      if (errors.isEmpty()) {
+        user.name = name;
+        user.lastName = lastName;
+        user.email = email;
+        user.phone = phone;
+        user.avatar = req.file?.filename || user.avatar;
+  
+        await user.save();
+        return res.redirect("/users/profile")
+      } else {
+        db.User.findByPk(req.params.id)
+      .then(user => {
+        return res.render('profile',{user,old :req.body,errors: errors.mapped() })
+      })
+      }} catch (error) {
+      res.status(500).json({
+        ok: false,
+        status: 500,
+        msg: error.message || "Ocurrió un error",
+      });
     }
   },
+
 
   processLogin: async (req, res) => {
     let errors = validationResult(req);

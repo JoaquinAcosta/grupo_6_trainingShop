@@ -1,4 +1,6 @@
 'use strict';
+
+const { defaultValidationsRequiredFields, objectValidate } = require('../resource');
 const {
   Model
 } = require('sequelize');
@@ -38,12 +40,54 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Product.init({
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    brandId: DataTypes.INTEGER,
-    categoryId: DataTypes.INTEGER,
-    sectionId: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        len:objectValidate([3],"Longitud minima 3 caracteres")
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        len: objectValidate([20], "Longitud minima 20 caracteres")
+      }
+    },
+    price: {
+      type : DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        isInt: objectValidate(/[0-9]/g, "el precio debe ser un número")
+      }
+    },
+    brandId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        isInt: objectValidate(true, "la marca es invalida")
+      }
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        isInt: objectValidate(true, "la categoria es invalida")
+      }
+    },
+    sectionId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate:{
+        ...defaultValidationsRequiredFields,
+        isInt: objectValidate(true, "la seccion es invalida")
+      }
+    },
   }, {
     sequelize,
     modelName: 'Product',
