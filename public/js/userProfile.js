@@ -103,9 +103,6 @@ $("email").addEventListener("blur",async function (e) {
             $("emailMsg").style.color = "red";
             $("emailMsg").innerHTML = "El email tiene un formato inválido", e;
             break;
-        case await verifyEmail(this.value):
-            msgError('errorEmail',"El email ya se encuentra registrado", e);
-            break;
         default: $('emailMsg').innerHTML = null;
             break;
     }
