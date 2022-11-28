@@ -86,35 +86,35 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     name: {
       type: DataTypes.STRING,
-    validate: {
+    /* validate: {
       is: objectValidate(/^[a-z]+$/i,"Nombre no puede estar vacio ni contener números")
-      }
+      } */
     },
     lastName: {
       type: DataTypes.STRING,
-      validate: {
+      /* validate: {
         is: objectValidate(/^[a-z]+$/i,"Apellido no puede estar vacio ni debe contener números")
-      }
+      } */
     },
    
     avatar: 
     {
       type: DataTypes.STRING,
-      validate: {
+      /* validate: {
         isImage(value){
           if(!/.png|.jpg|.jpeg|.webp/i.test(value)){
             unlinkSync(join(__dirname,`../../../public/images/avatars/${value}`))
             throw new Error ("Archivo invalido")
           }
         }
-      }
+      } */
     },
       
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
+      /* validate: {
           ...defaultValidationsRequiredFields,
           isNull:objectValidate(false,"Ingrese un mail valido"),
 
@@ -124,12 +124,12 @@ module.exports = (sequelize, DataTypes) => {
               throw new Error('El mail ya existe')
             }
           }
-      }  
+      }   */
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
+      /* validate: {
         ...defaultValidationsRequiredFields,
 
        isAlphanumeric: objectValidate( true, "Contraseña invalida, solo numeros y letras"),
@@ -141,20 +141,20 @@ module.exports = (sequelize, DataTypes) => {
           user.password =hashSync(value)
         })
        }
-      },
+      }, */
     },
     
     phone:{ 
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
+      /* validate: {
         ...defaultValidationsRequiredFields,     
-       /*  len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "), */
+        len: objectValidate ([8,12],"longitud invalida, (mas de 8 y menos de 12) "),
        len: {
         args: [8,12],
         msg: "Nº de celular: longitud invalida, (mas de 8 y menos de 12)"
       }
-      }
+      } */
     },
     rolId: DataTypes.INTEGER,
  
