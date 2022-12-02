@@ -8,7 +8,6 @@ module.exports = {
           path.join(__dirname, `../../../public/images/profilesImage/${req.params.img}`)
         );
       },
-
     getById : async (req, res) => {
         try{
             const user = await db.User.findByPk(req.params.id,{ 
@@ -54,7 +53,7 @@ module.exports = {
                 })
             }
         },
-        usersList: async(req, res) =>{
+    usersList: async(req, res) =>{
 
             try{
                 let users = await db.User.findAll({

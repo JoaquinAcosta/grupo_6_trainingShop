@@ -7,7 +7,6 @@ const { sendJsonError } = require("../../helpers/sendJsonError");
 
 module.exports = {
 
-  // API -> GET IMAGE IN VIEW
   image: (req, res) => {
     res.sendFile(
       path.join(__dirname, `../../../public/images/productsImage/${req.params.img}`)
@@ -174,9 +173,7 @@ module.exports = {
       return sendJsonError(error, res);
     }
   },
-  
-    // API -> DETAIL PRODUCT
-    detail: async (req, res) => {
+  detail: async (req, res) => {
       /* OPTIONS DEFAULT */
       let options = {
         include: [
@@ -240,8 +237,7 @@ module.exports = {
       } catch (error) {
         sendJsonError(error, res);
       }
-    },
-
+  },
   update: async (req, res) => {
     const { name, description, price, brandId, categoryId, sectionId } = req.body;
     const { id } = req.params;
@@ -273,7 +269,11 @@ module.exports = {
               exclude: ["createdAt", "updatedAt", "deletedAt"],
             },
           },
+          
         ],
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
       });
 
       product.name = name?.trim() || product.name;
@@ -308,6 +308,7 @@ module.exports = {
       res.status(200).json({
         ok:true,
         status:200,
+        data: product,
         url: `${req.protocol}://${req.get("host")}/api/products/${product.id}`,
       })
 
