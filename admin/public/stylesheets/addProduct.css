@@ -1,0 +1,166 @@
+.addProduct-main{
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.addProduct-title-h2{
+    text-decoration: underline;
+    margin: 30px 0px;
+}
+.addProduct-div-general{
+    margin: 7px 0px;
+}
+.form-select-celeste{
+    background-color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131, 131, 131);
+}
+.addProduct-fieldset{
+    border-radius: 8px;
+    background-color: var(--colorCeleste);
+    box-shadow: 6px 4px 7px 1px rgb(131 131 131);
+    text-align: center;
+}
+.addProduct-fieldset input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0px 0px 10px 5px;
+    background-color: var(--colorCeleste);
+}
+.addProduct-fieldset textarea{
+    width: 100%;
+    padding-left: 5px;
+    border: none;
+    outline: none;
+    height: 170px;
+    background-color: var(--colorCeleste);
+}
+
+.addProduct-div-padre_img{
+    display: flex;
+    justify-content: center
+}
+
+.addProduct-div-img_producto{
+    margin: 15px 0px;
+    padding: 60px 20px;
+    color: white;
+}
+.addProduct-div-img_producto label{
+    margin: 15px 0px;
+    border: solid 1px black;
+    padding: 60px 19px;
+    border-radius: 8px;
+    background-color: var(--colorAzul);
+    cursor: pointer;
+    box-shadow: 6px 4px 7px 1px rgb(131 131 131);
+}
+.addProduct-div-img_producto input{
+    display: none;
+}
+.addProduct-div-catYcolor{
+    text-align: center;
+}
+.addProduct-div-catYcolor select{
+    border-radius: 5px;
+    background-color: var(--colorCeleste);
+    box-shadow: 6px 4px 7px 1px rgb(131 131 131);
+    cursor: pointer;
+    outline: none;
+}
+.addProduct-div-button button{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    background-color: var(--colorAzulOscuro);
+    border-radius: 8px;
+    border: none;
+    color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    margin-top: 10px;
+    cursor: pointer;
+}
+.addProduct-div-button button:hover{
+    background-color: var(--colorAzul);
+    transition: 0.5s;
+}
+
+.divTextareaContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+     /*addProduct Tablet*/
+@media(min-width: 768px){
+    .addProduct-main{
+        width: 65%;
+    }
+}
+
+     /*addProduct*/
+@media(min-width: 1024px){
+    .divInputTexts{
+        display: flex;
+        justify-content: space-around;
+    }
+    .divInputName{
+        width: 270px;
+        margin-top: 9px;
+    }
+    .divInputPrice{
+        width: 270px;
+        margin-left: -111px;
+    }
+    .divInputSelect1{
+        display: flex;
+        
+        gap: 38px;
+        justify-content: space-around;
+    }
+    .divInputSection{
+        width: 271px;
+        margin-top: 9px;
+    }
+    .divInputCategory{
+        width: 271px;
+    }
+    .divInputBrandId{
+        width: 270px;
+    }
+
+    .divTextareaContainer{
+        flex-direction: row;
+    }
+
+    .imgForm{
+        width: 193px
+    }
+   
+    .butonAddImg{
+        padding: 8px
+    }
+    .textAreaForm{
+        height: 260px;
+        width: 257px;
+        margin-left: -9px;
+    }
+    }
+
+    @media(min-width: 1440px){
+        
+        .divInputSelect1{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 38px;
+            justify-content: space-around;
+        }
+        
+        .registerLabelPrice{
+            margin-left: -66px;
+        }
+    }

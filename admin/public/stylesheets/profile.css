@@ -1,0 +1,25 @@
+.input-trainingShop{
+    border-radius: 8px;
+    background-color: var(--colorCeleste);
+    border: none;
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+    outline: none;
+}
+
+.trainingShop-shadow{
+    box-shadow: 1px 2px 5px 0px rgb(131 131 131);
+
+}
+.checkbox-traingShop{
+    height: 80px;
+    border: solid 1px #d5d5d5;
+}
+
+.input-trainingShop:hover{
+    background-color: var(--colorCeleste);
+    box-shadow: 1px 2px 5px 0px rgb(27, 38, 48);
+}
+
+.label-add{
+    width: 226px;
+}
