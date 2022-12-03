@@ -8,6 +8,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const localsUserCheck = require('./middlewares/localsUserCheck');
+const cors = require('cors')
 
 const cookieCheck = require('./middlewares/cookieCheck');
 
@@ -17,6 +18,7 @@ var productCartRouter = require('./routes/productCart');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
 const apiProductRouter = require('./routes/APIsRoutes/apiProducts')
+const apiUsersRouter = require('./routes/APIsRoutes/apiUsers')
 
 var app = express();
 
@@ -31,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 app.use(session({ secret: 'this is secret', resave: false, saveUninitialized: true }));
+app.use(cors())
 
 app.use(cookieCheck);
 
@@ -41,8 +44,9 @@ app.use('/users', usersRouter);
 app.use('/productCart', productCartRouter);
 app.use('/products', productsRouter);
 app.use('/admin',adminRouter);
-/* app.use('/api/users', require('./routes/APis/apiUsers'))
-app.use('/api/products', apiProductRouter); */
+app.use('/api/users', require('./routes/APis/apiUsers'))
+app.use('/api/products', apiProductRouter);
+app.use('/api/users', apiUsersRouter);
 
 /* app.use((err, req, res, next) => {
 

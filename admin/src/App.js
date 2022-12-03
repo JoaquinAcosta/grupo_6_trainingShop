@@ -1,3 +1,4 @@
+import './App.css';
 import { AppRouter } from "./routes/appRouter";
 
 

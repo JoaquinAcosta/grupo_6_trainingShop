@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const{getAll, getById, veryEmail} = require('../../controllers/APIs/apiProductsController');
+const{getById, verifyEmail, image, usersList} = require('../../controllers/APIs/apiUsersController');
 
 router
-    .get('/', getAll)
+    .get('/', usersList)
     .get('/:id', getById)
-    .get('/veryfy-email', veryEmail)
+    .get('/veryfy-email', verifyEmail)
+    .get('/image/:img', image)
 
 
     module.exports = router;
