@@ -6,16 +6,18 @@
     width: 80%;}
 .register-main-menu{
     display: flex;
-    margin: 10px 0px;
+    margin: 5px 0px;
     justify-content: center;}
 .register-main-menu li{
     padding-left: 5px;
-    text-transform: none;}
+    text-transform: none;
+    opacity: 0.7}
 .register-main-menu a{
     color: black;}
 .register-main-titulo{
+    font-weight: bold;
     text-align: center;
-    text-decoration: underline;
+    padding-top: 10px;
     padding-bottom: 20px;}
 .register-main-div{
     text-align: start;
@@ -50,6 +52,10 @@
     box-shadow: 1px 2px 5px 0px rgb(131 131 131);
     margin-top: 6px;
     cursor: pointer;}
+.register-main-button {
+    width: 170px;}
+.register-main-div_button{
+    text-align: center;}
 .register-main-button:hover{
     background-color: var(--colorAzul);
     transition: 0.5s;}
@@ -90,8 +96,11 @@
     /*main tablet*/
 @media(min-width: 768px){
 .register-main-hijo{
-    width: 65%;}
+    width: 400px;}
+
+
 }
+
   
     /*main desktop*/
 @media(min-width: 1024px){
@@ -106,12 +115,10 @@
 .register-main-div i {
     right: 5px;
     top: 45%;}
-.register-main-div_button{
-    text-align: center;}
-.register-main-button {
-    width: 75%;}
 
-    .heightInputsErrors{
-        height: 50px;
-    }
+
+
+.heightInputsErrors{
+    height: 50px;
+}
 }
