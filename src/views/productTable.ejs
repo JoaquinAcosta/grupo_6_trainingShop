@@ -16,19 +16,21 @@
                 
                 <div class="cotainer">
                     <div class="row">
-                        <div class="col">
-                            <table class="table table-striped table-hover table-bordered">
+                        <div class="col table table-responsive">
+                            <table class="table table-striped table-hover table-bordered table-responsive">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>IMAGE</th>
                                         <th>PRODUCTO</th>
                                         <th>PRECIO</th>
                                         <th>ACCIONES</th>
                                     </tr>
                                 </thead>
-                                <% products.forEach(({id,name,price}) => { %>
+                                <% products.forEach(({id,name,price,images}) => { %>
                                  <tbody >
                                     <td><%= id %> </td>
+                                    <td><img width="70px" class="img-responsive d-block mx-auto" src="/images/productsImage/<%= images[0].file %>" alt=""></td>
                                     <td><%= name %> </td>
                                     <td>$<%= toThousand(price) %> </td>
                                     <td>

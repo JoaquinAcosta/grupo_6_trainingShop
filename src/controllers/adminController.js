@@ -4,12 +4,26 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports= {
 
-    productsTable: (req,res)=>{
+   /*  productsTable: (req,res)=>{
         db.Product.findAll()
             .then(products => res.render('productTable',{
                 products,
                 toThousand
             }))
+
+    }, */
+
+    productsTable: async(req,res) => {
+        try{
+            let products = await db.Product.findAll({include: ['images']});
+
+            return res.render('productTable',{
+                products,
+                toThousand
+            })
+        }catch(error){
+            console.error;
+        }
     },
     usersTable: (req,res) =>{
         db.User.findAll()
