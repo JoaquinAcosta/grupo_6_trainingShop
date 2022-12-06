@@ -84,14 +84,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         ...defaultValidationsRequiredFields,
-       len: objectValidate ([8,16],"longitud invalida, (mas de 8 y menos de 16) "),
        is: objectValidate(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/ , "la contrasenia debe tener entre 8 y 16 caracteres, almenos una minuscula,almenos una mayuscula"),
 
-       hashPass(value){
+      /*  hashPass(value){
         User.beforeCreate((user)=> {
           user.password =hashSync(value)
         })
-       }
+       } */ //esto impredia loguear con usuarios nuevos.
       },
     },
     
