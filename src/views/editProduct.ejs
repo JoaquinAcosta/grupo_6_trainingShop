@@ -33,7 +33,7 @@
               <div class="mt-3 col-12 divInputSelect1">
                 <div class="heightInputsErrors">
                   <select name="sectionId" class="form-select form-select-celeste divInputSection form-control sectionOption" id="sectionId">
-                    <option value="0"selected>Sección</option>
+                    <option value="0" hidden selected>Sección</option>
                     <% sections.forEach(({id,name}) => { %>
                       <option value="<%= id %>" <%= id === product.sectionId && 'selected' %>><%= name %></option>
                     <% }) %>
@@ -42,7 +42,7 @@
                 </div> 
                   <div class="heightInputsErrors">
                     <select name="categoryId" id="categoryId" class="form-select form-select-celeste mt-2 divInputCategory form-control">
-                      <option value="0">Categoría</option>
+                      <option value="0" hidden>Categoría</option>
                       <% categories.forEach(({id,name}) => { %>
                         <option value="<%= id %>" <%= id === product.categoryId && 'selected' %>><%= name %></option>
                       <% }) %>
@@ -56,7 +56,7 @@
                 <div class="mt-3 col-12 divInputSelect1 ">
                   <div class="heightInputsErrors">
                     <select name="brandId" class="form-select mt-2 form-select-celeste col-lg-4 divInputBrandId form-control" id="brandId">
-                      <option value="0">Marca</option>
+                      <option value="0" hidden>Marca</option>
                       <% brands.forEach(({id,name}) => { %>
                         <option value="<%= id %>" <%= id === product.brandId && 'selected' %>><%= name %></option>
                         <% }) %>
