@@ -164,8 +164,8 @@ console.log();
     form.addEventListener("submit", function (e) {
         if (isInvalid.length > 0 || terms.checked === false) {
             e.preventDefault() 
-            $('termsError').innerText = "Debe aceptar las bases y condiciones"
-            $('msgError').innerText = "Algunos tienen errores y/o están vacíos."
+            $('termsError').innerText = "* Debe aceptar las bases y condiciones"
+            $('msgError').innerText = "* Algunos tienen errores y/o están vacíos."
         }
     
     })
