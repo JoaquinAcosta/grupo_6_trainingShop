@@ -11,7 +11,6 @@ const profileValidation = require('../validations/profileValidation')
 const userSessionCheck = require('../middlewares/userSessionCheck')
 const guestSessionCheck = require('../middlewares/guestSessionCheck')
 const {uploadImageProfile} = require('../middlewares/uploadImageProfile');
-const {usersList} = require('../controllers/APIs controllers/usersList');
 
 router
    .get('/register',guestSessionCheck, register )
@@ -30,8 +29,7 @@ router
    
    .delete('/delete/:id',destroy)
    
-   //APIs
-   .get('/',usersList)
+
    
 
 
