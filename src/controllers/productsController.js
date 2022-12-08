@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { validationResult } = require("express-validator");
 
 module.exports = {
   detail: (req, res) => {
@@ -30,6 +31,7 @@ module.exports = {
       attributes: ["id", "name"],
       order: ["name"],
     });
+
 
     Promise.all([categories, sections, brands])
       .then(([categories, sections, brands]) => {
@@ -98,37 +100,66 @@ module.exports = {
       
     )
       .then(() => res.redirect("/admin/products"))
-      .catch((error) => console.log(error));
+      .catch((error) => res.status(500).json({
+        ok: false,
+        status: 500,
+        msg: error.message || "Ocurrió un error",
+      }));
   },
   store: async (req, res) => {
     let { brandId, otro } = req.body
     let new_brand;
     try {
-      
+      const errors = validationResult(req)
+      if (errors.isEmpty()) {
         if (brandId === '11' && otro) {
-            new_brand = await db.Brand.create({name: otro})
-            new_brand = new_brand.id
-        }
+          new_brand = await db.Brand.create({name: otro})
+          new_brand = new_brand.id
+      }
 
-        let new_product = await db.Product.create({
-             ...req.body,
-             name : req.body.name,
-            brandId: new_brand ? new_brand : brandId,
-             description : req.body.description,
-        })
-        let images = req.files.map(({filename}) => {
-            return {
-                file: filename,
-                productId: new_product.id
-            }
+      let new_product = await db.Product.create({
+           ...req.body,
+           name : req.body.name,
+          brandId: new_brand ? new_brand : brandId,
+           description : req.body.description,
+      })
+      let images = req.files.map(({filename}) => {
+          return {
+              file: filename,
+              productId: new_product.id
+          }
+      });
+      let result = await db.Image.bulkCreate(images, { validate: true});
+      console.log(result);
+      return res.redirect('/admin/products')
+      }else {
+        let categories = await db.Category.findAll({
+          attributes: ["id", "name"],
+          order: ["name"],
         });
-        let result = await db.Image.bulkCreate(images, { validate: true});
-        console.log(result);
-        return res.redirect('/admin/products')
+    
+        let sections = await db.Section.findAll({
+          attributes: ["id", "name"],
+          order: ["name"],
+        });
+    
+        let brands =await db.Brand.findAll({
+          attributes: ["id", "name"],
+          order: ["name"],
+        });
+        
+
+        return res.render("addProduct", { categories, sections, brands, errors: errors.mapped(), old: req.body });
+      }
+        
     }
 
     catch (error) {
-        console.log(error);
+      res.status(500).json({
+        ok: false,
+        status: 500,
+        msg: error.message || "Ocurrió un error",
+      });
     }
 },
 

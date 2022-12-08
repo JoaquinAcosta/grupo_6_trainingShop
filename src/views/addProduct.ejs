@@ -18,12 +18,14 @@
               <div class="heightInputsErrors">
                 
                 <input class="register-main-input mt-2 divInputBrandId form-control" type="text" name="name" id="name" placeholder="Ingrese nombre producto">
+                <p class="form__error__msg" id="nameMsg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
                 <small class="d-block text-danger text-start nameError"></small>
               </div>
               
               <div class="heightInputsErrors">
                 
                 <input class="register-main-input mt-2 divInputBrandId form-control" type="number" name="price" id="price" placeholder="Ingrese precio">
+                <p class="form__error__msg" id="priceMsg"><%= locals.errors && errors.price ? errors.price.msg : null%> </p>
                 <small class="d-block text-danger text-start priceError"></small>
               </div>
             </div>
@@ -96,6 +98,7 @@
               width: 257px;
               margin-left: -9px;"></textarea>
             <label for="floatingTextarea2" >Descripción del producto:</label>
+            <p class="form__error__msg" id="descriptionMsg"><%= locals.errors && errors.description ? errors.description.msg : null%> </p>
             <small class="d-block text-danger text-start descriptionError"></small>
           </div>
 
