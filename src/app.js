@@ -18,6 +18,7 @@ const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
 const apiProductsRouter = require('./routes/APIsRoutes/apiProducts');
 const apiUsersRouter = require('./routes/APIsRoutes/apiUsers');
+const { sendJsonError } = require('./helpers/sendJsonError');
 
 var app = express();
 

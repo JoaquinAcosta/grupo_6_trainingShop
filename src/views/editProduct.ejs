@@ -15,10 +15,10 @@
               <h2 class="addProduct-title-h2">Editar producto: <%= product.name %></h2>
             </div>
             <div class="mt-3 col-12 divInputSelect1">
-              <div class="heightInputsErrors">
+              <div >
                 
                 <input class="register-main-input mt-2 divInputBrandId form-control" type="text" name="name" id="name" placeholder="Ingrese nombre producto" value="<%= product.name %>">
-                <p class="form__error__msg" id="nameMsg"><%= locals.errors && errors.name ? errors.name.msg : null%> </p>
+                <small class="form__error__msg text-start d-block" id="nameMsg"><%= locals.errors && errors.name ? errors.name.msg : null%> </small>
                 <small class="d-block text-danger text-start nameError"></small>
               </div>
               
