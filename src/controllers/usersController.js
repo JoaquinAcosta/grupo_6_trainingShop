@@ -21,7 +21,7 @@ module.exports = {
         name: name.trim(),
         lastName: lastName.trim(),
         email: email.trim(),
-        phone: +phone,
+        phone: +phone || 0,
         password: bcryptjs.hashSync(password, 10),
         rolId: 2,
         avatar: "default-image.png",
@@ -120,7 +120,6 @@ module.exports = {
         const user = await db.User.findOne({ where: { email: emailBody } });
 
         const isPassValid = await bcryptjs.compare(password, user.password);
-
         if (user && isPassValid) {
           req.session.userLogin = user;
 
