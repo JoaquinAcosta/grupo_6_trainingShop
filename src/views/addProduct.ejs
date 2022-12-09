@@ -86,9 +86,9 @@
             <div class="card-body mt-3">
               <img src="/images/productsImage/default-image.png" alt="" class="trainingShop-shadow imgForm" width="192" id="imagePrev">
             </div>
-            <label for="image" class="form-control register-main-input label-add  text-center butonAddImg" id="imageLabel">Agregar imagen</label>
+            <label for="image" class="form-control register-main-input label-add  text-center butonAddImg" id="imageLabel" style="cursor: pointer;">Agregar imagen</label>
             <input type="file" name="image" id="image" hidden>
-            <p class="form__error__msg d-block text-danger text-start" id="descriptionMsg"><%= locals.errors && errors.image ? errors.image.msg : null%> </p>
+            <small class="d-block text-danger text-start imageError form__error__msg " id="imageMsg"><%= locals.errors && errors.image ? errors.image.msg : null%></small>
           </div>
           
 

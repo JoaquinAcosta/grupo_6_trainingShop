@@ -155,7 +155,7 @@ module.exports = {
         });
         let images = req.files.map(({ filename }) => {
           return {
-            file: filename,
+            file: filename || 'default-image.png',
             productId: new_product.id,
           };
         });
