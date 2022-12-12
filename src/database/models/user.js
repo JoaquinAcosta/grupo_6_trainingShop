@@ -84,7 +84,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         ...defaultValidationsRequiredFields,
-       is: objectValidate(/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/ , "la contrasenia debe tener entre 8 y 16 caracteres, almenos una minuscula,almenos una mayuscula"),
+       is: objectValidate(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/ , "La contraseña debe tener entre 6 y 12 caracteres, un número, una mayúscula y un caracter especial"),
 
       /*  hashPass(value){
         User.beforeCreate((user)=> {
