@@ -24,9 +24,14 @@ window.onload = function () {
   let newBrandError = document.querySelector(".newBrandError");
   let descriptionError = document.querySelector(".descriptionError");
 
+    //errors express-validators fields//
+  let nameMsg = document.getElementById('nameMsg');
+  let priceMsg = document.getElementById('priceMsg');
+  let descriptionMsg = document.getElementById('descriptionMsg');
+
   //name validations
   name.addEventListener("focus", function () {
-    nameError.innerHTML = "";
+    nameMsg.innerHTML = "";
     name.classList.remove("is-valid") || name.classList.remove("is-invalid");
   });
 
@@ -37,23 +42,26 @@ window.onload = function () {
         break;
       case name.value === "":
         name.classList.add("is-invalid");
-        nameError.innerHTML = "Debe ingresar el nombre del producto";
+        nameMsg.innerHTML = "Debe ingresar el nombre del producto";
         break;
     }
   });
 
   //price validation:
   price.addEventListener("focus", function () {
-    priceError.innerHTML = "";
+    priceMsg.innerHTML = "";
     price.classList.remove("is-valid") || price.classList.remove("is-invalid");
   });
 
   price.addEventListener("blur", function () {
-    if (price.value <= 0 || "") {
-      price.classList.add("is-invalid");
-      priceError.innerHTML = "El precio debe ser mayor a 0";
+    if (price.value === "") {
+      priceMsg.innerHTML = "Debe ingresar un precio";
     }
-    if (price.value > 0) {
+    else if (price.value <= 0) {
+      price.classList.add("is-invalid");
+      priceMsg.innerHTML = "El precio debe ser mayor a 0";
+    }
+    else if (price.value > 0) {
       price.classList.add("is-valid");
     }
   });
@@ -120,7 +128,7 @@ window.onload = function () {
   });
 
   description.addEventListener("focus", function () {
-    descriptionError.innerHTML = "";
+    descriptionMsg.innerHTML = "";
     description.classList.remove("is-invalid") ||
       description.classList.remove("is-valid");
   });
@@ -128,11 +136,11 @@ window.onload = function () {
   description.addEventListener("blur", function () {
     switch (true) {
       case description.value === "":
-        descriptionError.innerHTML = "Debe ingresar una descripción";
+        descriptionMsg.innerHTML = "Debe ingresar una descripción";
         break;
 
       case description.value.trim().length < 20:
-        descriptionError.innerHTML = "Debe tener más de 20 caracteres";
+        descriptionMsg.innerHTML = "Debe tener más de 20 caracteres";
         description.classList.add('is-invalid');
         break;
       case description.value.trim().length > 20:
