@@ -14,6 +14,7 @@ module.exports = [
   body("description")
     .notEmpty()
     .withMessage("Debe ingresar una descripcion")
+    .isLength({min: 20}).withMessage("Longitud mínima 20 caracteres")
     .bail(),
   body("sectionId").custom((value, { req }) => {
     const sectionsId = ["1", "2"];
