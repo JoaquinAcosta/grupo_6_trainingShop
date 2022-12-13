@@ -14,7 +14,7 @@ export const Root = () => {
 
                 <div id="content">
 
-                    <TopBar />
+                    {/* <TopBar /> */}
                     
                     <Outlet/>
                    

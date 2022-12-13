@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../assets/images/logoDashboard.png';
 
 export const SideBar = () => {
     return (
         <ul
-            className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion"
+            className="navbar-nav bg-gradient sidebar sidebar-dark accordion menuLateral" style={{backgroundColor: '#1B262C'}}
             id="accordionSidebar"
         >
-            <Link className="sidebar-brand " to="/">
+            <Link className="sidebar-brand mb-2 " to="/">
                 <div className="sidebar-brand-icon">
                     <img
                         className="w-100"
-                        src="/images/logo-mercado-liebre.svg"
-                        alt="Mercado Liebre"
+                        src={logo}
                     />
                 </div>
             </Link>
