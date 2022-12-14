@@ -4,7 +4,7 @@
 .btn-TraininShop{
     display: inline-block;
     text-decoration: none;
-    background: var(--colorAzulOscuro);
+    background: #1B262C;
     color: white;
     width: 85px;
     text-align: center;
@@ -31,3 +31,9 @@
     
 }
 
+.soyDiv{
+    height: 200px;
+    width: 200px;
+    background-color: #1B262C;
+    color: yellow;
+}

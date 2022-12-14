@@ -4,7 +4,7 @@ import { SideBar } from './SideBar';
 import { TopBar } from './TopBar';
 import {Outlet} from 'react-router-dom';
 
-export const Root = () => {
+export let Root = () => {
     return (
         <div id="wrapper">
 
