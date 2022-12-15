@@ -99,6 +99,20 @@ module.exports = {
             },
           }
         );
+
+        let {file} = await db.Image.findByPk(req.params.id);
+        await db.Image.update(
+          {
+            file: req.files[0]?.filename || file
+          },
+          {
+            where:{
+              id: req.params.id
+            }
+          }
+        )
+
+        
         return res.redirect("/admin/products");
       }else{
         let categories = await db.Category.findAll({
