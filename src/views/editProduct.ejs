@@ -25,7 +25,7 @@
               <div class="heightInputsErrors">
                 
                 <input class="register-main-input mt-2 divInputBrandId form-control" type="number" name="price" id="price" placeholder="Ingrese precio" value="<%= product.price %>">
-                <p class="form__error__msg" id="priceMsg"><%= locals.errors && errors.price ? errors.price.msg : null%> </p>
+                <p class="form__error__msg text-start d-block" id="priceMsg"><%= locals.errors && errors.price ? errors.price.msg : null%> </p>
                 <small class="d-block text-danger text-start priceError"></small>
               </div>
             </div>
@@ -89,6 +89,7 @@
             <label for="image" class="form-control register-main-input label-add  text-center butonAddImg" id="imageLabel" style="cursor: pointer;">Agregar imagen</label>
             <input type="file" name="image" id="image" hidden>
             <small class="d-block text-danger text-start imageError form__error__msg " id="imageMsg"><%= locals.errors && errors.image ? errors.image.msg : null%></small>
+            <small class="d-block text-danger text-start imageError"></small>
           </div>
           
 
@@ -117,7 +118,7 @@
     </main>
     <%- include('./partials/footer') %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="/js/editProductValidations.js"></script>
+   <script src="/js/editProductValidations.js"></script>
 </body>
 
 </html>
