@@ -80,8 +80,8 @@ $('avatar').addEventListener('change', (e) => {
     };
     switch (true){
       case  !exRegAvatar.test(this.value):
-          $("avatarMsg").style.color = "red";
-          $("avatarMsg").innerHTML = "La imagen debe tener uno de los siguientes fotmatos jpg, jpeg, png", e;
+          $("avatarMsg").style.color = "green";
+          $("avatarMsg").innerHTML = "La imagen debe tener uno de los siguientes formatos jpg, jpeg, png", e;
           break;
       default: $('avatarMsg').innerHTML = null;
           break;
