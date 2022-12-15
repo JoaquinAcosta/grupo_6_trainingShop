@@ -28,7 +28,7 @@ const users = [
     email : 'joaquin@gmail.com',
     password : hashSync("123Aa!",10),
     avatar : null,
-    phone : Acosta,
+    phone : 343434,
     rolId : 1,
     createdAt : new Date()
   },
