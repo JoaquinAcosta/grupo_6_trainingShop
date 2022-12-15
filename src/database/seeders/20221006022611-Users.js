@@ -3,23 +3,53 @@ const {hashSync} = require('bcryptjs')
 
 const users = [
   {
-    name : 'admin',
-    lastName : 'admin',
-    email : 'admin@gmail.com',
-    password : hashSync("123123",10),
+    name : 'Fabian',
+    lastName : 'Coseglia',
+    email : 'fabian@gmail.com',
+    password : hashSync("123Aa!",10),
     avatar : null,
     phone : 123456,
     rolId : 1,
     createdAt : new Date()
   },
   {
-    name : 'user',
-    lastName : 'user',
+    name : 'Leandro',
+    lastName : 'Mumbach',
     email : 'user@gmail.com',
-    password : hashSync("123123",10),
+    password : hashSync("123Aa!",10),
     avatar : null,
     phone : 345678,
-    rolId : 2,
+    rolId : 1,
+    createdAt : new Date()
+  },
+  {
+    name : 'Joaquin',
+    lastName : 'Acosta',
+    email : 'joaquin@gmail.com',
+    password : hashSync("123Aa!",10),
+    avatar : null,
+    phone : Acosta,
+    rolId : 1,
+    createdAt : new Date()
+  },
+  {
+    name : 'Flora',
+    lastName : 'Vargas',
+    email : 'flora@gmail.com',
+    password : hashSync("123Aa!",10),
+    avatar : null,
+    phone : 345678,
+    rolId : 1,
+    createdAt : new Date()
+  },
+  {
+    name : 'Daniel',
+    lastName : 'Zambrana',
+    email : 'daniel@gmail.com',
+    password : hashSync("123Aa!",10),
+    avatar : null,
+    phone : 345678,
+    rolId : 1,
     createdAt : new Date()
   }
 ]
