@@ -13,6 +13,21 @@ window.onload = function () {
   let form = document.getElementById("form");
   let imageLabel = document.getElementById("imageLabel");
 
+
+ /* explicacíon:
+ 
+ Para lograr que no se superpongan los msgs de error, lo que hay que hacer es: en vez que escribir un nuevo msj de error desde el front, hay que capturar el elemento de HTML que ya tenemos en express-validator (en la vista: por ej en editProduct.ejs existe un elemento con la clase "nameMsg" este te muestra el error express validator).
+
+ Hay que capturar ese elemento y hacer lo mismo que ya haciamos con las demas validaciones solo que reemplezando, en vez de aplicarle los eventos en blur y focus al elemento de errores que habiamos creado, es simplemente reemplezarlo por el de express-validator, es decir, nosotros por ej creamos un elemento html en la vista de edit que se llama nameError a esta clase le agregaramos los eventos del form cuando haciamos focus o blur, bueno, en vez de hacerlo sobre ese elemento, hacerlo sobre el que ya existe de express validator, en este caso es el elemento con id "nameMsg".
+
+ abajo esta el ejemplo en los eventos de name, en focus y blur. ya esta funcionando podes checkearlo
+ 
+ */
+
+
+
+
+
   //error fields
   let nameError = document.querySelector(".nameError");
   let priceError = document.querySelector(".priceError");
@@ -21,6 +36,9 @@ window.onload = function () {
   let brandError = document.querySelector(".brandError");
   let newBrandError = document.querySelector(".newBrandError");
   let descriptionError = document.querySelector(".descriptionError");
+
+  //errors express-validators fields//
+  let nameMsg = document.getElementById('nameMsg');
 
   //ONLOADS VALIDATIONS//
   if (name.value !== "") {
@@ -47,7 +65,7 @@ window.onload = function () {
 
   //name validations
   name.addEventListener("focus", function () {
-    nameError.innerHTML = "";
+    nameMsg.innerHTML = "";
     name.classList.remove("is-valid") || name.classList.remove("is-invalid");
   });
 
@@ -58,7 +76,7 @@ window.onload = function () {
         break;
       case name.value === "":
         name.classList.add("is-invalid");
-        nameError.innerHTML = "Debe ingresar el nombre del producto";
+        nameMsg.innerHTML = "Debe ingresar el nombre del producto";
         break;
     }
   });

@@ -26,7 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     file: {
       type: DataTypes.STRING,
       defaultValue: "default-image.png",
+      allowNull:false,
       validate: {
+        ...defaultValidationsRequiredFields,
         isImage(value){
           if(!/.png|.jpg|.jpeg|.webp/i.test(value)){
             unlinkSync(join(__dirname,`../../../public/images/productsImage/${value}`)) 

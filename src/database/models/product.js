@@ -85,7 +85,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate:{
         ...defaultValidationsRequiredFields,
-        isInt: objectValidate(true, "la seccion es invalida")
+        /* isInt: objectValidate(true, "la seccion es invalida") */
       }
     },
   }, {

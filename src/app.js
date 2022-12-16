@@ -17,8 +17,14 @@ var usersRouter = require('./routes/users');
 var productCartRouter = require('./routes/productCart');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
+<<<<<<< HEAD
 const apiProductRouter = require('./routes/APIsRoutes/apiProducts')
 const apiUsersRouter = require('./routes/APIsRoutes/apiUsers')
+=======
+const apiProductsRouter = require('./routes/APIsRoutes/apiProducts');
+const apiUsersRouter = require('./routes/APIsRoutes/apiUsers');
+const { sendJsonError } = require('./helpers/sendJsonError');
+>>>>>>> master
 
 var app = express();
 
@@ -48,19 +54,19 @@ app.use('/api/users', require('./routes/APis/apiUsers'))
 app.use('/api/products', apiProductRouter);
 app.use('/api/users', apiUsersRouter);
 
-/* app.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
 
   sendJsonError(err,res)
 
-  set locals, only providing error in development
-   res.locals.message = err.message;
-  res.locals.path = req.path;
-   res.locals.error = req.app.get("env") === "development" ? err : {};
+  // // set locals, only providing error in development
+  // res.locals.message = err.message;
+  // res.locals.path = req.path;
+  // res.locals.error = req.app.get("env") === "development" ? err : {};
 
-   render the error page
-   res.status(err.status || 500);
-  res.render("error");
-}); */
+  // // render the error page
+  // res.status(err.status || 500);
+  // res.render("error");
+});
 
 
 

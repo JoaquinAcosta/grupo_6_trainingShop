@@ -18,7 +18,7 @@ module.exports = [
         return !!!user;
         }).withMessage('El email ya se encuentra registrado'), */
     body('password').notEmpty().withMessage('Debe ingresar una contraseña').bail()
-        .isLength({ min: 6, max: 12 }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,12}/).withMessage('La contraseña debe tener entre 6 y 12 caracteres, un número, una mayúscula y un caracter especial'),
     body('password2').notEmpty().withMessage('Vuelva a introducir la contraseña').bail()
         .custom((value, { req }) => {
             if (value !== req.body.password) {
