@@ -17,14 +17,9 @@ var usersRouter = require('./routes/users');
 var productCartRouter = require('./routes/productCart');
 const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
-<<<<<<< HEAD
-const apiProductRouter = require('./routes/APIsRoutes/apiProducts')
-const apiUsersRouter = require('./routes/APIsRoutes/apiUsers')
-=======
 const apiProductsRouter = require('./routes/APIsRoutes/apiProducts');
 const apiUsersRouter = require('./routes/APIsRoutes/apiUsers');
 const { sendJsonError } = require('./helpers/sendJsonError');
->>>>>>> master
 
 var app = express();
 
