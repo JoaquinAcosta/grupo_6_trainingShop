@@ -29,3 +29,38 @@
     border: 2px solid #FFFFFF;
     box-shadow: -1px 1px 5px 2px rgba(0, 0, 0, 0.25);
 }
+
+/*productos card*/
+.price-verMas{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.index__section__novedades--article--products{
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-format{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.text-p{
+    font-size: 15px;
+    text-align: center;
+}
+
+.hr-products{
+    height: 1px;
+    width: 230px;
+    align-items: center;
+    background-color: black
+
+}
+.no-result-gift{
+    width: 500px
+}
+
