@@ -46,7 +46,7 @@ app.use('/productCart', productCartRouter);
 app.use('/products', productsRouter);
 app.use('/admin',adminRouter);
 app.use('/api/users', require('./routes/APisRoutes/apiUsers'))
-/* app.use('/api/products', apiProductRouter); */
+app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
 
 app.use((err, req, res, next) => {
