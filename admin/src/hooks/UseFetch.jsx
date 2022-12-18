@@ -4,7 +4,7 @@
 export const UseFetch = async (endpoint, method = "GET", data, token) => {
     const apiUrlBase = "http://localhost:4000/api"; 
 
-    console.log(apiUrlBase);
+
     const url = apiUrlBase + endpoint;
 
     let response;

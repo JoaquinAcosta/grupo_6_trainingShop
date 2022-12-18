@@ -38,6 +38,13 @@ export const SideBar = () => {
             </li>
 
             <li className="nav-item">
+                <Link className="nav-link collapsed" to="/productsTable">
+                    <i className="fas fa-fw fa-folder"></i>
+                    <span>Material dataTable</span>
+                </Link>
+            </li>
+
+            <li className="nav-item">
                 <Link className="nav-link" to="/users">
                     <i className="fas fa-users"></i>
                     <span>Usuarios</span>
