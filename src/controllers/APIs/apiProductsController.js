@@ -233,9 +233,14 @@ module.exports = {
         }
   
         return res.status(200).json({
-          ok: true,
+          meta: {
+            ok: true,
+            status: 200,
+          },
+          data: {product},
+          /* ok: true,
           status: 200,
-          data: product,
+          data: product, */
         });
       } catch (error) {
         sendJsonError(error, res);
@@ -314,6 +319,25 @@ module.exports = {
     } catch (error) {
       sendJsonError(error, res);
     }
-  }
+  },
+  // API -> DELETE PRODUCT
+  destroy: async (req, res) => {
+    const { id } = req.params; /* product id */
+    try {
+  
+      const product = await db.Product.findByPk(id);
+
+      
+        await product.destroy()
+        
+      res.status(200).json({
+        ok:true,
+        status:200,
+        msg:'Producto eliminado'
+      })
+    } catch (error) {
+      sendJsonError(error, res);
+    }
+  },
   
   };
