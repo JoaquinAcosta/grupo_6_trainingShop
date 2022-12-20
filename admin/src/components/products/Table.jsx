@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row } from './Row';
 
-export const Table = ({products}) => {
+export const Table = ({products, getInfo }) => {
   return (
     <div class="cotainer">
       <div class="row">
@@ -20,6 +20,7 @@ export const Table = ({products}) => {
             <tbody>
               {products.data.map((product, index) => (
                 <Row
+                  getInfo={getInfo}
                   {...product}
                   key={product.name + index}
                 />

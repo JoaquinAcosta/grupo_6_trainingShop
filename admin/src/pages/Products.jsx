@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Info } from '../components/products/Info';
 import { Table } from '../components/products/Table';
 import { UseFetch } from '../hooks/UseFetch';
 
@@ -26,18 +27,17 @@ export const Products = () => {
 
   }, []);
 
- /*  const getInfo = (id) => {
+  const getInfo = (id) => {
     UseFetch(`/products/${id}`)
       .then(({ meta, data }) => {
 
         if (meta.ok) {
           setProduct(
-            data
+            data = data.product
             )
-          //console.log(data);
         }
       }).catch(() => console.error)
-  } */
+  }
   return (
     <div className='container mx-auto'>
       <div className="row">
@@ -54,20 +54,20 @@ export const Products = () => {
                   :
                   <Table
                     products={products.data}
-                    /* getInfo={getInfo} */
+                    getInfo={getInfo}
                   />
               }
             </div>
           </div>
         </div>
-        {/* <div className="col-4">
+        <div className="col-4">
            {
             <Info
             {...product}
           />
 
           } 
-        </div> */}
+        </div>
       </div>
 
     </div>

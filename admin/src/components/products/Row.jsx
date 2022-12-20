@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Row = ({ id, name, price, brand/* , getInfo */ }) => {
+export const Row = ({ id, name, price, brand, getInfo }) => {
   return (
     <tr>
       <th scope="row">{id}</th>
@@ -12,7 +12,7 @@ export const Row = ({ id, name, price, brand/* , getInfo */ }) => {
           <button
             className="btn btn-sm btn-primary mx-1"
             style={{ width: "30px" }} title="Info"
-            /* onClick={()=>getInfo(id)}  */
+            onClick={()=>getInfo(id)} 
           >
             <i className="fas fa-info"></i>
           </button>

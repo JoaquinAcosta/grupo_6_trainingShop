@@ -18,7 +18,7 @@ export const UsersTable = ({users}) => {
           label: "NOMBRE",
           options: {
             filter: true,
-            sort: false,
+            sort: true,
           },
         },
         
