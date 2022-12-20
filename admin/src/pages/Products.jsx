@@ -37,6 +37,18 @@ export const Products = () => {
             )
         }
       }).catch(() => console.error)
+  };
+
+  const DestroyProduct = (id) => {
+    UseFetch(`/products/${id}`)
+      .then(({ meta, data }) => {
+
+        if (meta.ok) {
+          setProduct(
+            data = data.product
+            )
+        }
+      }).catch(() => console.error)
   }
   return (
     <div className='container mx-auto'>

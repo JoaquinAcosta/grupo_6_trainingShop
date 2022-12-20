@@ -1,14 +1,14 @@
 import React from 'react'
 
 export const Info = ({ name,description, brand, categories, images }) => {
-    console.log('................---',[images][0]?.[0].file)
+    let imageProduct = [images][0]?.[0].file;
     return (
         <div className="card">
             <div className="card-header">
                 <h5>Información</h5>
             </div>
             <div className="card-body">
-                <img className='img-thumbnail' src='' alt=""/>
+                <img className='img-thumbnail' src={imageProduct} alt=""/>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                         <label>Nombre:</label>

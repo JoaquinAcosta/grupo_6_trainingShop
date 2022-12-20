@@ -1,10 +1,9 @@
 import React from "react";
 
-export const Row = ({ id, name, price, brand, getInfo }) => {
+export const Row = ({ id, name, price, getInfo }) => {
   return (
     <tr>
       <th scope="row">{id}</th>
-      <td>IMG</td>
       <td>{name}</td>
       <td className="text-right">{price}</td>
       <td>

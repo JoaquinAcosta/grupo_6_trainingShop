@@ -3,14 +3,13 @@ import { Row } from './Row';
 
 export const Table = ({products, getInfo }) => {
   return (
-    <div class="cotainer">
-      <div class="row">
-        <div class="col table table-responsive">
-          <table class="table table-striped table-hover table-bordered">
+    <div className="cotainer">
+      <div className="row">
+        <div className="col table table-responsive">
+          <table className="table table-striped table-hover table-bordered">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>IMAGEN</th>
                 <th>NOMBRE</th>
                 <th>PRECIO</th>
                 <th>ACCIONES</th>
