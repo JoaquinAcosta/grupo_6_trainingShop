@@ -67,14 +67,14 @@
                                 form.addEventListener('click', function (e) {
                                 e.preventDefault();
                                 swal({
-                                    title: "¿Quieres borrar el producto?",
+                                    title: "¿Seguro quieres borrar el usuario?",
                                     icon: "warning",
                                     buttons: true,
                                     dangerMode: true,
                                 })
                                     .then((willDelete) => {
                                         if (willDelete) {
-                                            swal("El producto ha sido borrado", {
+                                            swal("El usuario ha sido borrado", {
                                                 icon: "success",
     
                                             });
