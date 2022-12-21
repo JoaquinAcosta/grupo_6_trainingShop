@@ -7,7 +7,8 @@ const {detail, add, store, edit, update, index, destroy,addBrand, remove } = req
 const productValidation = require('../validations/productValidation')
 
 const adminUserCheck = require('../middlewares/adminUserCheck');
-const {uploadProductImage} = require('../middlewares/uploadImageProduct')
+const {uploadProductImage} = require('../middlewares/uploadImageProduct');
+const editProductValidation = require('../validations/editProductValidation');
 
 router
     .get('/detail/:id',  detail)
@@ -16,7 +17,7 @@ router
     //GET ALL PRODUCTS//
     .get('/', index)
     .get('/edit/:id',adminUserCheck, edit)
-    .put('/update/:id',uploadProductImage.array('image'),productValidation, update)
+    .put('/update/:id',uploadProductImage.array('image'),editProductValidation, update)
     .post('/store',uploadProductImage.array('image'),productValidation, store)
 
 
