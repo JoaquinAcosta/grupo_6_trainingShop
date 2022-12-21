@@ -37,8 +37,8 @@
                                         
                                         <a href="/products/edit/<%= id %>"><button type="button" class="btn-TraininShop">Editar</button></a>
                                       
-                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" id="formDelete" >
-                                            <button type="submit" class="btn-TraininShop"  id="deleteButton" >Borrar</button>
+                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" class="formDelete" >
+                                            <button type="submit" class="btn-TraininShop deleteButton" id="buttonDelete">Borrar</button>
                                         </form>
                                         
                                     </td>
@@ -60,8 +60,10 @@
                     <!-- SCRIPT DE SWEET ALERT -->
                 <script>
                     window.onload = function () {
-                        let formDelete = document.getElementById('formDelete');
-                        formDelete.addEventListener('click', function (e) {
+                        let formDelete = document.querySelectorAll('.formDelete');
+                        
+                        formDelete.forEach(form=>{
+                            form.addEventListener('click', function (e) {
                             e.preventDefault();
                             swal({
                                 title: "¿Quieres borrar el producto?",
@@ -77,16 +79,20 @@
                                         });
                                         
                                         setTimeout(function () {
-                                            formDelete.submit();
+                                            form.submit();
                                         }, 1100);
                                         setTimeout();
                                     }
                                 });
-                            console.log(e)
+                            
 
 
                         })
 
+                        })
+                       
+                        
+                        
 
                     } 
                 </script>
