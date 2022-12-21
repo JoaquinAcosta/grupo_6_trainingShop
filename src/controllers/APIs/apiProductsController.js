@@ -175,8 +175,8 @@ module.exports = {
     }
   },
   
-    // API -> DETAIL PRODUCT
-    detail: async (req, res) => {
+  // API -> DETAIL PRODUCT
+  detail: async (req, res) => {
       /* OPTIONS DEFAULT */
       let options = {
         include: [
@@ -245,7 +245,7 @@ module.exports = {
       } catch (error) {
         sendJsonError(error, res);
       }
-    },
+  },
 
   update: async (req, res) => {
     const { name, description, price, brandId, categoryId, sectionId } = req.body;
@@ -339,5 +339,74 @@ module.exports = {
       sendJsonError(error, res);
     }
   },
-  
+  // API -> STORAGE PRODUCT
+  store: async (req, res) => {
+    try {
+      const { name, description, price, brandId, categoryId, sectionId } = req.body;
+
+      const product = await db.Product.create({
+        name: name?.trim(),
+        description: description?.trim(),
+        price: +price,
+        brandId: +brandId,
+        categoryId: +categoryId,
+        sectionId: +sectionId,
+      });
+
+      /*       await db.Product.afterCreate(product => {
+        console.log(product)
+      }) */
+
+      let images = [{ productId: product.id }];
+
+      if (req.files?.length) {
+        images = req.files.map((file) => {
+          return {
+            productId: product.id,
+            file: file.filename,
+          };
+        });
+      }
+
+      await db.Image.bulkCreate(images, { validate: true });
+
+      await product.reload({
+        include: [
+          {
+            association: "images",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "brand",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "categories",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "sections",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+        ],
+      });
+
+      return res.status(201).json({
+        ok: true,
+        status: 201,
+        data: product,
+        url: `${req.protocol}://${req.get("host")}/api/products/${product.id}`
+      });
+    } catch (error) {
+      sendJsonError(error, res);
+    }
+  },
   };
