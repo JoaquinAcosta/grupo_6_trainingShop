@@ -44,14 +44,14 @@ export const Metrics = () => {
                     value: data.totalUser
                 })
             }).catch(error => console.error)
-        UseFetch('/users')
+        /* UseFetch('/users')
             .then(({ data }) => {
                 console.log(data);
                 setUsers({
                     ...users,
                     value: data.totalCategory
                 })
-            }).catch(error => console.error)
+            }).catch(error => console.error) */
 
     }, []);
     /* useEffect(() => {

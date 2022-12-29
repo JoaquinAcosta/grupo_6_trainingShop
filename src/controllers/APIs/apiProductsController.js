@@ -29,7 +29,7 @@ module.exports = {
 
       const typesSort = ["name", "price", "discount", "category", "newest"];
       /* Comprobaciones */
-      limit = +limit > 5 ? 5 : +limit;
+      limit = +limit > 10 ? 10 : +limit;
       salesDiscount = +salesDiscount < 5 ? 5 : +salesDiscount;
       sortBy = typesSort.includes(sortBy) ? sortBy : "name";
       page = +page <= 0 || isNaN(page) ? 1 : +page;
