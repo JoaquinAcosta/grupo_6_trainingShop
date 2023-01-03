@@ -7,28 +7,44 @@
         <%- include('./partials/adminNavBar') %> 
             <main class="container">
                 <div class="row m-5">
-                    <h4>Resultado de la búsqueda: <%= keywords %></h4>
+                    <h4 class="text-format">Resultado de la búsqueda: <%= keywords %></h4>
                     <% if (products.length > 0) { %>
                      
-                            <div class="glider">
-                                <% products.forEach(({id,name,price,images}) => { %>
-                                 <article class="index__section__novedades--article">
-                                  <div class="index__section__novedades--container"><img src="/images/productsImage/<%=images[0].file%> " alt=""></div>
-                                  <h4 class="index__section__h4"><%= name %> </h4>
-                                  <div class="article__price--flex">
-                                    <p>$<%= toThousand(price) %> </p>
-                                    <a a href="/products/detail">Comprar</a>
-                                  </div>
+                         <div class="container d-flex gap-4 justify-content-center">
+                            <% products.forEach(({id,name,images,description,price})=> { %>
+                                <article class="index__section__novedades--article sombra index__section__novedades--article--products">
+        
+                                    <div class="index__section__novedades--container img-products"><img
+                                            src="/images/productsImage/<%= images[0].file %>" alt="">
+                                    </div>
+                                    <h4 class="index__section__h4 ">
+                                        <%= name %>
+                                    </h4>
+                                    <div class="article__price--flex price-verMas">
+                                        <p>$<%= toThousand(price) %>
+                                        </p>
+                                        <a a href="/products/detail/<%= id %>">Ver más</a>
+                                    </div>
+        
                                 </article>
+        
                                 <% }) %>
-                              </div>
-                 
-                      
-                        <% }else{ %>
-                            <p>No hay resultados 😒</p>
-                            <% } %>
+                                 
+                     
+                          
+                            <% }else{ %>
+                                <div class="mb-4">
+                                    <img class="d-block mx-auto" src="/images/no-results.png" width="120px" alt="sin resultados">
+                                </div>
+                                
+                                <p class="text-p">No hubo resultados para tu búsqueda</p>
+                                <% } %>
+                         </div>  
+                       
                 </div>
             </main>
+            <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
     </body>
 
 </html>

@@ -4,28 +4,31 @@
 
     <body>
         <%- include('./partials/header') %>
-        <%- include('./partials/adminNavBar') %> 
-            <main class="productsMain">
-                <h2 class="productsMain__h2">TODOS LOS PRUDUCTOS:</h2>
-                <% products.forEach(({id,name,images,description,price})=> { %>
-                    <article class="index__section__novedades--article sombra">
-                        
-                            <div class="index__section__novedades--container"><img
-                                    src="/images/productsImage/<%= images[0].file %>" alt=""></div>
+            <%- include('./partials/adminNavBar') %>
+                <main class="productsMain">
+                    <h2 class="productsMain__h2">TODOS LOS PRUDUCTOS:</h2>
+                    <% products.forEach(({id,name,images,description,price})=> { %>
+                        <article class="index__section__novedades--article sombra index__section__novedades--article--products">
+
+                            <div class="index__section__novedades--container img-products"><img
+                                    src="/images/productsImage/<%= images[0].file %>" alt="">
+                            </div>
                             <h4 class="index__section__h4">
                                 <%= name %>
                             </h4>
-                            <div class="article__price--flex">
-                                <p>$<%= toThousand(price) %> </p>
-                                <a a href="/products/detail/<%= id %>">Comprar</a>
+                            <div class="article__price--flex price-verMas">
+                                <hr class="hr-products">
+                                <p>$<%= toThousand(price) %>
+                                </p>
+                                <a a href="/products/detail/<%= id %>">Ver más</a>
                             </div>
-                       
-                    </article>
 
-                    <% }) %>
+                        </article>
 
-            </main>
-            <%- include('./partials/footer') %>
+                        <% }) %>
+
+                </main>
+                <%- include('./partials/footer') %>
     </body>
 
 </html>

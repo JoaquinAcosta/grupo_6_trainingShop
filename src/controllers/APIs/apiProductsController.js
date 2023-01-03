@@ -28,7 +28,7 @@ module.exports = {
 
       const typesSort = ["name", "price", "discount", "category", "newest"];
       /* Comprobaciones */
-      limit = +limit > 5 ? 5 : +limit;
+      limit = +limit > 10 ? 10 : +limit;
       salesDiscount = +salesDiscount < 5 ? 5 : +salesDiscount;
       sortBy = typesSort.includes(sortBy) ? sortBy : "name";
       page = +page <= 0 || isNaN(page) ? 1 : +page;
@@ -173,6 +173,8 @@ module.exports = {
       return sendJsonError(error, res);
     }
   },
+  
+  // API -> DETAIL PRODUCT
   detail: async (req, res) => {
       /* OPTIONS DEFAULT */
       let options = {
@@ -230,14 +232,20 @@ module.exports = {
         }
   
         return res.status(200).json({
-          ok: true,
+          meta: {
+            ok: true,
+            status: 200,
+          },
+          data: {product},
+          /* ok: true,
           status: 200,
-          data: product,
+          data: product, */
         });
       } catch (error) {
         sendJsonError(error, res);
       }
   },
+
   update: async (req, res) => {
     const { name, description, price, brandId, categoryId, sectionId } = req.body;
     const { id } = req.params;
@@ -315,6 +323,94 @@ module.exports = {
     } catch (error) {
       sendJsonError(error, res);
     }
-  }
+  },
+  // API -> DELETE PRODUCT
+  destroy: async (req, res) => {
+    const { id } = req.params; /* product id */
+    try {
   
+      const product = await db.Product.findByPk(id);
+
+      
+        await product.destroy()
+        
+      res.status(200).json({
+        ok:true,
+        status:200,
+        msg:'Producto eliminado'
+      })
+    } catch (error) {
+      sendJsonError(error, res);
+    }
+  },
+  // API -> STORAGE PRODUCT
+  store: async (req, res) => {
+    try {
+      const { name, description, price, brandId, categoryId, sectionId } = req.body;
+
+      const product = await db.Product.create({
+        name: name?.trim(),
+        description: description?.trim(),
+        price: +price,
+        brandId: +brandId,
+        categoryId: +categoryId,
+        sectionId: +sectionId,
+      });
+
+      /*       await db.Product.afterCreate(product => {
+        console.log(product)
+      }) */
+
+      let images = [{ productId: product.id }];
+
+      if (req.files?.length) {
+        images = req.files.map((file) => {
+          return {
+            productId: product.id,
+            file: file.filename,
+          };
+        });
+      }
+
+      await db.Image.bulkCreate(images, { validate: true });
+
+      await product.reload({
+        include: [
+          {
+            association: "images",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "brand",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "categories",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+          {
+            association: "sections",
+            attributes: {
+              exclude: ["createdAt", "updatedAt", "deletedAt"],
+            },
+          },
+        ],
+      });
+
+      return res.status(201).json({
+        ok: true,
+        status: 201,
+        data: product,
+        url: `${req.protocol}://${req.get("host")}/api/products/${product.id}`
+      });
+    } catch (error) {
+      sendJsonError(error, res);
+    }
+  },
   };

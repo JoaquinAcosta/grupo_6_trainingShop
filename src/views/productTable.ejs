@@ -16,27 +16,29 @@
                 
                 <div class="cotainer">
                     <div class="row">
-                        <div class="col">
-                            <table class="table table-striped table-hover table-bordered">
+                        <div class="col table table-responsive">
+                            <table class="table table-striped table-hover table-bordered table-responsive">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>IMAGEN</th>
                                         <th>PRODUCTO</th>
                                         <th>PRECIO</th>
                                         <th>ACCIONES</th>
                                     </tr>
                                 </thead>
-                                <% products.forEach(({id,name,price}) => { %>
+                                <% products.forEach(({id,name,price,images}) => { %>
                                  <tbody >
                                     <td><%= id %> </td>
+                                    <td><img width="70px" class="img-responsive d-block mx-auto" src="/images/productsImage/<%= images[0].file %>" alt=""></td>
                                     <td><%= name %> </td>
                                     <td>$<%= toThousand(price) %> </td>
                                     <td>
                                         
                                         <a href="/products/edit/<%= id %>"><button type="button" class="btn-TraininShop">Editar</button></a>
                                       
-                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST">
-                                            <button type="submit" class="btn-TraininShop">Borrar</button>
+                                        <form action="/products/delete/<%= id %>?_method=DELETE" method="POST" class="formDelete" >
+                                            <button type="submit" class="btn-TraininShop deleteButton" id="buttonDelete">Borrar</button>
                                         </form>
                                         
                                     </td>
@@ -54,6 +56,47 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
                     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
                     crossorigin="anonymous"></script>
+                   
+                    <!-- SCRIPT DE SWEET ALERT -->
+                <script>
+                    window.onload = function () {
+                        let formDelete = document.querySelectorAll('.formDelete');
+                        
+                        formDelete.forEach(form=>{
+                            form.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            swal({
+                                title: "¿Quieres borrar el producto?",
+                                icon: "warning",
+                                buttons: true,
+                                dangerMode: true,
+                            })
+                                .then((willDelete) => {
+                                    if (willDelete) {
+                                        swal("El producto ha sido borrado", {
+                                            icon: "success",
+                                            buttons: false,
+
+                                        });
+                                        
+                                        setTimeout(function () {
+                                            form.submit();
+                                        }, 1100);
+                                        setTimeout();
+                                    }
+                                });
+                            
+
+
+                        })
+
+                        })
+                       
+                        
+                        
+
+                    } 
+                </script>
     </body>
 
 </html>

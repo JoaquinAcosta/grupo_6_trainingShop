@@ -36,8 +36,8 @@
                                         
                                         <!-- <a href="#"><button type="button" class="btn-TraininShop">Editar</button></a> -->
                                       
-                                        <form action="/users/delete/<%= id %>?_method=DELETE" method="POST">
-                                            <button type="submit" class="btn-TraininShop">Borrar</button>
+                                        <form action="/users/delete/<%= id %>?_method=DELETE" method="POST" class="formDelete">
+                                            <button type="submit" class="btn-TraininShop" id="deleteButton">Borrar</button>
                                         </form>
                                         
                                     </td>
@@ -49,12 +49,55 @@
                     </div>
                 </div>
                 
-
             </main>
             <%- include('./partials/footer') %>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-                    crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+                crossorigin="anonymous">
+            </script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+                    <!-- SCRIPT DE SWEET ALERT -->
+                    <script>
+                        window.onload = function () {
+                            let formDelete = document.querySelectorAll('.formDelete');
+                            
+                            formDelete.forEach(form=>{
+                                form.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                swal({
+                                    title: "¿Seguro quieres borrar el usuario?",
+                                    icon: "warning",
+                                    buttons: true,
+                                    dangerMode: true,
+                                })
+                                    .then((willDelete) => {
+                                        if (willDelete) {
+                                            swal("El usuario ha sido borrado", {
+                                                icon: "success",
+                                                buttons: false,
+                                            });
+                                            
+                                            setTimeout(function () {
+                                                form.submit();
+                                            }, 1100);
+                                            setTimeout();
+                                        }
+                                    });
+                                
+    
+    
+                            })
+    
+                            })
+                           
+                            
+                            
+    
+                        } 
+                    </script>
+                
     </body>
 
 </html>

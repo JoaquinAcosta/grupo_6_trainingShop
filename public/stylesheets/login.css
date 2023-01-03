@@ -10,14 +10,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;}
-.login-main-div h1{
-    text-align: center;
-    margin: 20px 0px;
-    text-decoration: underline;}
 .login-main-div{
     position: relative;
     padding-bottom: 15px;
     text-align: start;}
+.login-main-hijo h1{
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0px;}
 .login-main-div i{
     position: absolute;
     right: 10px;
@@ -49,7 +49,7 @@
     padding: 20px 0px;}
 .login-main-button{
     height: 36px;
-    width: 100%;
+    width: 175px;
     font-size: 20px;
     padding: 0px 30px;
     background-color: var(--colorAzulOscuro);
@@ -81,26 +81,36 @@
     /*login tablet*/
 @media(min-width: 768px){
 .login-main form{
-    width: 65%;}
+    width: 400px;}
+.login-main-button{
+    width: 175px;}
 } 
 
 
 
      /*login desktop*/
 @media(min-width: 1024px){
+
+.login-main-hijo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+}    
+
 .login-main form{
     width: 55%;}
-.login-main-div {
-    display: flex;}    
+
 .login-main-label{
     width: 20%;
     align-self: center;
-    text-align: end;
+   /*  text-align: end; */
     padding-right: 10px;}
 .login-main-div i {
-        top: 30%;}
-.login-main-div-button{
-    text-align: end;}
-.login-main-button{
-    width: 83%;}
+    top: 50%;
+    right: -5px;
 }
+.login-main-div-button{
+    text-align: center;}
+    }
+
