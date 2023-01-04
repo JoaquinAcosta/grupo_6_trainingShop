@@ -23,6 +23,7 @@ export const Metrics = () => {
         value: 0,
         color: "warning"
     })
+    
 
     useEffect(() => {
 
@@ -44,14 +45,15 @@ export const Metrics = () => {
                     value: data.totalUser
                 })
             }).catch(error => console.error)
-        /* UseFetch('/users')
+
+        UseFetch('/categories')
             .then(({ data }) => {
                 console.log(data);
-                setUsers({
-                    ...users,
-                    value: data.totalCategory
+                setCategories({
+                    ...categories,
+                    value: data.totalCategories
                 })
-            }).catch(error => console.error) */
+            }).catch(error => console.error)  
 
     }, []);
     /* useEffect(() => {
@@ -74,7 +76,7 @@ export const Metrics = () => {
         <div className="row">
             <Metric {...products} />
             <Metric {...users} />
-            {/* <Metric {...categories}/> */}
+            <Metric {...categories}/>
         </div>
 
     )

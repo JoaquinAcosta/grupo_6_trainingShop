@@ -19,6 +19,7 @@ const productsRouter = require('./routes/products');
 const adminRouter = require('./routes/admin');
 const apiProductsRouter = require('./routes/APIsRoutes/apiProducts');
 const apiUsersRouter = require('./routes/APIsRoutes/apiUsers');
+const apiCategoriesRouter = require('./routes/APIsRoutes/apiCategories')
 const { sendJsonError } = require('./helpers/sendJsonError');
 
 var app = express();
@@ -48,6 +49,7 @@ app.use('/admin',adminRouter);
 app.use('/api/users', require('./routes/APisRoutes/apiUsers'))
 app.use('/api/products', apiProductsRouter);
 app.use('/api/users', apiUsersRouter);
+app.use('/api/categories', apiCategoriesRouter)
 
 app.use((err, req, res, next) => {
 
