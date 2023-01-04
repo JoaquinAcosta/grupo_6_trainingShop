@@ -1,5 +1,6 @@
 const { unlinkSync } = require("fs");
 const path = require("path");
+const { monitorEventLoopDelay } = require("perf_hooks");
 const { literal, Op } = require("sequelize");
 const db = require("../../database/models");
 const { literalQueryUrlImage } = require("../../helpers/literalQueryUrlImage");
@@ -413,4 +414,72 @@ module.exports = {
       sendJsonError(error, res);
     }
   },
+  // API -> LAST PRODUCT
+  newest: async (req, res) => {
+
+    /* OPTIONS DEFAULT */
+    let options = {
+      include: [
+        {
+          association: "images",
+          attributes: {
+            include: [literalQueryUrlImage(req, "file", "file")],
+            exclude: ["createdAt", "updatedAt", "deletedAt", "productId"],
+            /*  [
+                literal(
+                  `CONCAT( '${req.protocol}://${req.get(
+                    "host"
+                  )}/products/image/',images.file )`
+                ),
+                "file",
+              ], */
+          },
+        },
+        {
+          association: "brand",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "deletedAt"],
+          },
+        },
+        {
+          association: "categories",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "deletedAt"],
+          },
+        },
+        {
+          association: "sections",
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "deletedAt"],
+          },
+        },
+      ],
+      attributes: {
+        exclude: ["updatedAt", "deletedAt"],
+      },
+      order : [
+        ['createdAt', 'DESC']
+      ],
+      limit: 1
+    };
+
+    try {
+
+      let product = await db.Product.findAll(options);
+
+      if(product.length){
+        return res.status(200).json({
+          meta: {
+            ok: true,
+            status: 200,
+          },
+          data: {product},
+        })
+      }
+      
+    } catch (error) {
+      sendJsonError(error, res);
+      
+    }
+  }
   };
