@@ -1,4 +1,5 @@
 import React from "react";
+import swal from 'sweetalert';
 
 export const Row = ({ id, name, price, getInfo }) => {
   return (
@@ -18,12 +19,14 @@ export const Row = ({ id, name, price, getInfo }) => {
           <button
             className="btn btn-sm btn-success mx-1" title="Editar"
             style={{ width: "30px" }}
+            onClick={()=>swal('Equipo de desarrollo:','Disculpe, esta sección aún está en proceso')}
           >
             <i className="fas fa-edit"></i>
           </button>
           <button
             className="btn btn-sm btn-danger mx-1" title="Eliminar"
             style={{ width: "30px" }}
+            onClick={()=>swal('Equipo de desarrollo:','Disculpe, esta sección aún está en proceso')}
           >
             <i className="fas fa-trash"></i>
           </button>

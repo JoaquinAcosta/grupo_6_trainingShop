@@ -2,7 +2,6 @@ import React from 'react'
 
 export const LastProductInfo = ({data}) => {
     let dataOfProduct = data.product[0];
-    console.log('asdasdasdasd',dataOfProduct)
   return (
     
     <div className="card-body">

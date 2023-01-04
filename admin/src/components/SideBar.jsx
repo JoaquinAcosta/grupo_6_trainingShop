@@ -37,12 +37,12 @@ export const SideBar = () => {
                 </Link>
             </li>
 
-            <li className="nav-item">
+          {/*   <li className="nav-item">
                 <Link className="nav-link collapsed" to="/productsTable">
                     <i className="fas fa-fw fa-folder"></i>
                     <span>Material dataTable</span>
                 </Link>
-            </li>
+            </li> */}
 
             <li className="nav-item">
                 <Link className="nav-link" to="/users">
@@ -51,12 +51,12 @@ export const SideBar = () => {
                 </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
                 <Link className="nav-link" to="/categories">
                     <i className="fas fa-fw fa-table"></i>
                     <span>Categorias</span>
                 </Link>
-            </li>
+            </li> */}
 
             <hr className="sidebar-divider d-none d-md-block" />
         </ul>

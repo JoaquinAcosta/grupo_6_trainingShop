@@ -8,7 +8,12 @@ export const Info = ({ name,description, brand, categories, images }) => {
                 <h5>Información</h5>
             </div>
             <div className="card-body">
-                <img className='img-thumbnail' src={imageProduct} alt=""/>
+                {   imageProduct
+                    ?
+                <img className='img-thumbnail d-block mx-auto' src={imageProduct}  style={{ width: "10rem" }} alt=""/>
+                :
+                <p className='text-center'>Seleccione un producto...</p>
+            }
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">
                         <label>Nombre:</label>
